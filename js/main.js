@@ -1,18 +1,12 @@
+document.addEventListener('DOMContentLoaded', async ()=>{
+async function include(id,file){const el=document.getElementById(id);if(!el)return;try{const r=await fetch(file);el.innerHTML=await r.text();}catch(e){console.error(e)}}
+await include('siteHeader','components/header.html'); await include('siteFooter','components/footer.html');
+const burger=document.getElementById('burger'), mobileNav=document.getElementById('mobileNav'); if(burger&&mobileNav){burger.addEventListener('click',()=>mobileNav.classList.toggle('open')); mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileNav.classList.remove('open')))}
+const scrollTopBtn=document.getElementById('scrollTop'); if(scrollTopBtn){window.addEventListener('scroll',()=>scrollTopBtn.classList.toggle('visible',window.scrollY>400));scrollTopBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}))}
+const header=document.getElementById('header'); if(header)window.addEventListener('scroll',()=>header.style.boxShadow=window.scrollY>20?'0 2px 20px rgba(0,0,0,.1)':'0 2px 10px rgba(0,0,0,.05)');
+const tabs=document.querySelectorAll('.doc-tab'), list=document.getElementById('docList'); if(tabs.length&&list){const docs={legal:['Уставные документы (копия)','Свидетельство о государственной регистрации','Свидетельство о постановке на учёт в налоговом органе','Бухгалтерская отчётность за последний отчётный период','Финансовая отчётность за последние 12 месяцев','Документы, подтверждающие полномочия руководителя','Карточка предприятия с банковскими реквизитами','Бизнес-план или обоснование необходимости приобретения имущества','Документы на приобретаемое имущество (коммерческое предложение, счёт)'],ip:['Паспорт индивидуального предпринимателя','Свидетельство о государственной регистрации ИП','Свидетельство о постановке на учёт в налоговом органе','Налоговая декларация за последний отчётный период','Выписка из банка о движении средств по счетам за 6 месяцев','Документы, подтверждающие доходы','Карточка предприятия с банковскими реквизитами','Документы на приобретаемое имущество'],phys:['Паспорт гражданина Республики Беларусь','Справка о доходах по форме 1-НДФЛ или справка с места работы','Копия трудовой книжки, заверенная работодателем','Документы, подтверждающие наличие первоначального взноса','Документы на приобретаемое имущество']};const render=t=>list.innerHTML=docs[t].map((d,i)=>`<div class="doc-item"><div class="doc-check">${i+1}</div><div class="doc-text">${d}</div></div>`).join('');render('legal');tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');render(t.dataset.tab)}))}
 
-async function loadComponent(id,url){
- const el=document.getElementById(id); if(!el)return;
- try{el.innerHTML=await (await fetch(url)).text();}catch(e){}
-}
-function initSite(){
- document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
- const burger=document.querySelector('.burger'), nav=document.querySelector('.mobile-nav');
- if(burger&&nav) burger.addEventListener('click',()=>nav.classList.toggle('open'));
- const form=document.querySelector('#leadForm');
- if(form) form.addEventListener('submit',e=>{e.preventDefault();form.innerHTML='<div style="text-align:center;padding:35px"><i class="fa-solid fa-circle-check" style="font-size:48px;color:#16a34a"></i><h3 style="color:#132B4F;margin:12px 0">Спасибо за заявку!</h3><p style="color:#687386">Специалист «Лида-Сервис» свяжется с вами в рабочее время.</p></div>'});
- const range=document.querySelector('#amount'), out=document.querySelector('#amountOut');
- if(range&&out) range.addEventListener('input',()=>out.textContent=Number(range.value).toLocaleString('ru-RU')+' BYN');
- const cookie=document.querySelector('.cookie'), ok=document.querySelector('#cookieOk');
- if(cookie&&!localStorage.getItem('cookie')) setTimeout(()=>cookie.classList.add('show'),700);
- if(ok)ok.addEventListener('click',()=>{localStorage.setItem('cookie','1');cookie.classList.remove('show')});
-}
-Promise.all([loadComponent('siteHeader','components/header.html'),loadComponent('siteFooter','components/footer.html')]).then(initSite);
+document.querySelectorAll('.faq-item').forEach(item=>{const q=item.querySelector('.faq-q');if(q)q.addEventListener('click',()=>{const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open')})});
+const form=document.getElementById('leadForm');if(form){form.addEventListener('submit',e=>{e.preventDefault();const c=document.getElementById('formContent'),s=document.getElementById('formSuccess');if(c&&s){c.style.display='none';s.style.display='block'}})}
+const accept=document.getElementById('cookieAccept'),decline=document.getElementById('cookieDecline'),banner=document.getElementById('cookieBanner');if(accept&&decline&&banner){if(!localStorage.getItem('cookie_consent'))setTimeout(()=>banner.classList.add('show'),800);accept.addEventListener('click',()=>{localStorage.setItem('cookie_consent','accepted');banner.classList.remove('show')});decline.addEventListener('click',()=>{localStorage.setItem('cookie_consent','declined');banner.classList.remove('show')})}
+});

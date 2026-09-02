@@ -1,1 +1,1 @@
-Добавьте сюда изображения сайта. Рекомендуемые имена: logo.png, favicon.png, back.png, page-back.png, cta-back.png, about-back.png, liz-auto.png, liz-special.png, liz-equipment.png, liz-realestate.png, manager.png и логотипы клиентов при необходимости.
+Добавьте сюда изображения из вашего набора: logo.png, favicon.png, back.png, about-back.png, cta-back.png, liz-auto.png, liz-tech.png, liz-equipment.png, liz-building.png, manager.png и логотипы клиентов из исходного файла.
