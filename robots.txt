@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lida-servis.by/sitemap.xml
