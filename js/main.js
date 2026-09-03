@@ -90,6 +90,72 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     update();
   });
 
+  // Privacy modal used from application forms. The footer itself links to the standalone privacy page.
+  if(!document.getElementById('privacyModal')){
+    const modal=document.createElement('div');
+    modal.className='modal-overlay';
+    modal.id='privacyModal';
+    modal.innerHTML=`
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Политика конфиденциальности</h3>
+          <button class="modal-close" type="button" aria-label="Закрыть"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+          <h4>1. Общие положения</h4>
+          <p>Настоящая Политика конфиденциальности разработана в соответствии с законодательством Республики Беларусь, в том числе Законом Республики Беларусь от 10 ноября 2008 года № 455-З «Об информации, информатизации и защите информации», Законом Республики Беларусь от 7 мая 2021 года № 99-З «О защите персональных данных».</p>
+          <h4>2. Основные понятия</h4>
+          <ul>
+            <li><strong>Персональные данные</strong> — любая информация, относящаяся к прямо или косвенно определённому физическому лицу.</li>
+            <li><strong>Обработка персональных данных</strong> — любое действие с персональными данными.</li>
+            <li><strong>Файлы cookie</strong> — небольшие текстовые файлы, сохраняющиеся на устройстве пользователя.</li>
+          </ul>
+          <h4>3. Состав обрабатываемых персональных данных</h4>
+          <ul>
+            <li>Фамилия, имя, отчество</li>
+            <li>Адрес электронной почты (e-mail)</li>
+            <li>Номер телефона</li>
+            <li>Данные, полученные при заполнении форм на Сайте</li>
+            <li>Технические данные: IP-адрес, информация о браузере, файлы cookie</li>
+          </ul>
+          <h4>4. Цели обработки персональных данных</h4>
+          <ul>
+            <li>Обработка заявок, поступивших через формы обратной связи</li>
+            <li>Консультирование по вопросам лизинговых услуг</li>
+            <li>Заключение и исполнение договоров лизинга</li>
+            <li>Информирование об услугах Компании</li>
+            <li>Улучшение работы Сайта и анализ статистики посещений</li>
+          </ul>
+          <h4>5. Права субъекта персональных данных</h4>
+          <ul>
+            <li>Получать информацию об обработке своих персональных данных</li>
+            <li>Требовать уточнения, блокирования или уничтожения персональных данных</li>
+            <li>Отозвать согласие на обработку персональных данных</li>
+            <li>Обжаловать действия Оператора в уполномоченный орган или в судебном порядке</li>
+          </ul>
+          <h4>6. Контактная информация</h4>
+          <ul>
+            <li><strong>ООО «Лида-Сервис»</strong></li>
+            <li>Адрес: 231300, Гродненская область, г. Лида, ул. Кирова, д. 27, пом. 9</li>
+            <li>Телефон: <a href="tel:+375154659775">8 (0154) 65-97-75</a></li>
+            <li>E-mail: <a href="mailto:info@lida-servis.by">info@lida-servis.by</a></li>
+          </ul>
+          <p><em>Дата последнего обновления: 1 сентября 2026 года</em></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="button">Закрыть</button>
+        </div>
+      </div>`;
+    document.body.appendChild(modal);
+    const close=()=>modal.classList.remove('show');
+    window.openPrivacyModal=()=>modal.classList.add('show');
+    window.closePrivacyModal=close;
+    modal.querySelector('.modal-close').addEventListener('click',close);
+    modal.querySelector('.modal-footer button').addEventListener('click',close);
+    modal.addEventListener('click',e=>{if(e.target===modal)close()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+  }
+
   // Identical application form behavior on the homepage and all leasing-type pages.
   document.querySelectorAll('#leadForm').forEach(form=>{
     form.addEventListener('submit',e=>{
