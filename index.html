@@ -1,537 +1,1155 @@
-<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Лида-Сервис — лизинг, который работает на ваш бизнес</title><meta name="description" content="ООО «Лида-Сервис» — лизинговая компания в Лиде. Финансовый, возвратный и оперативный лизинг автомобилей, спецтехники, оборудования и недвижимости."><meta name="robots" content="index,follow"><meta name="theme-color" content="#132B4F"><link rel="canonical" href="https://lida-servis.by/"><link rel="icon" href="img/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="css/style.css"></head><body><div id="siteHeader"></div><main>
-
-<section class="hero" id="home">
-<div class="container hero-inner">
-<div class="hero-content">
-<h1>ЛИЗИНГ,<br/>который <span>работает</span><br/>на ваш бизнес</h1>
-<p class="hero-sub">Финансовый, возвратный и оперативный лизинг автомобилей, спецтехники, оборудования и недвижимости. Работаем с 1997 года.</p>
-<div class="hero-cta">
-<a class="btn btn-primary btn-lg" href="#calculator">Рассчитать лизинг</a>
-<a class="btn btn-white btn-lg" href="#form">Оставить заявку</a>
-</div>
-<div class="hero-advantages">
-<div class="hero-adv-item">
-<div class="hero-adv-icon"><i class="fas fa-calendar-check"></i></div>
-<div class="hero-adv-text">Работаем<br/>с 1997 года</div>
-</div>
-<div class="hero-adv-item">
-<div class="hero-adv-icon"><i class="fas fa-user-tie"></i></div>
-<div class="hero-adv-text">Индивидуальный<br/>подход к клиенту</div>
-</div>
-<div class="hero-adv-item">
-<div class="hero-adv-icon"><i class="fas fa-file-contract"></i></div>
-<div class="hero-adv-text">Простые и<br/>понятные условия</div>
-</div>
-<div class="hero-adv-item">
-<div class="hero-adv-icon"><i class="fas fa-headset"></i></div>
-<div class="hero-adv-text">Сопровождение<br/>на всех этапах</div>
-</div>
-</div>
-</div>
-<div class="calc-card" id="calculator">
-<h3 class="calc-title">Онлайн-расчёт лизинга</h3>
-<div class="calc-field">
-<label class="calc-label">Выберите вид имущества</label>
-<select class="calc-select" id="calcType">
-<option value="auto">Автомобили</option>
-<option value="truck">Грузовые автомобили</option>
-<option value="special">Спецтехника</option>
-<option value="equipment">Оборудование</option>
-<option value="realty">Недвижимость</option>
-</select>
-</div>
-<div class="calc-field">
-<label class="calc-label">Стоимость имущества, BYN</label>
-<input class="calc-input" id="calcPrice" max="10000000" min="10000" step="1000" type="number" value="100000"/>
-</div>
-<div class="calc-field">
-<div class="slider-header">
-<label class="calc-label" style="margin:0">Аванс</label>
-<span class="slider-value" id="advValue">20%</span>
-</div>
-<div class="slider-wrap">
-<input class="slider" id="calcAdv" max="40" min="20" step="1" type="range" value="20"/>
-</div>
-</div>
-<div class="calc-field">
-<div class="slider-header">
-<label class="calc-label" style="margin:0">Срок лизинга</label>
-<span class="slider-value" id="termValue">36 мес.</span>
-</div>
-<div class="slider-wrap">
-<input class="slider" id="calcTerm" max="84" min="12" step="6" type="range" value="36"/>
-</div>
-</div>
-<div class="calc-result">
-<div class="calc-result-label">Ежемесячный платёж</div>
-<div class="calc-result-value" id="calcPayment">2 225 <span>BYN</span></div>
-</div>
-<button class="btn btn-primary calc-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Отправить заявку</button>
-</div>
-</div>
-</section>
-<section class="section" id="types">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Виды лизинга</h2>
-<p class="section-subtitle">Предлагаем лизинг широкого спектра имущества для развития и модернизации вашего бизнеса</p>
-<div class="section-line"></div>
-</div>
-<div class="types-grid">
-<div class="type-card">
-<div class="type-img">
-<img alt="Автотранспорт" src="img/liz-auto.png"/>
-</div>
-<div class="type-icon blue"><i class="fas fa-truck"></i></div>
-<div class="type-body">
-<h3 class="type-title">Автотранспорт</h3>
-<p class="type-desc">Лизинг легковых и грузовых автомобилей, микроавтобусов, прицепов и полуприцепов для бизнеса.</p>
-<a class="type-link" href="leasing-auto.html">Подробнее <i class="fas fa-arrow-right"></i></a>
-</div>
-</div>
-<div class="type-card">
-<div class="type-img">
-<img alt="Спецтехника" src="img/liz-tech.png"/>
-</div>
-<div class="type-icon orange"><i class="fas fa-hard-hat"></i></div>
-<div class="type-body">
-<h3 class="type-title">Спецтехника</h3>
-<p class="type-desc">Строительная, дорожная, коммунальная и сельскохозяйственная техника от ведущих производителей.</p>
-<a class="type-link" href="leasing-special.html">Подробнее <i class="fas fa-arrow-right"></i></a>
-</div>
-</div>
-<div class="type-card">
-<div class="type-img">
-<img alt="Оборудование" src="img/liz-equipment.png"/>
-</div>
-<div class="type-icon green"><i class="fas fa-cogs"></i></div>
-<div class="type-body">
-<h3 class="type-title">Оборудование</h3>
-<p class="type-desc">Производственное, торговое и медицинское оборудование для развития и модернизации бизнеса.</p>
-<a class="type-link" href="leasing-equipment.html">Подробнее <i class="fas fa-arrow-right"></i></a>
-</div>
-</div>
-<div class="type-card">
-<div class="type-img">
-<img alt="Недвижимость" src="img/liz-building.png"/>
-</div>
-<div class="type-icon purple"><i class="fas fa-building"></i></div>
-<div class="type-body">
-<h3 class="type-title">Недвижимость</h3>
-<p class="type-desc">Коммерческая недвижимость: офисы, склады, торговые и производственные площади на выгодных условиях.</p>
-<a class="type-link" href="leasing-realestate.html">Подробнее <i class="fas fa-arrow-right"></i></a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="section section-dark">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Почему выбирают «Лида-Сервис»</h2>
-<p class="section-subtitle">Более 28 лет мы помогаем бизнесу расти, предоставляя надёжные лизинговые решения</p>
-<div class="section-line"></div>
-</div>
-<div class="adv-grid">
-<div class="adv-item">
-<div class="adv-icon"><i class="fas fa-award"></i></div>
-<div class="adv-title">Опыт работы</div>
-<div class="adv-desc">С 1997 года на рынке лизинговых услуг Республики Беларусь</div>
-</div>
-<div class="adv-item">
-<div class="adv-icon"><i class="fas fa-shield-alt"></i></div>
-<div class="adv-title">Надёжность</div>
-<div class="adv-desc">Финансовая устойчивость и прозрачность всех операций</div>
-</div>
-<div class="adv-item">
-<div class="adv-icon"><i class="fas fa-user-tie"></i></div>
-<div class="adv-title">Индивидуальный подход</div>
-<div class="adv-desc">Гибкие условия под задачи каждого клиента</div>
-</div>
-<div class="adv-item">
-<div class="adv-icon"><i class="fas fa-clock"></i></div>
-<div class="adv-title">Оперативность</div>
-<div class="adv-desc">Быстрое рассмотрение заявок и оформление сделок</div>
-</div>
-<div class="adv-item">
-<div class="adv-icon"><i class="fas fa-handshake"></i></div>
-<div class="adv-title">Сопровождение</div>
-<div class="adv-desc">Поддержка на всех этапах лизинговой сделки</div>
-</div>
-</div>
-</div>
-</section>
-<section class="section section-light">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Как получить имущество в лизинг</h2>
-<p class="section-subtitle">Простой и понятный процесс от заявки до получения имущества</p>
-<div class="section-line"></div>
-</div>
-<div class="steps-grid">
-<div class="step-card">
-<div class="step-num">1</div>
-<div class="step-icon"><i class="fas fa-file-alt"></i></div>
-<h3 class="step-title">Вы оставляете заявку</h3>
-<p class="step-desc">Мы консультируем вас и подбираем оптимальное решение под ваши задачи и бюджет</p>
-</div>
-<div class="step-card">
-<div class="step-num">2</div>
-<div class="step-icon"><i class="fas fa-search-dollar"></i></div>
-<h3 class="step-title">Рассматриваем заявку</h3>
-<p class="step-desc">Анализируем документы, согласовываем условия сделки и подписываем договор</p>
-</div>
-<div class="step-card">
-<div class="step-num">3</div>
-<div class="step-icon"><i class="fas fa-key"></i></div>
-<h3 class="step-title">Вы получаете имущество</h3>
-<p class="step-desc">Передаём имущество и помогаем развивать ваш бизнес на выгодных условиях</p>
-</div>
-</div>
-</div>
-</section>
-<section class="section section-dark" id="conditions">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Базовые условия лизинговой сделки</h2>
-<p class="section-subtitle">Прозрачные финансовые параметры для вашего планирования</p>
-<div class="section-line"></div>
-</div>
-<div class="cond-grid">
-<div class="cond-card">
-<div class="cond-value">12–84 <span>мес.</span></div>
-<div class="cond-label">Срок лизинга</div>
-</div>
-<div class="cond-card">
-<div class="cond-value">60–80<span>%</span></div>
-<div class="cond-label">Финансирование сделки</div>
-</div>
-<div class="cond-card">
-<div class="cond-value">20–40<span>%</span></div>
-<div class="cond-label">Размер аванса</div>
-</div>
-<div class="cond-card">
-<div class="cond-value">7,9–21<span>%</span></div>
-<div class="cond-label">Ставка удорожания в год</div>
-</div>
-</div>
-<div class="cond-requirements" style="margin-top:60px;border-radius:16px;padding:40px">
-<h3 style="font-size:22px;font-weight:700;margin-bottom:24px;text-align:center">Требования к лизингополучателю</h3>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
-<div class="cond-req-item" style="display:flex;gap:12px;align-items:flex-start"><i class="fas fa-check-circle" style="color:var(--accent);font-size:20px;margin-top:2px"></i><div><strong>Юридические лица</strong><p style="font-size:14px;margin-top:4px">Регистрация в РБ, срок деятельности от 12 месяцев, положительная финансовая отчётность</p></div></div>
-<div class="cond-req-item" style="display:flex;gap:12px;align-items:flex-start"><i class="fas fa-check-circle" style="color:var(--accent);font-size:20px;margin-top:2px"></i><div><strong>Индивидуальные предприниматели</strong><p style="font-size:14px;margin-top:4px">Действующая регистрация, подтверждённый доход, отсутствие просроченной задолженности</p></div></div>
-<div class="cond-req-item" style="display:flex;gap:12px;align-items:flex-start"><i class="fas fa-check-circle" style="color:var(--accent);font-size:20px;margin-top:2px"></i><div><strong>Физические лица</strong><p style="font-size:14px;margin-top:4px">Гражданство РБ, возраст от 21 года, подтверждённый источник дохода</p></div></div>
-</div>
-</div>
-</div>
-</section>
-<!-- DOCS -->
-<section class="section section-dark" id="docs">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Документы</h2>
-      <p class="section-subtitle">Всё необходимое для оформления лизинговой сделки</p>
-      <div class="section-line"></div>
-    </div>
-    <div class="docs-tabs">
-      <button class="doc-tab active" data-tab="legal">Юридические лица</button>
-      <button class="doc-tab" data-tab="ip">Индивидуальные предприниматели</button>
-      <button class="doc-tab" data-tab="phys">Физические лица</button>
-    </div>
-    <div class="doc-list" id="docList"></div>
+<!doctype html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   &Lcy;&icy;&dcy;&acy;-&Scy;&iecy;&rcy;&vcy;&icy;&scy; &mdash; &lcy;&icy;&zcy;&icy;&ncy;&gcy;, &kcy;&ocy;&tcy;&ocy;&rcy;&ycy;&jcy; &rcy;&acy;&bcy;&ocy;&tcy;&acy;&iecy;&tcy; &ncy;&acy; &vcy;&acy;&shcy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;
+  </title>
+  <meta content="&Ocy;&Ocy;&Ocy; &laquo;&Lcy;&icy;&dcy;&acy;-&Scy;&iecy;&rcy;&vcy;&icy;&scy;&raquo; &mdash; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&acy;&yacy; &kcy;&ocy;&mcy;&pcy;&acy;&ncy;&icy;&yacy; &vcy; &Lcy;&icy;&dcy;&iecy;. &Fcy;&icy;&ncy;&acy;&ncy;&scy;&ocy;&vcy;&ycy;&jcy;, &vcy;&ocy;&zcy;&vcy;&rcy;&acy;&tcy;&ncy;&ycy;&jcy; &icy; &ocy;&pcy;&iecy;&rcy;&acy;&tcy;&icy;&vcy;&ncy;&ycy;&jcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy; &acy;&vcy;&tcy;&ocy;&mcy;&ocy;&bcy;&icy;&lcy;&iecy;&jcy;, &scy;&pcy;&iecy;&tscy;&tcy;&iecy;&khcy;&ncy;&icy;&kcy;&icy;, &ocy;&bcy;&ocy;&rcy;&ucy;&dcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy; &icy; &ncy;&iecy;&dcy;&vcy;&icy;&zhcy;&icy;&mcy;&ocy;&scy;&tcy;&icy;." name="description"/>
+  <meta content="index,follow" name="robots"/>
+  <meta content="#132B4F" name="theme-color"/>
+  <link href="https://lida-servis.by/" rel="canonical"/>
+  <link href="img/favicon.png" rel="icon"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div id="siteHeader">
   </div>
-</section>
-
-<section class="section section-light">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Часто задаваемые вопросы</h2>
-<p class="section-subtitle">Ответы на самые популярные вопросы о лизинге</p>
-<div class="section-line"></div>
-</div>
-<div class="faq-list">
-<div class="faq-item">
-<div class="faq-q">Что такое лизинг и чем он отличается от кредита? <i class="fas fa-chevron-down"></i></div>
-<div class="faq-a"><p>Лизинг — это форма финансирования, при которой лизинговая компания приобретает имущество и передаёт его клиенту во временное пользование с правом выкупа. В отличие от кредита, лизинг позволяет получить налоговые преимущества, не требует залога (имущество является предметом лизинга) и часто оформляется быстрее.</p></div>
-</div>
-<div class="faq-item">
-<div class="faq-q">Какие преимущества имеет лизинг перед кредитом? <i class="fas fa-chevron-down"></i></div>
-<div class="faq-a">
-<p>Лизинг обладает рядом существенных преимуществ по сравнению с банковским кредитованием:</p>
-<ul>
-<li><strong>Налоговые льготы</strong> — лизинговые платежи полностью относятся на расходы организации, что снижает налогооблагаемую базу по налогу на прибыль и НДС</li>
-<li><strong>Отсутствие залога</strong> — предмет лизинга сам является обеспечением сделки, не требуется дополнительное имущество в залог</li>
-<li><strong>Быстрое оформление</strong> — решение по заявке принимается в течение 1–3 рабочих дней, что значительно быстрее банковского кредитования</li>
-<li><strong>Гибкие условия</strong> — индивидуальный график платежей, возможность досрочного выкупа, изменение сроков и размера аванса</li>
-<li><strong>Сохранение оборотных средств</strong> — не требуется единовременная крупная оплата, что позволяет направить средства на развитие бизнеса</li>
-<li><strong>Обновление техники</strong> — возможность регулярно обновлять парк автомобилей и оборудования без значительных капитальных вложений</li>
-<li><strong>Минимальный аванс</strong> — от 20% стоимости имущества, тогда как по кредиту часто требуется 30–50%</li>
-<li><strong>Не увеличивает долговую нагрузку</strong> — при оперативном лизинге имущество не отражается на балансе лизингополучателя</li>
-<li><strong>Сервисное обслуживание</strong> — возможность включить страхование, ТО и ремонт в лизинговые платежи</li>
-<li><strong>Доступность для малого бизнеса</strong> — упрощённые требования к заёмщику по сравнению с банковским кредитом</li>
-</ul>
-</div>
-</div>
-<div class="faq-item">
-<div class="faq-q">Какие виды лизинга вы предлагаете? <i class="fas fa-chevron-down"></i></div>
-<div class="faq-a"><p>Мы предлагаем финансовый лизинг (с полным выкупом имущества по окончании срока), оперативный лизинг (с возможностью возврата имущества) и возвратный лизинг (клиент продаёт своё имущество лизинговой компании и берёт его в аренду).</p></div>
-</div>
-<div class="faq-item">
-<div class="faq-q">Можно ли взять в лизинг б/у технику? <i class="fas fa-chevron-down"></i></div>
-<div class="faq-a"><p>Да, мы рассматриваем лизинг подержанной техники и оборудования. Условия зависят от возраста, состояния и ликвидности имущества. Свяжитесь с нами для индивидуального расчёта.</p></div>
-</div>
-<div class="faq-item">
-<div class="faq-q">Как быстро рассматривается заявка? <i class="fas fa-chevron-down"></i></div>
-<div class="faq-a"><p>Предварительное решение по заявке принимается в течение 1–3 рабочих дней после получения полного пакета документов. Окончательное оформление сделки занимает от 5 до 10 рабочих дней.</p></div>
-</div>
-<div class="faq-item">
-<div class="faq-q">В какой валюте осуществляется финансирование? <i class="fas fa-chevron-down"></i></div>
-<div class="faq-a"><p>Финансирование осуществляется в белорусских рублях (BYN). Мы также работаем с партнёрскими банками, что позволяет предлагать конкурентные условия.</p></div>
-</div>
-</div>
-</div>
-</section>
-<section class="about-section" id="about">
-<div class="container">
-<div class="about-grid">
-<div class="about-text">
-<h2>О компании «Лида-Сервис»</h2>
-<p>ООО «Лида-Сервис» — одна из ведущих лизинговых компаний Гродненской области, успешно работающая на рынке с 1997 года. За более чем 28 лет мы помогли сотням предприятий и предпринимателей приобрести необходимое имущество для развития бизнеса.</p>
-<p>Мы предлагаем гибкие условия лизинга, индивидуальный подход к каждому клиенту и профессиональное сопровождение сделки на всех этапах. Наши партнёры — крупнейшие банки Республики Беларусь, что гарантирует надёжность и прозрачность всех операций.</p>
-<p>Наша миссия — сделать лизинг доступным и понятным инструментом финансирования для бизнеса любого масштаба.</p>
-<div class="about-stats">
-<div class="about-stat">
-<div class="about-stat-value">28+</div>
-<div class="about-stat-label">лет на рынке</div>
-</div>
-<div class="about-stat">
-<div class="about-stat-value">500+</div>
-<div class="about-stat-label">реализованных сделок</div>
-</div>
-<div class="about-stat">
-<div class="about-stat-value">7,9%</div>
-<div class="about-stat-label">минимальная ставка</div>
-</div>
-<div class="about-stat">
-<div class="about-stat-value">84</div>
-<div class="about-stat-label">месяца максимальный срок</div>
-</div>
-</div>
-<p class="disclosure-inline" style="margin-top:20px"><a class="btn btn-white" href="disclosure.html">Раскрытие информации о компании</a></p></div>
-<div></div>
-</div>
-</div>
-</section>
-<section class="section section-dark">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Наши партнёры</h2>
-<p class="section-subtitle">Сотрудничаем с ведущими банками Республики Беларусь</p>
-<div class="section-line"></div>
-</div>
-<div class="partners-grid">
-<a class="partner-card" href="https://www.belgazprombank.by/" rel="noopener" target="_blank">
-<div class="partner-icon"><i class="fas fa-university"></i></div>
-<div class="partner-name">ОАО «Белгазпромбанк»</div>
-<div class="partner-desc">Один из крупнейших банков страны, надёжный партнёр в финансировании лизинговых сделок</div>
-<div class="partner-link">Перейти на сайт банка <i class="fas fa-external-link-alt"></i></div>
-</a>
-<a class="partner-card" href="https://www.belveb.by/" rel="noopener" target="_blank">
-<div class="partner-icon"><i class="fas fa-landmark"></i></div>
-<div class="partner-name">ОАО «Банк БелВЭБ»</div>
-<div class="partner-desc">Ведущий банк с государственным участием, специализирующийся на поддержке бизнеса</div>
-<div class="partner-link">Перейти на сайт банка <i class="fas fa-external-link-alt"></i></div>
-</a>
-</div>
-</div>
-</section>
-<section class="section section-light">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Наши клиенты</h2>
-<p class="section-subtitle">Нам доверяют ведущие предприятия и организации Беларуси</p>
-<div class="section-line"></div>
-</div>
-<div class="clients-grid">
-<a class="client-card" href="https://milk.by/" rel="noopener" target="_blank">
-<div class="client-logo">
-<img alt="Молочный мир" src="img/logo-molochny-mir.png"/>
-</div>
-<div class="client-name">Молочный мир</div>
-</a>
-<a class="client-card" href="https://belsoftex.by/" rel="noopener" target="_blank">
-<div class="client-logo">
-<img alt="БелСофТекс" src="https://image.qwenlm.ai/public_source/eaaf2eb9-3a3d-4a96-b824-f8fe105953e7/1e8d0d4d6-a014-4a25-84b2-7c035272240e.png"/>
-</div>
-<div class="client-name">БелСофТекс</div>
-</a>
-<a class="client-card" href="https://novdar.by/" rel="noopener" target="_blank">
-<div class="client-logo">
-<img alt="Новогрудские дары" src="img/logo-novogrudskie-dary.png"/>
-</div>
-<div class="client-name">Новогрудские дары</div>
-</a>
-<a class="client-card" href="https://tdn.by/" rel="noopener" target="_blank">
-<div class="client-logo">
-<img alt="ТД Неман" src="img/logo-tdn.png"/>
-</div>
-<div class="client-name">ТД «Неман»</div>
-</a>
-<a class="client-card" href="https://fif.by/" rel="noopener" target="_blank">
-<div class="client-logo">
-<img alt="Евроавтоматика F&amp;F" src="img/logo-evroavtomatika.png"/>
-</div>
-<div class="client-name">Евроавтоматика F&amp;F</div>
-</a>
-</div>
-</div>
-</section>
-<section class="cta-section">
-<div class="cta-inner">
-<div class="cta-content">
-<h2>ГОТОВЫ РАЗВИВАТЬ<br/>ВАШ БИЗНЕС?</h2>
-<p>Оставьте заявку прямо сейчас, и наши специалисты свяжутся с вами для консультации и расчёта условий.</p>
-<a class="btn btn-primary btn-lg" href="#form">Оставить заявку</a>
-</div>
-</div>
-</section>
-<section class="section section-light" id="form">
-<div class="container">
-<div class="form-card">
-<div id="formContent">
-<h3 class="form-title">Оставить заявку</h3>
-<p class="form-subtitle">Заполните форму, и мы свяжемся с вами в течение рабочего дня</p>
-<form id="leadForm">
-<div class="form-row">
-<div class="form-group">
-<label class="form-label">ФИО *</label>
-<input class="form-input" placeholder="Иванов Иван Иванович" required="" type="text"/>
-</div>
-<div class="form-group">
-<label class="form-label">Телефон *</label>
-<input class="form-input" placeholder="+375 (__) ___-__-__" required="" type="tel"/>
-</div>
-</div>
-<div class="form-group">
-<label class="form-label">E-mail</label>
-<input class="form-input" placeholder="example@mail.com" type="email"/>
-</div>
-<div class="form-group">
-<label class="form-label">Вид имущества</label>
-<select class="form-select">
-<option>Автомобили</option>
-<option>Грузовые автомобили</option>
-<option>Спецтехника</option>
-<option>Оборудование</option>
-<option>Недвижимость</option>
-</select>
-</div>
-<div class="form-group">
-<label class="form-label">Сообщение</label>
-<textarea class="form-textarea" placeholder="Опишите ваши потребности..."></textarea>
-</div>
-<div class="form-group">
-<label class="form-check"><input required="" type="checkbox"/> Я согласен на обработку персональных данных в соответствии с <a href="privacy.html" style="color:var(--primary);text-decoration:underline">политикой конфиденциальности</a></label>
-</div>
-<button class="btn btn-primary btn-lg" style="width:100%" type="submit">Отправить заявку</button>
-</form>
-</div>
-<div class="form-success" id="formSuccess">
-<i class="fas fa-check-circle"></i>
-<h3>Заявка отправлена!</h3>
-<p>Наш специалист свяжется с вами в ближайшее время</p>
-</div>
-</div>
-</div>
-</section>
-<section class="section" id="contacts">
-<div class="container">
-<div class="section-header">
-<h2 class="section-title">Контакты</h2>
-<p class="section-subtitle">Свяжитесь с нами любым удобным способом</p>
-<div class="section-line"></div>
-</div>
-<div class="contacts-grid">
-<div class="contact-info">
-<div class="contact-item">
-<div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-<div>
-<div class="contact-label">Адрес офиса</div>
-<div class="contact-value">231300, Гродненская обл.,<br/>г. Лида, ул. Кирова, д. 27, пом. 9</div>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon"><i class="fas fa-phone"></i></div>
-<div>
-<div class="contact-label">Городские телефоны</div>
-<div class="contact-value">
-<a href="tel:+375154659775">8 (0154) 65-97-75</a><br/>
-<a href="tel:+375154659774">8 (0154) 65-97-74</a>
-</div>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon"><i class="fas fa-mobile-alt"></i></div>
-<div>
-<div class="contact-label">Мобильные телефоны</div>
-<div class="contact-value">
-<a href="tel:+375291301979">8 (029) 130-19-79</a><br/>
-<a href="tel:+375296444680">8 (029) 644-46-80</a><br/>
-<a href="tel:+375296755032">8 (029) 675-50-32</a>
-</div>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon viber"><i class="fab fa-viber"></i></div>
-<div>
-<div class="contact-label">Viber</div>
-<div class="contact-value">
-<a href="viber://chat?number=+37529644680">+375 (29) 644-46-80</a>
-</div>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon instagram"><i class="fab fa-instagram"></i></div>
-<div>
-<div class="contact-label">Instagram</div>
-<div class="contact-value">
-<a href="https://instagram.com/li_da_servis" rel="noopener" target="_blank">@li_da_servis</a>
-</div>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon"><i class="fas fa-envelope"></i></div>
-<div>
-<div class="contact-label">E-mail</div>
-<div class="contact-value"><a href="mailto:info@lida-servis.by">info@lida-servis.by</a></div>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon"><i class="fas fa-clock"></i></div>
-<div>
-<div class="contact-label">Режим работы</div>
-<div class="contact-value">Пн–Пт: 8:00 – 17:00<br/>Сб, Вс: выходной<br/>Обед: 13:00 – 14:00</div>
-</div>
-</div>
-<div class="contact-manager">
-<div class="contact-manager-img">
-<img alt="Менеджер Лида-Сервис" src="img/manager.png"/>
-</div>
-<div class="contact-manager-text">
-<strong>Нужна консультация?</strong>
-            Наши менеджеры всегда на связи и готовы ответить на ваши вопросы. Позвоните нам или оставьте заявку — мы перезвоним в течение рабочего дня.
-          </div>
-</div>
-</div>
-<div class="map-wrap">
-<iframe allowfullscreen="" loading="lazy" src="https://yandex.ru/map-widget/v1/?text=Лида+ул+Кирова+27&amp;z=17&amp;l=map"></iframe>
-</div>
-</div>
-</div>
-</section>
-
-
-
-
-
-</main><div id="siteFooter"></div><div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><div class="cookie-icon"><i class="fas fa-cookie-bite"></i></div><div class="cookie-text"><h4>Мы используем файлы cookie</h4><p>Этот сайт использует файлы cookie для улучшения работы сайта.</p></div><div class="cookie-buttons"><button class="cookie-btn cookie-accept" id="cookieAccept">Принять</button><button class="cookie-btn cookie-decline" id="cookieDecline">Отклонить</button></div></div></div><button class="scroll-top" id="scrollTop" aria-label="Наверх"><i class="fas fa-arrow-up"></i></button><script src="js/main.js"></script></body></html>
+  <main>
+   <section class="hero" id="home">
+    <div class="container hero-inner">
+     <div class="hero-content">
+      <h1>
+       &Lcy;&Icy;&Zcy;&Icy;&Ncy;&Gcy;,
+       <br/>
+       &kcy;&ocy;&tcy;&ocy;&rcy;&ycy;&jcy;
+       <span>
+        &rcy;&acy;&bcy;&ocy;&tcy;&acy;&iecy;&tcy;
+       </span>
+       <br/>
+       &ncy;&acy; &vcy;&acy;&shcy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;
+      </h1>
+      <p class="hero-sub">
+       &Fcy;&icy;&ncy;&acy;&ncy;&scy;&ocy;&vcy;&ycy;&jcy;, &vcy;&ocy;&zcy;&vcy;&rcy;&acy;&tcy;&ncy;&ycy;&jcy; &icy; &ocy;&pcy;&iecy;&rcy;&acy;&tcy;&icy;&vcy;&ncy;&ycy;&jcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy; &acy;&vcy;&tcy;&ocy;&mcy;&ocy;&bcy;&icy;&lcy;&iecy;&jcy;, &scy;&pcy;&iecy;&tscy;&tcy;&iecy;&khcy;&ncy;&icy;&kcy;&icy;, &ocy;&bcy;&ocy;&rcy;&ucy;&dcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy; &icy; &ncy;&iecy;&dcy;&vcy;&icy;&zhcy;&icy;&mcy;&ocy;&scy;&tcy;&icy;. &Rcy;&acy;&bcy;&ocy;&tcy;&acy;&iecy;&mcy; &scy; 1997 &gcy;&ocy;&dcy;&acy;.
+      </p>
+      <div class="hero-cta">
+       <a class="btn btn-primary btn-lg" href="#calculator">
+        &Rcy;&acy;&scy;&scy;&chcy;&icy;&tcy;&acy;&tcy;&softcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;
+       </a>
+       <a class="btn btn-white btn-lg" href="#form">
+        &Ocy;&scy;&tcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
+       </a>
+      </div>
+      <div class="hero-advantages">
+       <div class="hero-adv-item">
+        <div class="hero-adv-icon">
+         <i class="fas fa-calendar-check">
+         </i>
+        </div>
+        <div class="hero-adv-text">
+         &Rcy;&acy;&bcy;&ocy;&tcy;&acy;&iecy;&mcy;
+         <br/>
+         &scy; 1997 &gcy;&ocy;&dcy;&acy;
+        </div>
+       </div>
+       <div class="hero-adv-item">
+        <div class="hero-adv-icon">
+         <i class="fas fa-user-tie">
+         </i>
+        </div>
+        <div class="hero-adv-text">
+         &Icy;&ncy;&dcy;&icy;&vcy;&icy;&dcy;&ucy;&acy;&lcy;&softcy;&ncy;&ycy;&jcy;
+         <br/>
+         &pcy;&ocy;&dcy;&khcy;&ocy;&dcy; &kcy; &kcy;&lcy;&icy;&iecy;&ncy;&tcy;&ucy;
+        </div>
+       </div>
+       <div class="hero-adv-item">
+        <div class="hero-adv-icon">
+         <i class="fas fa-file-contract">
+         </i>
+        </div>
+        <div class="hero-adv-text">
+         &Pcy;&rcy;&ocy;&scy;&tcy;&ycy;&iecy; &icy;
+         <br/>
+         &pcy;&ocy;&ncy;&yacy;&tcy;&ncy;&ycy;&iecy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&yacy;
+        </div>
+       </div>
+       <div class="hero-adv-item">
+        <div class="hero-adv-icon">
+         <i class="fas fa-headset">
+         </i>
+        </div>
+        <div class="hero-adv-text">
+         &Scy;&ocy;&pcy;&rcy;&ocy;&vcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&iecy;
+         <br/>
+         &ncy;&acy; &vcy;&scy;&iecy;&khcy; &ecy;&tcy;&acy;&pcy;&acy;&khcy;
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="calc-card" id="calculator">
+      <h3 class="calc-title">
+       &Ocy;&ncy;&lcy;&acy;&jcy;&ncy;-&rcy;&acy;&scy;&chcy;&iocy;&tcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&acy;
+      </h3>
+      <div class="calc-field">
+       <label class="calc-label">
+        &Vcy;&ycy;&bcy;&iecy;&rcy;&icy;&tcy;&iecy; &vcy;&icy;&dcy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy;
+       </label>
+       <select class="calc-select" id="calcType">
+        <option value="auto">
+         &Acy;&vcy;&tcy;&ocy;&mcy;&ocy;&bcy;&icy;&lcy;&icy;
+        </option>
+        <option value="truck">
+         &Gcy;&rcy;&ucy;&zcy;&ocy;&vcy;&ycy;&iecy; &acy;&vcy;&tcy;&ocy;&mcy;&ocy;&bcy;&icy;&lcy;&icy;
+        </option>
+        <option value="special">
+         &Scy;&pcy;&iecy;&tscy;&tcy;&iecy;&khcy;&ncy;&icy;&kcy;&acy;
+        </option>
+        <option value="equipment">
+         &Ocy;&bcy;&ocy;&rcy;&ucy;&dcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy;
+        </option>
+        <option value="realty">
+         &Ncy;&iecy;&dcy;&vcy;&icy;&zhcy;&icy;&mcy;&ocy;&scy;&tcy;&softcy;
+        </option>
+       </select>
+      </div>
+      <div class="calc-field">
+       <label class="calc-label">
+        &Scy;&tcy;&ocy;&icy;&mcy;&ocy;&scy;&tcy;&softcy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy;, BYN
+       </label>
+       <input class="calc-input" id="calcPrice" max="10000000" min="10000" step="1000" type="number" value="100000"/>
+      </div>
+      <div class="calc-field">
+       <div class="slider-header">
+        <label class="calc-label" style="margin:0">
+         &Acy;&vcy;&acy;&ncy;&scy;
+        </label>
+        <span class="slider-value" id="advValue">
+         20%
+        </span>
+       </div>
+       <div class="slider-wrap">
+        <input class="slider" id="calcAdv" max="40" min="20" step="1" type="range" value="20"/>
+       </div>
+      </div>
+      <div class="calc-field">
+       <div class="slider-header">
+        <label class="calc-label" style="margin:0">
+         &Scy;&rcy;&ocy;&kcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&acy;
+        </label>
+        <span class="slider-value" id="termValue">
+         36 &mcy;&iecy;&scy;.
+        </span>
+       </div>
+       <div class="slider-wrap">
+        <input class="slider" id="calcTerm" max="84" min="12" step="6" type="range" value="36"/>
+       </div>
+      </div>
+      <div class="calc-result">
+       <div class="calc-result-label">
+        &IEcy;&zhcy;&iecy;&mcy;&iecy;&scy;&yacy;&chcy;&ncy;&ycy;&jcy; &pcy;&lcy;&acy;&tcy;&iocy;&zhcy;
+       </div>
+       <div class="calc-result-value" id="calcPayment">
+        2 225
+        <span>
+         BYN
+        </span>
+       </div>
+      </div>
+      <button class="btn btn-primary calc-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">
+       &Ocy;&tcy;&pcy;&rcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
+      </button>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="types">
+    <div class="container">
+     <div class="section-header">
+      <h2 class="section-title">
+       &Vcy;&icy;&dcy;&ycy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&acy;
+      </h2>
+      <p class="section-subtitle">
+       &Pcy;&rcy;&iecy;&dcy;&lcy;&acy;&gcy;&acy;&iecy;&mcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy; &shcy;&icy;&rcy;&ocy;&kcy;&ocy;&gcy;&ocy; &scy;&pcy;&iecy;&kcy;&tcy;&rcy;&acy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy; &dcy;&lcy;&yacy; &rcy;&acy;&zcy;&vcy;&icy;&tcy;&icy;&yacy; &icy; &mcy;&ocy;&dcy;&iecy;&rcy;&ncy;&icy;&zcy;&acy;&tscy;&icy;&icy; &vcy;&acy;&shcy;&iecy;&gcy;&ocy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;&acy;
+      </p>
+      <div class="section-line">
+      </div>
+     </div>
+     <div class="types-grid">
+      <div class="type-card">
+       <div class="type-img">
+        <img alt="&Acy;&vcy;&tcy;&ocy;&tcy;&rcy;&acy;&ncy;&scy;&pcy;&ocy;&rcy;&tcy;" src="img/liz-auto.png"/>
+       </div>
+       <div class="type-icon blue">
+        <i class="fas fa-truck">
+        </i>
+       </div>
+       <div class="type-body">
+        <h3 class="type-title">
+         &Acy;&vcy;&tcy;&ocy;&tcy;&rcy;&acy;&ncy;&scy;&pcy;&ocy;&rcy;&tcy;
+        </h3>
+        <p class="type-desc">
+         &Lcy;&icy;&zcy;&icy;&ncy;&gcy; &lcy;&iecy;&gcy;&kcy;&ocy;&vcy;&ycy;&khcy; &icy; &gcy;&rcy;&ucy;&zcy;&ocy;&vcy;&ycy;&khcy; &acy;&vcy;&tcy;&ocy;&mcy;&ocy;&bcy;&icy;&lcy;&iecy;&jcy;, &mcy;&icy;&kcy;&rcy;&ocy;&acy;&vcy;&tcy;&ocy;&bcy;&ucy;&scy;&ocy;&vcy;, &pcy;&rcy;&icy;&tscy;&iecy;&pcy;&ocy;&vcy; &icy; &pcy;&ocy;&lcy;&ucy;&pcy;&rcy;&icy;&tscy;&iecy;&pcy;&ocy;&vcy; &dcy;&lcy;&yacy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;&acy;.
+        </p>
+        <a class="type-link" href="leasing-auto.html">
+         &Pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+         <i class="fas fa-arrow-right">
+         </i>
+        </a>
+       </div>
+      </div>
+      <div class="type-card">
+       <div class="type-img">
+        <img alt="&Scy;&pcy;&iecy;&tscy;&tcy;&iecy;&khcy;&ncy;&icy;&kcy;&acy;" src="img/liz-tech.png"/>
+       </div>
+       <div class="type-icon orange">
+        <i class="fas fa-hard-hat">
+        </i>
+       </div>
+       <div class="type-body">
+        <h3 class="type-title">
+         &Scy;&pcy;&iecy;&tscy;&tcy;&iecy;&khcy;&ncy;&icy;&kcy;&acy;
+        </h3>
+        <p class="type-desc">
+         &Scy;&tcy;&rcy;&ocy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&acy;&yacy;, &dcy;&ocy;&rcy;&ocy;&zhcy;&ncy;&acy;&yacy;, &kcy;&ocy;&mcy;&mcy;&ucy;&ncy;&acy;&lcy;&softcy;&ncy;&acy;&yacy; &icy; &scy;&iecy;&lcy;&softcy;&scy;&kcy;&ocy;&khcy;&ocy;&zcy;&yacy;&jcy;&scy;&tcy;&vcy;&iecy;&ncy;&ncy;&acy;&yacy; &tcy;&iecy;&khcy;&ncy;&icy;&kcy;&acy; &ocy;&tcy; &vcy;&iecy;&dcy;&ucy;&shchcy;&icy;&khcy; &pcy;&rcy;&ocy;&icy;&zcy;&vcy;&ocy;&dcy;&icy;&tcy;&iecy;&lcy;&iecy;&jcy;.
+        </p>
+        <a class="type-link" href="leasing-special.html">
+         &Pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+         <i class="fas fa-arrow-right">
+         </i>
+        </a>
+       </div>
+      </div>
+      <div class="type-card">
+       <div class="type-img">
+        <img alt="&Ocy;&bcy;&ocy;&rcy;&ucy;&dcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy;" src="img/liz-equipment.png"/>
+       </div>
+       <div class="type-icon green">
+        <i class="fas fa-cogs">
+        </i>
+       </div>
+       <div class="type-body">
+        <h3 class="type-title">
+         &Ocy;&bcy;&ocy;&rcy;&ucy;&dcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy;
+        </h3>
+        <p class="type-desc">
+         &Pcy;&rcy;&ocy;&icy;&zcy;&vcy;&ocy;&dcy;&scy;&tcy;&vcy;&iecy;&ncy;&ncy;&ocy;&iecy;, &tcy;&ocy;&rcy;&gcy;&ocy;&vcy;&ocy;&iecy; &icy; &mcy;&iecy;&dcy;&icy;&tscy;&icy;&ncy;&scy;&kcy;&ocy;&iecy; &ocy;&bcy;&ocy;&rcy;&ucy;&dcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy; &dcy;&lcy;&yacy; &rcy;&acy;&zcy;&vcy;&icy;&tcy;&icy;&yacy; &icy; &mcy;&ocy;&dcy;&iecy;&rcy;&ncy;&icy;&zcy;&acy;&tscy;&icy;&icy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;&acy;.
+        </p>
+        <a class="type-link" href="leasing-equipment.html">
+         &Pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+         <i class="fas fa-arrow-right">
+         </i>
+        </a>
+       </div>
+      </div>
+      <div class="type-card">
+       <div class="type-img">
+        <img alt="&Ncy;&iecy;&dcy;&vcy;&icy;&zhcy;&icy;&mcy;&ocy;&scy;&tcy;&softcy;" src="img/liz-building.png"/>
+       </div>
+       <div class="type-icon purple">
+        <i class="fas fa-building">
+        </i>
+       </div>
+       <div class="type-body">
+        <h3 class="type-title">
+         &Ncy;&iecy;&dcy;&vcy;&icy;&zhcy;&icy;&mcy;&ocy;&scy;&tcy;&softcy;
+        </h3>
+        <p class="type-desc">
+         &Kcy;&ocy;&mcy;&mcy;&iecy;&rcy;&chcy;&iecy;&scy;&kcy;&acy;&yacy; &ncy;&iecy;&dcy;&vcy;&icy;&zhcy;&icy;&mcy;&ocy;&scy;&tcy;&softcy;: &ocy;&fcy;&icy;&scy;&ycy;, &scy;&kcy;&lcy;&acy;&dcy;&ycy;, &tcy;&ocy;&rcy;&gcy;&ocy;&vcy;&ycy;&iecy; &icy; &pcy;&rcy;&ocy;&icy;&zcy;&vcy;&ocy;&dcy;&scy;&tcy;&vcy;&iecy;&ncy;&ncy;&ycy;&iecy; &pcy;&lcy;&ocy;&shchcy;&acy;&dcy;&icy; &ncy;&acy; &vcy;&ycy;&gcy;&ocy;&dcy;&ncy;&ycy;&khcy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&yacy;&khcy;.
+        </p>
+        <a class="type-link" href="leasing-realestate.html">
+         &Pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+         <i class="fas fa-arrow-right">
+         </i>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section section-dark">
+    <div class="container">
+     <div class="section-header">
+      <h2 class="section-title">
+       &Pcy;&ocy;&chcy;&iecy;&mcy;&ucy; &vcy;&ycy;&bcy;&icy;&rcy;&acy;&yucy;&tcy; &laquo;&Lcy;&icy;&dcy;&acy;-&Scy;&iecy;&rcy;&vcy;&icy;&scy;&raquo;
+      </h2>
+      <p class="section-subtitle">
+       &Bcy;&ocy;&lcy;&iecy;&iecy; 28 &lcy;&iecy;&tcy; &mcy;&ycy; &pcy;&ocy;&mcy;&ocy;&gcy;&acy;&iecy;&mcy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;&ucy; &rcy;&acy;&scy;&tcy;&icy;, &pcy;&rcy;&iecy;&dcy;&ocy;&scy;&tcy;&acy;&vcy;&lcy;&yacy;&yacy; &ncy;&acy;&dcy;&iocy;&zhcy;&ncy;&ycy;&iecy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&ycy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&yacy;
+      </p>
+      <div class="section-line">
+      </div>
+     </div>
+     <div class="adv-grid">
+      <div class="adv-item">
+       <div class="adv-icon">
+        <i class="fas fa-award">
+        </i>
+       </div>
+       <div class="adv-title">
+        &Ocy;&pcy;&ycy;&tcy; &rcy;&acy;&bcy;&ocy;&tcy;&ycy;
+       </div>
+       <div class="adv-desc">
+        &Scy; 1997 &gcy;&ocy;&dcy;&acy; &ncy;&acy; &rcy;&ycy;&ncy;&kcy;&iecy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&ycy;&khcy; &ucy;&scy;&lcy;&ucy;&gcy; &Rcy;&iecy;&scy;&pcy;&ucy;&bcy;&lcy;&icy;&kcy;&icy; &Bcy;&iecy;&lcy;&acy;&rcy;&ucy;&scy;&softcy;
+       </div>
+      </div>
+      <div class="adv-item">
+       <div class="adv-icon">
+        <i class="fas fa-shield-alt">
+        </i>
+       </div>
+       <div class="adv-title">
+        &Ncy;&acy;&dcy;&iocy;&zhcy;&ncy;&ocy;&scy;&tcy;&softcy;
+       </div>
+       <div class="adv-desc">
+        &Fcy;&icy;&ncy;&acy;&ncy;&scy;&ocy;&vcy;&acy;&yacy; &ucy;&scy;&tcy;&ocy;&jcy;&chcy;&icy;&vcy;&ocy;&scy;&tcy;&softcy; &icy; &pcy;&rcy;&ocy;&zcy;&rcy;&acy;&chcy;&ncy;&ocy;&scy;&tcy;&softcy; &vcy;&scy;&iecy;&khcy; &ocy;&pcy;&iecy;&rcy;&acy;&tscy;&icy;&jcy;
+       </div>
+      </div>
+      <div class="adv-item">
+       <div class="adv-icon">
+        <i class="fas fa-user-tie">
+        </i>
+       </div>
+       <div class="adv-title">
+        &Icy;&ncy;&dcy;&icy;&vcy;&icy;&dcy;&ucy;&acy;&lcy;&softcy;&ncy;&ycy;&jcy; &pcy;&ocy;&dcy;&khcy;&ocy;&dcy;
+       </div>
+       <div class="adv-desc">
+        &Gcy;&icy;&bcy;&kcy;&icy;&iecy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&yacy; &pcy;&ocy;&dcy; &zcy;&acy;&dcy;&acy;&chcy;&icy; &kcy;&acy;&zhcy;&dcy;&ocy;&gcy;&ocy; &kcy;&lcy;&icy;&iecy;&ncy;&tcy;&acy;
+       </div>
+      </div>
+      <div class="adv-item">
+       <div class="adv-icon">
+        <i class="fas fa-clock">
+        </i>
+       </div>
+       <div class="adv-title">
+        &Ocy;&pcy;&iecy;&rcy;&acy;&tcy;&icy;&vcy;&ncy;&ocy;&scy;&tcy;&softcy;
+       </div>
+       <div class="adv-desc">
+        &Bcy;&ycy;&scy;&tcy;&rcy;&ocy;&iecy; &rcy;&acy;&scy;&scy;&mcy;&ocy;&tcy;&rcy;&iecy;&ncy;&icy;&iecy; &zcy;&acy;&yacy;&vcy;&ocy;&kcy; &icy; &ocy;&fcy;&ocy;&rcy;&mcy;&lcy;&iecy;&ncy;&icy;&iecy; &scy;&dcy;&iecy;&lcy;&ocy;&kcy;
+       </div>
+      </div>
+      <div class="adv-item">
+       <div class="adv-icon">
+        <i class="fas fa-handshake">
+        </i>
+       </div>
+       <div class="adv-title">
+        &Scy;&ocy;&pcy;&rcy;&ocy;&vcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&iecy;
+       </div>
+       <div class="adv-desc">
+        &Pcy;&ocy;&dcy;&dcy;&iecy;&rcy;&zhcy;&kcy;&acy; &ncy;&acy; &vcy;&scy;&iecy;&khcy; &ecy;&tcy;&acy;&pcy;&acy;&khcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&ocy;&jcy; &scy;&dcy;&iecy;&lcy;&kcy;&icy;
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section section-light">
+    <div class="container">
+     <div class="section-header">
+      <h2 class="section-title">
+       &Kcy;&acy;&kcy; &pcy;&ocy;&lcy;&ucy;&chcy;&icy;&tcy;&softcy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ocy; &vcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;
+      </h2>
+      <p class="section-subtitle">
+       &Pcy;&rcy;&ocy;&scy;&tcy;&ocy;&jcy; &icy; &pcy;&ocy;&ncy;&yacy;&tcy;&ncy;&ycy;&jcy; &pcy;&rcy;&ocy;&tscy;&iecy;&scy;&scy; &ocy;&tcy; &zcy;&acy;&yacy;&vcy;&kcy;&icy; &dcy;&ocy; &pcy;&ocy;&lcy;&ucy;&chcy;&iecy;&ncy;&icy;&yacy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy;
+      </p>
+      <div class="section-line">
+      </div>
+     </div>
+     <div class="steps-grid">
+      <div class="step-card">
+       <div class="step-num">
+        1
+       </div>
+       <div class="step-icon">
+        <i class="fas fa-file-alt">
+        </i>
+       </div>
+       <h3 class="step-title">
+        &Vcy;&ycy; &ocy;&scy;&tcy;&acy;&vcy;&lcy;&yacy;&iecy;&tcy;&iecy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
+       </h3>
+       <p class="step-desc">
+        &Mcy;&ycy; &kcy;&ocy;&ncy;&scy;&ucy;&lcy;&softcy;&tcy;&icy;&rcy;&ucy;&iecy;&mcy; &vcy;&acy;&scy; &icy; &pcy;&ocy;&dcy;&bcy;&icy;&rcy;&acy;&iecy;&mcy; &ocy;&pcy;&tcy;&icy;&mcy;&acy;&lcy;&softcy;&ncy;&ocy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&iecy; &pcy;&ocy;&dcy; &vcy;&acy;&shcy;&icy; &zcy;&acy;&dcy;&acy;&chcy;&icy; &icy; &bcy;&yucy;&dcy;&zhcy;&iecy;&tcy;
+       </p>
+      </div>
+      <div class="step-card">
+       <div class="step-num">
+        2
+       </div>
+       <div class="step-icon">
+        <i class="fas fa-search-dollar">
+        </i>
+       </div>
+       <h3 class="step-title">
+        &Rcy;&acy;&scy;&scy;&mcy;&acy;&tcy;&rcy;&icy;&vcy;&acy;&iecy;&mcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
+       </h3>
+       <p class="step-desc">
+        &Acy;&ncy;&acy;&lcy;&icy;&zcy;&icy;&rcy;&ucy;&iecy;&mcy; &dcy;&ocy;&kcy;&ucy;&mcy;&iecy;&ncy;&tcy;&ycy;, &scy;&ocy;&gcy;&lcy;&acy;&scy;&ocy;&vcy;&ycy;&vcy;&acy;&iecy;&mcy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&yacy; &scy;&dcy;&iecy;&lcy;&kcy;&icy; &icy; &pcy;&ocy;&dcy;&pcy;&icy;&scy;&ycy;&vcy;&acy;&iecy;&mcy; &dcy;&ocy;&gcy;&ocy;&vcy;&ocy;&rcy;
+       </p>
+      </div>
+      <div class="step-card">
+       <div class="step-num">
+        3
+       </div>
+       <div class="step-icon">
+        <i class="fas fa-key">
+        </i>
+       </div>
+       <h3 class="step-title">
+        &Vcy;&ycy; &pcy;&ocy;&lcy;&ucy;&chcy;&acy;&iecy;&tcy;&iecy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ocy;
+       </h3>
+       <p class="step-desc">
+        &Pcy;&iecy;&rcy;&iecy;&dcy;&acy;&iocy;&mcy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ocy; &icy; &pcy;&ocy;&mcy;&ocy;&gcy;&acy;&iecy;&mcy; &rcy;&acy;&zcy;&vcy;&icy;&vcy;&acy;&tcy;&softcy; &vcy;&acy;&shcy; &bcy;&icy;&zcy;&ncy;&iecy;&scy; &ncy;&acy; &vcy;&ycy;&gcy;&ocy;&dcy;&ncy;&ycy;&khcy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&yacy;&khcy;
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section section-dark" id="conditions">
+    <div class="container">
+     <div class="section-header">
+      <h2 class="section-title">
+       &Bcy;&acy;&zcy;&ocy;&vcy;&ycy;&iecy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&yacy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&ocy;&jcy; &scy;&dcy;&iecy;&lcy;&kcy;&icy;
+      </h2>
+      <p class="section-subtitle">
+       &Pcy;&rcy;&ocy;&zcy;&rcy;&acy;&chcy;&ncy;&ycy;&iecy; &fcy;&icy;&ncy;&acy;&ncy;&scy;&ocy;&vcy;&ycy;&iecy; &pcy;&acy;&rcy;&acy;&mcy;&iecy;&tcy;&rcy;&ycy; &dcy;&lcy;&yacy; &vcy;&acy;&shcy;&iecy;&gcy;&ocy; &pcy;&lcy;&acy;&ncy;&icy;&rcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy;
+      </p>
+      <div class="section-line">
+      </div>
+     </div>
+     <div class="cond-grid">
+      <div class="cond-card">
+       <div class="cond-value">
+        12&ndash;84
+        <span>
+         &mcy;&iecy;&scy;.
+        </span>
+       </div>
+       <div class="cond-label">
+        &Scy;&rcy;&ocy;&kcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&acy;
+       </div>
+      </div>
+      <div class="cond-card">
+       <div class="cond-value">
+        60&ndash;80
+        <span>
+         %
+        </span>
+       </div>
+       <div class="cond-label">
+        &Fcy;&icy;&ncy;&acy;&ncy;&scy;&icy;&rcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy; &scy;&dcy;&iecy;&lcy;&kcy;&icy;
+       </div>
+      </div>
+      <div class="cond-card">
+       <div class="cond-value">
+        20&ndash;40
+        <span>
+         %
+        </span>
+       </div>
+       <div class="cond-label">
+        &Rcy;&acy;&zcy;&mcy;&iecy;&rcy; &acy;&vcy;&acy;&ncy;&scy;&acy;
+       </div>
+      </div>
+      <div class="cond-card">
+       <div class="cond-value">
+        7,9&ndash;21
+        <span>
+         %
+        </span>
+       </div>
+       <div class="cond-label">
+        &Scy;&tcy;&acy;&vcy;&kcy;&acy; &ucy;&dcy;&ocy;&rcy;&ocy;&zhcy;&acy;&ncy;&icy;&yacy; &vcy; &gcy;&ocy;&dcy;
+       </div>
+      </div>
+     </div>
+     <div class="cond-requirements" style="margin-top:60px;border-radius:16px;padding:40px">
+      <h3 style="font-size:22px;font-weight:700;margin-bottom:24px;text-align:center">
+       &Tcy;&rcy;&iecy;&bcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy; &kcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&pcy;&ocy;&lcy;&ucy;&chcy;&acy;&tcy;&iecy;&lcy;&yucy;
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+       <div class="cond-req-item" style="display:flex;gap:12px;align-items:flex-start">
+        <i class="fas fa-check-circle" style="color:var(--accent);font-size:20px;margin-top:2px">
+        </i>
+        <div>
+         <strong>
+          &YUcy;&rcy;&icy;&dcy;&icy;&chcy;&iecy;&scy;&kcy;&icy;&iecy; &lcy;&icy;&tscy;&acy;
+         </strong>
+         <p style="font-size:14px;margin-top:4px">
+          &Rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&acy;&tscy;&icy;&yacy; &vcy; &Rcy;&Bcy;, &scy;&rcy;&ocy;&kcy; &dcy;&iecy;&yacy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&icy; &ocy;&tcy; 12 &mcy;&iecy;&scy;&yacy;&tscy;&iecy;&vcy;, &pcy;&ocy;&lcy;&ocy;&zhcy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&acy;&yacy; &fcy;&icy;&ncy;&acy;&ncy;&scy;&ocy;&vcy;&acy;&yacy; &ocy;&tcy;&chcy;&iocy;&tcy;&ncy;&ocy;&scy;&tcy;&softcy;
+         </p>
+        </div>
+       </div>
+       <div class="cond-req-item" style="display:flex;gap:12px;align-items:flex-start">
+        <i class="fas fa-check-circle" style="color:var(--accent);font-size:20px;margin-top:2px">
+        </i>
+        <div>
+         <strong>
+          &Icy;&ncy;&dcy;&icy;&vcy;&icy;&dcy;&ucy;&acy;&lcy;&softcy;&ncy;&ycy;&iecy; &pcy;&rcy;&iecy;&dcy;&pcy;&rcy;&icy;&ncy;&icy;&mcy;&acy;&tcy;&iecy;&lcy;&icy;
+         </strong>
+         <p style="font-size:14px;margin-top:4px">
+          &Dcy;&iecy;&jcy;&scy;&tcy;&vcy;&ucy;&yucy;&shchcy;&acy;&yacy; &rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&acy;&tscy;&icy;&yacy;, &pcy;&ocy;&dcy;&tcy;&vcy;&iecy;&rcy;&zhcy;&dcy;&iocy;&ncy;&ncy;&ycy;&jcy; &dcy;&ocy;&khcy;&ocy;&dcy;, &ocy;&tcy;&scy;&ucy;&tcy;&scy;&tcy;&vcy;&icy;&iecy; &pcy;&rcy;&ocy;&scy;&rcy;&ocy;&chcy;&iecy;&ncy;&ncy;&ocy;&jcy; &zcy;&acy;&dcy;&ocy;&lcy;&zhcy;&iecy;&ncy;&ncy;&ocy;&scy;&tcy;&icy;
+         </p>
+        </div>
+       </div>
+       <div class="cond-req-item" style="display:flex;gap:12px;align-items:flex-start">
+        <i class="fas fa-check-circle" style="color:var(--accent);font-size:20px;margin-top:2px">
+        </i>
+        <div>
+         <strong>
+          &Fcy;&icy;&zcy;&icy;&chcy;&iecy;&scy;&kcy;&icy;&iecy; &lcy;&icy;&tscy;&acy;
+         </strong>
+         <p style="font-size:14px;margin-top:4px">
+          &Gcy;&rcy;&acy;&zhcy;&dcy;&acy;&ncy;&scy;&tcy;&vcy;&ocy; &Rcy;&Bcy;, &vcy;&ocy;&zcy;&rcy;&acy;&scy;&tcy; &ocy;&tcy; 21 &gcy;&ocy;&dcy;&acy;, &pcy;&ocy;&dcy;&tcy;&vcy;&iecy;&rcy;&zhcy;&dcy;&iocy;&ncy;&ncy;&ycy;&jcy; &icy;&scy;&tcy;&ocy;&chcy;&ncy;&icy;&kcy; &dcy;&ocy;&khcy;&ocy;&dcy;&acy;
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- DOCS -->
+   <section class="section section-dark" id="docs">
+    <div class="container">
+     <div class="section-header">
+      <h2 class="section-title">
+       &Dcy;&ocy;&kcy;&ucy;&mcy;&iecy;&ncy;&tcy;&ycy;
+      </h2>
+      <p class="section-subtitle">
+       &Vcy;&scy;&iocy; &ncy;&iecy;&ocy;&bcy;&khcy;&ocy;&dcy;&icy;&mcy;&ocy;&iecy; &dcy;&lcy;&yacy; &ocy;&fcy;&ocy;&rcy;&mcy;&lcy;&iecy;&ncy;&icy;&yacy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&ocy;&jcy; &scy;&dcy;&iecy;&lcy;&kcy;&icy;
+      </p>
+      <div class="section-line">
+      </div>
+     </div>
+     <div class="docs-tabs">
+      <button class="doc-tab active" data-tab="legal">
+       &YUcy;&rcy;&icy;&dcy;&icy;&chcy;&iecy;&scy;&kcy;&icy;&iecy; &lcy;&icy;&tscy;&acy;
+      </button>
+      <button class="doc-tab" data-tab="ip">
+       &Icy;&ncy;&dcy;&icy;&vcy;&icy;&dcy;&ucy;&acy;&lcy;&softcy;&ncy;&ycy;&iecy; &pcy;&rcy;&iecy;&dcy;&pcy;&rcy;&icy;&ncy;&icy;&mcy;&acy;&tcy;&iecy;&lcy;&icy;
+      </button>
+      <button class="doc-tab" data-tab="phys">
+       &Fcy;&icy;&zcy;&icy;&chcy;&iecy;&scy;&kcy;&icy;&iecy; &lcy;&icy;&tscy;&acy;
+      </button>
+     </div>
+     <div class="doc-list" id="docList">
+     </div>
+    </div>
+   </section>
+   <section class="section section-light">
+    <div class="container">
+     <div class="section-header">
+      <h2 class="section-title">
+       &CHcy;&acy;&scy;&tcy;&ocy; &zcy;&acy;&dcy;&acy;&vcy;&acy;&iecy;&mcy;&ycy;&iecy; &vcy;&ocy;&pcy;&rcy;&ocy;&scy;&ycy;
+      </h2>
+      <p class="section-subtitle">
+       &Ocy;&tcy;&vcy;&iecy;&tcy;&ycy; &ncy;&acy; &scy;&acy;&mcy;&ycy;&iecy; &pcy;&ocy;&pcy;&ucy;&lcy;&yacy;&rcy;&ncy;&ycy;&iecy; &vcy;&ocy;&pcy;&rcy;&ocy;&scy;&ycy; &ocy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&iecy;
+      </p>
+      <div class="section-line">
+      </div>
+     </div>
+     <div class="faq-list">
+      <div class="faq-item">
+       <div class="faq-q">
+        &CHcy;&tcy;&ocy; &tcy;&acy;&kcy;&ocy;&iecy; &lcy;&icy;&zcy;&icy;&ncy;&gcy; &icy; &chcy;&iecy;&mcy; &ocy;&ncy; &ocy;&tcy;&lcy;&icy;&chcy;&acy;&iecy;&tcy;&scy;&yacy; &ocy;&tcy; &kcy;&rcy;&iecy;&dcy;&icy;&tcy;&acy;?
+        <i class="fas fa-chevron-down">
+        </i>
+       </div>
+       <div class="faq-a">
+        <p>
+         &Lcy;&icy;&zcy;&icy;&ncy;&gcy; &mdash; &ecy;&tcy;&ocy; &fcy;&ocy;&rcy;&mcy;&acy; &fcy;&icy;&ncy;&acy;&ncy;&scy;&icy;&rcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy;, &pcy;&rcy;&icy; &kcy;&ocy;&tcy;&ocy;&rcy;&ocy;&jcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&acy;&yacy; &kcy;&ocy;&mcy;&pcy;&acy;&ncy;&icy;&yacy; &pcy;&rcy;&icy;&ocy;&bcy;&rcy;&iecy;&tcy;&acy;&iecy;&tcy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ocy; &icy; &pcy;&iecy;&rcy;&iecy;&dcy;&acy;&iocy;&tcy; &iecy;&gcy;&ocy; &kcy;&lcy;&icy;&iecy;&ncy;&tcy;&ucy; &vcy;&ocy; &vcy;&rcy;&iecy;&mcy;&iecy;&ncy;&ncy;&ocy;&iecy; &pcy;&ocy;&lcy;&softcy;&zcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy; &scy; &pcy;&rcy;&acy;&vcy;&ocy;&mcy; &vcy;&ycy;&kcy;&ucy;&pcy;&acy;. &Vcy; &ocy;&tcy;&lcy;&icy;&chcy;&icy;&iecy; &ocy;&tcy; &kcy;&rcy;&iecy;&dcy;&icy;&tcy;&acy;, &lcy;&icy;&zcy;&icy;&ncy;&gcy; &pcy;&ocy;&zcy;&vcy;&ocy;&lcy;&yacy;&iecy;&tcy; &pcy;&ocy;&lcy;&ucy;&chcy;&icy;&tcy;&softcy; &ncy;&acy;&lcy;&ocy;&gcy;&ocy;&vcy;&ycy;&iecy; &pcy;&rcy;&iecy;&icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy;, &ncy;&iecy; &tcy;&rcy;&iecy;&bcy;&ucy;&iecy;&tcy; &zcy;&acy;&lcy;&ocy;&gcy;&acy; (&icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ocy; &yacy;&vcy;&lcy;&yacy;&iecy;&tcy;&scy;&yacy; &pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy;&ocy;&mcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&acy;) &icy; &chcy;&acy;&scy;&tcy;&ocy; &ocy;&fcy;&ocy;&rcy;&mcy;&lcy;&yacy;&iecy;&tcy;&scy;&yacy; &bcy;&ycy;&scy;&tcy;&rcy;&iecy;&iecy;.
+        </p>
+       </div>
+      </div>
+      <div class="faq-item">
+       <div class="faq-q">
+        &Kcy;&acy;&kcy;&icy;&iecy; &pcy;&rcy;&iecy;&icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy; &icy;&mcy;&iecy;&iecy;&tcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy; &pcy;&iecy;&rcy;&iecy;&dcy; &kcy;&rcy;&iecy;&dcy;&icy;&tcy;&ocy;&mcy;?
+        <i class="fas fa-chevron-down">
+        </i>
+       </div>
+       <div class="faq-a">
+        <p>
+         &Lcy;&icy;&zcy;&icy;&ncy;&gcy; &ocy;&bcy;&lcy;&acy;&dcy;&acy;&iecy;&tcy; &rcy;&yacy;&dcy;&ocy;&mcy; &scy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&iecy;&ncy;&ncy;&ycy;&khcy; &pcy;&rcy;&iecy;&icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy; &pcy;&ocy; &scy;&rcy;&acy;&vcy;&ncy;&iecy;&ncy;&icy;&yucy; &scy; &bcy;&acy;&ncy;&kcy;&ocy;&vcy;&scy;&kcy;&icy;&mcy; &kcy;&rcy;&iecy;&dcy;&icy;&tcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy;&mcy;:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           &Ncy;&acy;&lcy;&ocy;&gcy;&ocy;&vcy;&ycy;&iecy; &lcy;&softcy;&gcy;&ocy;&tcy;&ycy;
+          </strong>
+          &mdash; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&ycy;&iecy; &pcy;&lcy;&acy;&tcy;&iecy;&zhcy;&icy; &pcy;&ocy;&lcy;&ncy;&ocy;&scy;&tcy;&softcy;&yucy; &ocy;&tcy;&ncy;&ocy;&scy;&yacy;&tcy;&scy;&yacy; &ncy;&acy; &rcy;&acy;&scy;&khcy;&ocy;&dcy;&ycy; &ocy;&rcy;&gcy;&acy;&ncy;&icy;&zcy;&acy;&tscy;&icy;&icy;, &chcy;&tcy;&ocy; &scy;&ncy;&icy;&zhcy;&acy;&iecy;&tcy; &ncy;&acy;&lcy;&ocy;&gcy;&ocy;&ocy;&bcy;&lcy;&acy;&gcy;&acy;&iecy;&mcy;&ucy;&yucy; &bcy;&acy;&zcy;&ucy; &pcy;&ocy; &ncy;&acy;&lcy;&ocy;&gcy;&ucy; &ncy;&acy; &pcy;&rcy;&icy;&bcy;&ycy;&lcy;&softcy; &icy; &Ncy;&Dcy;&Scy;
+         </li>
+         <li>
+          <strong>
+           &Ocy;&tcy;&scy;&ucy;&tcy;&scy;&tcy;&vcy;&icy;&iecy; &zcy;&acy;&lcy;&ocy;&gcy;&acy;
+          </strong>
+          &mdash; &pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&acy; &scy;&acy;&mcy; &yacy;&vcy;&lcy;&yacy;&iecy;&tcy;&scy;&yacy; &ocy;&bcy;&iecy;&scy;&pcy;&iecy;&chcy;&iecy;&ncy;&icy;&iecy;&mcy; &scy;&dcy;&iecy;&lcy;&kcy;&icy;, &ncy;&iecy; &tcy;&rcy;&iecy;&bcy;&ucy;&iecy;&tcy;&scy;&yacy; &dcy;&ocy;&pcy;&ocy;&lcy;&ncy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&iecy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ocy; &vcy; &zcy;&acy;&lcy;&ocy;&gcy;
+         </li>
+         <li>
+          <strong>
+           &Bcy;&ycy;&scy;&tcy;&rcy;&ocy;&iecy; &ocy;&fcy;&ocy;&rcy;&mcy;&lcy;&iecy;&ncy;&icy;&iecy;
+          </strong>
+          &mdash; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&iecy; &pcy;&ocy; &zcy;&acy;&yacy;&vcy;&kcy;&iecy; &pcy;&rcy;&icy;&ncy;&icy;&mcy;&acy;&iecy;&tcy;&scy;&yacy; &vcy; &tcy;&iecy;&chcy;&iecy;&ncy;&icy;&iecy; 1&ndash;3 &rcy;&acy;&bcy;&ocy;&chcy;&icy;&khcy; &dcy;&ncy;&iecy;&jcy;, &chcy;&tcy;&ocy; &zcy;&ncy;&acy;&chcy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy; &bcy;&ycy;&scy;&tcy;&rcy;&iecy;&iecy; &bcy;&acy;&ncy;&kcy;&ocy;&vcy;&scy;&kcy;&ocy;&gcy;&ocy; &kcy;&rcy;&iecy;&dcy;&icy;&tcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy;
+         </li>
+         <li>
+          <strong>
+           &Gcy;&icy;&bcy;&kcy;&icy;&iecy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&yacy;
+          </strong>
+          &mdash; &icy;&ncy;&dcy;&icy;&vcy;&icy;&dcy;&ucy;&acy;&lcy;&softcy;&ncy;&ycy;&jcy; &gcy;&rcy;&acy;&fcy;&icy;&kcy; &pcy;&lcy;&acy;&tcy;&iecy;&zhcy;&iecy;&jcy;, &vcy;&ocy;&zcy;&mcy;&ocy;&zhcy;&ncy;&ocy;&scy;&tcy;&softcy; &dcy;&ocy;&scy;&rcy;&ocy;&chcy;&ncy;&ocy;&gcy;&ocy; &vcy;&ycy;&kcy;&ucy;&pcy;&acy;, &icy;&zcy;&mcy;&iecy;&ncy;&iecy;&ncy;&icy;&iecy; &scy;&rcy;&ocy;&kcy;&ocy;&vcy; &icy; &rcy;&acy;&zcy;&mcy;&iecy;&rcy;&acy; &acy;&vcy;&acy;&ncy;&scy;&acy;
+         </li>
+         <li>
+          <strong>
+           &Scy;&ocy;&khcy;&rcy;&acy;&ncy;&iecy;&ncy;&icy;&iecy; &ocy;&bcy;&ocy;&rcy;&ocy;&tcy;&ncy;&ycy;&khcy; &scy;&rcy;&iecy;&dcy;&scy;&tcy;&vcy;
+          </strong>
+          &mdash; &ncy;&iecy; &tcy;&rcy;&iecy;&bcy;&ucy;&iecy;&tcy;&scy;&yacy; &iecy;&dcy;&icy;&ncy;&ocy;&vcy;&rcy;&iecy;&mcy;&iecy;&ncy;&ncy;&acy;&yacy; &kcy;&rcy;&ucy;&pcy;&ncy;&acy;&yacy; &ocy;&pcy;&lcy;&acy;&tcy;&acy;, &chcy;&tcy;&ocy; &pcy;&ocy;&zcy;&vcy;&ocy;&lcy;&yacy;&iecy;&tcy; &ncy;&acy;&pcy;&rcy;&acy;&vcy;&icy;&tcy;&softcy; &scy;&rcy;&iecy;&dcy;&scy;&tcy;&vcy;&acy; &ncy;&acy; &rcy;&acy;&zcy;&vcy;&icy;&tcy;&icy;&iecy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;&acy;
+         </li>
+         <li>
+          <strong>
+           &Ocy;&bcy;&ncy;&ocy;&vcy;&lcy;&iecy;&ncy;&icy;&iecy; &tcy;&iecy;&khcy;&ncy;&icy;&kcy;&icy;
+          </strong>
+          &mdash; &vcy;&ocy;&zcy;&mcy;&ocy;&zhcy;&ncy;&ocy;&scy;&tcy;&softcy; &rcy;&iecy;&gcy;&ucy;&lcy;&yacy;&rcy;&ncy;&ocy; &ocy;&bcy;&ncy;&ocy;&vcy;&lcy;&yacy;&tcy;&softcy; &pcy;&acy;&rcy;&kcy; &acy;&vcy;&tcy;&ocy;&mcy;&ocy;&bcy;&icy;&lcy;&iecy;&jcy; &icy; &ocy;&bcy;&ocy;&rcy;&ucy;&dcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy; &bcy;&iecy;&zcy; &zcy;&ncy;&acy;&chcy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&ycy;&khcy; &kcy;&acy;&pcy;&icy;&tcy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &vcy;&lcy;&ocy;&zhcy;&iecy;&ncy;&icy;&jcy;
+         </li>
+         <li>
+          <strong>
+           &Mcy;&icy;&ncy;&icy;&mcy;&acy;&lcy;&softcy;&ncy;&ycy;&jcy; &acy;&vcy;&acy;&ncy;&scy;
+          </strong>
+          &mdash; &ocy;&tcy; 20% &scy;&tcy;&ocy;&icy;&mcy;&ocy;&scy;&tcy;&icy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy;, &tcy;&ocy;&gcy;&dcy;&acy; &kcy;&acy;&kcy; &pcy;&ocy; &kcy;&rcy;&iecy;&dcy;&icy;&tcy;&ucy; &chcy;&acy;&scy;&tcy;&ocy; &tcy;&rcy;&iecy;&bcy;&ucy;&iecy;&tcy;&scy;&yacy; 30&ndash;50%
+         </li>
+         <li>
+          <strong>
+           &Ncy;&iecy; &ucy;&vcy;&iecy;&lcy;&icy;&chcy;&icy;&vcy;&acy;&iecy;&tcy; &dcy;&ocy;&lcy;&gcy;&ocy;&vcy;&ucy;&yucy; &ncy;&acy;&gcy;&rcy;&ucy;&zcy;&kcy;&ucy;
+          </strong>
+          &mdash; &pcy;&rcy;&icy; &ocy;&pcy;&iecy;&rcy;&acy;&tcy;&icy;&vcy;&ncy;&ocy;&mcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&iecy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ocy; &ncy;&iecy; &ocy;&tcy;&rcy;&acy;&zhcy;&acy;&iecy;&tcy;&scy;&yacy; &ncy;&acy; &bcy;&acy;&lcy;&acy;&ncy;&scy;&iecy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&pcy;&ocy;&lcy;&ucy;&chcy;&acy;&tcy;&iecy;&lcy;&yacy;
+         </li>
+         <li>
+          <strong>
+           &Scy;&iecy;&rcy;&vcy;&icy;&scy;&ncy;&ocy;&iecy; &ocy;&bcy;&scy;&lcy;&ucy;&zhcy;&icy;&vcy;&acy;&ncy;&icy;&iecy;
+          </strong>
+          &mdash; &vcy;&ocy;&zcy;&mcy;&ocy;&zhcy;&ncy;&ocy;&scy;&tcy;&softcy; &vcy;&kcy;&lcy;&yucy;&chcy;&icy;&tcy;&softcy; &scy;&tcy;&rcy;&acy;&khcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy;, &Tcy;&Ocy; &icy; &rcy;&iecy;&mcy;&ocy;&ncy;&tcy; &vcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&ycy;&iecy; &pcy;&lcy;&acy;&tcy;&iecy;&zhcy;&icy;
+         </li>
+         <li>
+          <strong>
+           &Dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&ocy;&scy;&tcy;&softcy; &dcy;&lcy;&yacy; &mcy;&acy;&lcy;&ocy;&gcy;&ocy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;&acy;
+          </strong>
+          &mdash; &ucy;&pcy;&rcy;&ocy;&shchcy;&iocy;&ncy;&ncy;&ycy;&iecy; &tcy;&rcy;&iecy;&bcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy; &kcy; &zcy;&acy;&iocy;&mcy;&shchcy;&icy;&kcy;&ucy; &pcy;&ocy; &scy;&rcy;&acy;&vcy;&ncy;&iecy;&ncy;&icy;&yucy; &scy; &bcy;&acy;&ncy;&kcy;&ocy;&vcy;&scy;&kcy;&icy;&mcy; &kcy;&rcy;&iecy;&dcy;&icy;&tcy;&ocy;&mcy;
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="faq-item">
+       <div class="faq-q">
+        &Kcy;&acy;&kcy;&icy;&iecy; &vcy;&icy;&dcy;&ycy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&acy; &vcy;&ycy; &pcy;&rcy;&iecy;&dcy;&lcy;&acy;&gcy;&acy;&iecy;&tcy;&iecy;?
+        <i class="fas fa-chevron-down">
+        </i>
+       </div>
+       <div class="faq-a">
+        <p>
+         &Mcy;&ycy; &pcy;&rcy;&iecy;&dcy;&lcy;&acy;&gcy;&acy;&iecy;&mcy; &fcy;&icy;&ncy;&acy;&ncy;&scy;&ocy;&vcy;&ycy;&jcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy; (&scy; &pcy;&ocy;&lcy;&ncy;&ycy;&mcy; &vcy;&ycy;&kcy;&ucy;&pcy;&ocy;&mcy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy; &pcy;&ocy; &ocy;&kcy;&ocy;&ncy;&chcy;&acy;&ncy;&icy;&icy; &scy;&rcy;&ocy;&kcy;&acy;), &ocy;&pcy;&iecy;&rcy;&acy;&tcy;&icy;&vcy;&ncy;&ycy;&jcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy; (&scy; &vcy;&ocy;&zcy;&mcy;&ocy;&zhcy;&ncy;&ocy;&scy;&tcy;&softcy;&yucy; &vcy;&ocy;&zcy;&vcy;&rcy;&acy;&tcy;&acy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy;) &icy; &vcy;&ocy;&zcy;&vcy;&rcy;&acy;&tcy;&ncy;&ycy;&jcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy; (&kcy;&lcy;&icy;&iecy;&ncy;&tcy; &pcy;&rcy;&ocy;&dcy;&acy;&iocy;&tcy; &scy;&vcy;&ocy;&iocy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ocy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&ocy;&jcy; &kcy;&ocy;&mcy;&pcy;&acy;&ncy;&icy;&icy; &icy; &bcy;&iecy;&rcy;&iocy;&tcy; &iecy;&gcy;&ocy; &vcy; &acy;&rcy;&iecy;&ncy;&dcy;&ucy;).
+        </p>
+       </div>
+      </div>
+      <div class="faq-item">
+       <div class="faq-q">
+        &Mcy;&ocy;&zhcy;&ncy;&ocy; &lcy;&icy; &vcy;&zcy;&yacy;&tcy;&softcy; &vcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy; &bcy;/&ucy; &tcy;&iecy;&khcy;&ncy;&icy;&kcy;&ucy;?
+        <i class="fas fa-chevron-down">
+        </i>
+       </div>
+       <div class="faq-a">
+        <p>
+         &Dcy;&acy;, &mcy;&ycy; &rcy;&acy;&scy;&scy;&mcy;&acy;&tcy;&rcy;&icy;&vcy;&acy;&iecy;&mcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy; &pcy;&ocy;&dcy;&iecy;&rcy;&zhcy;&acy;&ncy;&ncy;&ocy;&jcy; &tcy;&iecy;&khcy;&ncy;&icy;&kcy;&icy; &icy; &ocy;&bcy;&ocy;&rcy;&ucy;&dcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy;. &Ucy;&scy;&lcy;&ocy;&vcy;&icy;&yacy; &zcy;&acy;&vcy;&icy;&scy;&yacy;&tcy; &ocy;&tcy; &vcy;&ocy;&zcy;&rcy;&acy;&scy;&tcy;&acy;, &scy;&ocy;&scy;&tcy;&ocy;&yacy;&ncy;&icy;&yacy; &icy; &lcy;&icy;&kcy;&vcy;&icy;&dcy;&ncy;&ocy;&scy;&tcy;&icy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy;. &Scy;&vcy;&yacy;&zhcy;&icy;&tcy;&iecy;&scy;&softcy; &scy; &ncy;&acy;&mcy;&icy; &dcy;&lcy;&yacy; &icy;&ncy;&dcy;&icy;&vcy;&icy;&dcy;&ucy;&acy;&lcy;&softcy;&ncy;&ocy;&gcy;&ocy; &rcy;&acy;&scy;&chcy;&iocy;&tcy;&acy;.
+        </p>
+       </div>
+      </div>
+      <div class="faq-item">
+       <div class="faq-q">
+        &Kcy;&acy;&kcy; &bcy;&ycy;&scy;&tcy;&rcy;&ocy; &rcy;&acy;&scy;&scy;&mcy;&acy;&tcy;&rcy;&icy;&vcy;&acy;&iecy;&tcy;&scy;&yacy; &zcy;&acy;&yacy;&vcy;&kcy;&acy;?
+        <i class="fas fa-chevron-down">
+        </i>
+       </div>
+       <div class="faq-a">
+        <p>
+         &Pcy;&rcy;&iecy;&dcy;&vcy;&acy;&rcy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&iecy; &pcy;&ocy; &zcy;&acy;&yacy;&vcy;&kcy;&iecy; &pcy;&rcy;&icy;&ncy;&icy;&mcy;&acy;&iecy;&tcy;&scy;&yacy; &vcy; &tcy;&iecy;&chcy;&iecy;&ncy;&icy;&iecy; 1&ndash;3 &rcy;&acy;&bcy;&ocy;&chcy;&icy;&khcy; &dcy;&ncy;&iecy;&jcy; &pcy;&ocy;&scy;&lcy;&iecy; &pcy;&ocy;&lcy;&ucy;&chcy;&iecy;&ncy;&icy;&yacy; &pcy;&ocy;&lcy;&ncy;&ocy;&gcy;&ocy; &pcy;&acy;&kcy;&iecy;&tcy;&acy; &dcy;&ocy;&kcy;&ucy;&mcy;&iecy;&ncy;&tcy;&ocy;&vcy;. &Ocy;&kcy;&ocy;&ncy;&chcy;&acy;&tcy;&iecy;&lcy;&softcy;&ncy;&ocy;&iecy; &ocy;&fcy;&ocy;&rcy;&mcy;&lcy;&iecy;&ncy;&icy;&iecy; &scy;&dcy;&iecy;&lcy;&kcy;&icy; &zcy;&acy;&ncy;&icy;&mcy;&acy;&iecy;&tcy; &ocy;&tcy; 5 &dcy;&ocy; 10 &rcy;&acy;&bcy;&ocy;&chcy;&icy;&khcy; &dcy;&ncy;&iecy;&jcy;.
+        </p>
+       </div>
+      </div>
+      <div class="faq-item">
+       <div class="faq-q">
+        &Vcy; &kcy;&acy;&kcy;&ocy;&jcy; &vcy;&acy;&lcy;&yucy;&tcy;&iecy; &ocy;&scy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&lcy;&yacy;&iecy;&tcy;&scy;&yacy; &fcy;&icy;&ncy;&acy;&ncy;&scy;&icy;&rcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy;?
+        <i class="fas fa-chevron-down">
+        </i>
+       </div>
+       <div class="faq-a">
+        <p>
+         &Fcy;&icy;&ncy;&acy;&ncy;&scy;&icy;&rcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy; &ocy;&scy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&lcy;&yacy;&iecy;&tcy;&scy;&yacy; &vcy; &bcy;&iecy;&lcy;&ocy;&rcy;&ucy;&scy;&scy;&kcy;&icy;&khcy; &rcy;&ucy;&bcy;&lcy;&yacy;&khcy; (BYN). &Mcy;&ycy; &tcy;&acy;&kcy;&zhcy;&iecy; &rcy;&acy;&bcy;&ocy;&tcy;&acy;&iecy;&mcy; &scy; &pcy;&acy;&rcy;&tcy;&ncy;&iocy;&rcy;&scy;&kcy;&icy;&mcy;&icy; &bcy;&acy;&ncy;&kcy;&acy;&mcy;&icy;, &chcy;&tcy;&ocy; &pcy;&ocy;&zcy;&vcy;&ocy;&lcy;&yacy;&iecy;&tcy; &pcy;&rcy;&iecy;&dcy;&lcy;&acy;&gcy;&acy;&tcy;&softcy; &kcy;&ocy;&ncy;&kcy;&ucy;&rcy;&iecy;&ncy;&tcy;&ncy;&ycy;&iecy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&yacy;.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="about-section" id="about">
+    <div class="container">
+     <div class="about-grid">
+      <div class="about-text">
+       <h2>
+        &Ocy; &kcy;&ocy;&mcy;&pcy;&acy;&ncy;&icy;&icy; &laquo;&Lcy;&icy;&dcy;&acy;-&Scy;&iecy;&rcy;&vcy;&icy;&scy;&raquo;
+       </h2>
+       <p>
+        &Ocy;&Ocy;&Ocy; &laquo;&Lcy;&icy;&dcy;&acy;-&Scy;&iecy;&rcy;&vcy;&icy;&scy;&raquo; &mdash; &ocy;&dcy;&ncy;&acy; &icy;&zcy; &vcy;&iecy;&dcy;&ucy;&shchcy;&icy;&khcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&ycy;&khcy; &kcy;&ocy;&mcy;&pcy;&acy;&ncy;&icy;&jcy; &Gcy;&rcy;&ocy;&dcy;&ncy;&iecy;&ncy;&scy;&kcy;&ocy;&jcy; &ocy;&bcy;&lcy;&acy;&scy;&tcy;&icy;, &ucy;&scy;&pcy;&iecy;&shcy;&ncy;&ocy; &rcy;&acy;&bcy;&ocy;&tcy;&acy;&yucy;&shchcy;&acy;&yacy; &ncy;&acy; &rcy;&ycy;&ncy;&kcy;&iecy; &scy; 1997 &gcy;&ocy;&dcy;&acy;. &Zcy;&acy; &bcy;&ocy;&lcy;&iecy;&iecy; &chcy;&iecy;&mcy; 28 &lcy;&iecy;&tcy; &mcy;&ycy; &pcy;&ocy;&mcy;&ocy;&gcy;&lcy;&icy; &scy;&ocy;&tcy;&ncy;&yacy;&mcy; &pcy;&rcy;&iecy;&dcy;&pcy;&rcy;&icy;&yacy;&tcy;&icy;&jcy; &icy; &pcy;&rcy;&iecy;&dcy;&pcy;&rcy;&icy;&ncy;&icy;&mcy;&acy;&tcy;&iecy;&lcy;&iecy;&jcy; &pcy;&rcy;&icy;&ocy;&bcy;&rcy;&iecy;&scy;&tcy;&icy; &ncy;&iecy;&ocy;&bcy;&khcy;&ocy;&dcy;&icy;&mcy;&ocy;&iecy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ocy; &dcy;&lcy;&yacy; &rcy;&acy;&zcy;&vcy;&icy;&tcy;&icy;&yacy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;&acy;.
+       </p>
+       <p>
+        &Mcy;&ycy; &pcy;&rcy;&iecy;&dcy;&lcy;&acy;&gcy;&acy;&iecy;&mcy; &gcy;&icy;&bcy;&kcy;&icy;&iecy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&yacy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&acy;, &icy;&ncy;&dcy;&icy;&vcy;&icy;&dcy;&ucy;&acy;&lcy;&softcy;&ncy;&ycy;&jcy; &pcy;&ocy;&dcy;&khcy;&ocy;&dcy; &kcy; &kcy;&acy;&zhcy;&dcy;&ocy;&mcy;&ucy; &kcy;&lcy;&icy;&iecy;&ncy;&tcy;&ucy; &icy; &pcy;&rcy;&ocy;&fcy;&iecy;&scy;&scy;&icy;&ocy;&ncy;&acy;&lcy;&softcy;&ncy;&ocy;&iecy; &scy;&ocy;&pcy;&rcy;&ocy;&vcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&iecy; &scy;&dcy;&iecy;&lcy;&kcy;&icy; &ncy;&acy; &vcy;&scy;&iecy;&khcy; &ecy;&tcy;&acy;&pcy;&acy;&khcy;. &Ncy;&acy;&shcy;&icy; &pcy;&acy;&rcy;&tcy;&ncy;&iocy;&rcy;&ycy; &mdash; &kcy;&rcy;&ucy;&pcy;&ncy;&iecy;&jcy;&shcy;&icy;&iecy; &bcy;&acy;&ncy;&kcy;&icy; &Rcy;&iecy;&scy;&pcy;&ucy;&bcy;&lcy;&icy;&kcy;&icy; &Bcy;&iecy;&lcy;&acy;&rcy;&ucy;&scy;&softcy;, &chcy;&tcy;&ocy; &gcy;&acy;&rcy;&acy;&ncy;&tcy;&icy;&rcy;&ucy;&iecy;&tcy; &ncy;&acy;&dcy;&iocy;&zhcy;&ncy;&ocy;&scy;&tcy;&softcy; &icy; &pcy;&rcy;&ocy;&zcy;&rcy;&acy;&chcy;&ncy;&ocy;&scy;&tcy;&softcy; &vcy;&scy;&iecy;&khcy; &ocy;&pcy;&iecy;&rcy;&acy;&tscy;&icy;&jcy;.
+       </p>
+       <p>
+        &Ncy;&acy;&shcy;&acy; &mcy;&icy;&scy;&scy;&icy;&yacy; &mdash; &scy;&dcy;&iecy;&lcy;&acy;&tcy;&softcy; &lcy;&icy;&zcy;&icy;&ncy;&gcy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&ycy;&mcy; &icy; &pcy;&ocy;&ncy;&yacy;&tcy;&ncy;&ycy;&mcy; &icy;&ncy;&scy;&tcy;&rcy;&ucy;&mcy;&iecy;&ncy;&tcy;&ocy;&mcy; &fcy;&icy;&ncy;&acy;&ncy;&scy;&icy;&rcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy; &dcy;&lcy;&yacy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;&acy; &lcy;&yucy;&bcy;&ocy;&gcy;&ocy; &mcy;&acy;&scy;&shcy;&tcy;&acy;&bcy;&acy;.
+       </p>
+       <div class="about-stats">
+        <div class="about-stat">
+         <div class="about-stat-value">
+          28+
+         </div>
+         <div class="about-stat-label">
+          &lcy;&iecy;&tcy; &ncy;&acy; &rcy;&ycy;&ncy;&kcy;&iecy;
+         </div>
+        </div>
+        <div class="about-stat">
+         <div class="about-stat-value">
+          500+
+         </div>
+         <div class="about-stat-label">
+          &rcy;&iecy;&acy;&lcy;&icy;&zcy;&ocy;&vcy;&acy;&ncy;&ncy;&ycy;&khcy; &scy;&dcy;&iecy;&lcy;&ocy;&kcy;
+         </div>
+        </div>
+        <div class="about-stat">
+         <div class="about-stat-value">
+          7,9%
+         </div>
+         <div class="about-stat-label">
+          &mcy;&icy;&ncy;&icy;&mcy;&acy;&lcy;&softcy;&ncy;&acy;&yacy; &scy;&tcy;&acy;&vcy;&kcy;&acy;
+         </div>
+        </div>
+        <div class="about-stat">
+         <div class="about-stat-value">
+          84
+         </div>
+         <div class="about-stat-label">
+          &mcy;&iecy;&scy;&yacy;&tscy;&acy; &mcy;&acy;&kcy;&scy;&icy;&mcy;&acy;&lcy;&softcy;&ncy;&ycy;&jcy; &scy;&rcy;&ocy;&kcy;
+         </div>
+        </div>
+       </div>
+       <p class="disclosure-inline" style="margin-top:20px">
+        <a class="btn btn-white" href="disclosure.html">
+         &Rcy;&acy;&scy;&kcy;&rcy;&ycy;&tcy;&icy;&iecy; &icy;&ncy;&fcy;&ocy;&rcy;&mcy;&acy;&tscy;&icy;&icy; &ocy; &kcy;&ocy;&mcy;&pcy;&acy;&ncy;&icy;&icy;
+        </a>
+       </p>
+      </div>
+      <div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section section-dark">
+    <div class="container">
+     <div class="section-header">
+      <h2 class="section-title">
+       &Ncy;&acy;&shcy;&icy; &pcy;&acy;&rcy;&tcy;&ncy;&iocy;&rcy;&ycy;
+      </h2>
+      <p class="section-subtitle">
+       &Scy;&ocy;&tcy;&rcy;&ucy;&dcy;&ncy;&icy;&chcy;&acy;&iecy;&mcy; &scy; &vcy;&iecy;&dcy;&ucy;&shchcy;&icy;&mcy;&icy; &bcy;&acy;&ncy;&kcy;&acy;&mcy;&icy; &Rcy;&iecy;&scy;&pcy;&ucy;&bcy;&lcy;&icy;&kcy;&icy; &Bcy;&iecy;&lcy;&acy;&rcy;&ucy;&scy;&softcy;
+      </p>
+      <div class="section-line">
+      </div>
+     </div>
+     <div class="partners-grid">
+      <a class="partner-card" href="https://www.belgazprombank.by/" rel="noopener" target="_blank">
+       <div class="partner-icon">
+        <i class="fas fa-university">
+        </i>
+       </div>
+       <div class="partner-name">
+        &Ocy;&Acy;&Ocy; &laquo;&Bcy;&iecy;&lcy;&gcy;&acy;&zcy;&pcy;&rcy;&ocy;&mcy;&bcy;&acy;&ncy;&kcy;&raquo;
+       </div>
+       <div class="partner-desc">
+        &Ocy;&dcy;&icy;&ncy; &icy;&zcy; &kcy;&rcy;&ucy;&pcy;&ncy;&iecy;&jcy;&shcy;&icy;&khcy; &bcy;&acy;&ncy;&kcy;&ocy;&vcy; &scy;&tcy;&rcy;&acy;&ncy;&ycy;, &ncy;&acy;&dcy;&iocy;&zhcy;&ncy;&ycy;&jcy; &pcy;&acy;&rcy;&tcy;&ncy;&iocy;&rcy; &vcy; &fcy;&icy;&ncy;&acy;&ncy;&scy;&icy;&rcy;&ocy;&vcy;&acy;&ncy;&icy;&icy; &lcy;&icy;&zcy;&icy;&ncy;&gcy;&ocy;&vcy;&ycy;&khcy; &scy;&dcy;&iecy;&lcy;&ocy;&kcy;
+       </div>
+       <div class="partner-link">
+        &Pcy;&iecy;&rcy;&iecy;&jcy;&tcy;&icy; &ncy;&acy; &scy;&acy;&jcy;&tcy; &bcy;&acy;&ncy;&kcy;&acy;
+        <i class="fas fa-external-link-alt">
+        </i>
+       </div>
+      </a>
+      <a class="partner-card" href="https://www.belveb.by/" rel="noopener" target="_blank">
+       <div class="partner-icon">
+        <i class="fas fa-landmark">
+        </i>
+       </div>
+       <div class="partner-name">
+        &Ocy;&Acy;&Ocy; &laquo;&Bcy;&acy;&ncy;&kcy; &Bcy;&iecy;&lcy;&Vcy;&Ecy;&Bcy;&raquo;
+       </div>
+       <div class="partner-desc">
+        &Vcy;&iecy;&dcy;&ucy;&shchcy;&icy;&jcy; &bcy;&acy;&ncy;&kcy; &scy; &gcy;&ocy;&scy;&ucy;&dcy;&acy;&rcy;&scy;&tcy;&vcy;&iecy;&ncy;&ncy;&ycy;&mcy; &ucy;&chcy;&acy;&scy;&tcy;&icy;&iecy;&mcy;, &scy;&pcy;&iecy;&tscy;&icy;&acy;&lcy;&icy;&zcy;&icy;&rcy;&ucy;&yucy;&shchcy;&icy;&jcy;&scy;&yacy; &ncy;&acy; &pcy;&ocy;&dcy;&dcy;&iecy;&rcy;&zhcy;&kcy;&iecy; &bcy;&icy;&zcy;&ncy;&iecy;&scy;&acy;
+       </div>
+       <div class="partner-link">
+        &Pcy;&iecy;&rcy;&iecy;&jcy;&tcy;&icy; &ncy;&acy; &scy;&acy;&jcy;&tcy; &bcy;&acy;&ncy;&kcy;&acy;
+        <i class="fas fa-external-link-alt">
+        </i>
+       </div>
+      </a>
+     </div>
+    </div>
+   </section>
+   <section class="section section-light">
+    <div class="container">
+     <div class="section-header">
+      <h2 class="section-title">
+       &Ncy;&acy;&shcy;&icy; &kcy;&lcy;&icy;&iecy;&ncy;&tcy;&ycy;
+      </h2>
+      <p class="section-subtitle">
+       &Ncy;&acy;&mcy; &dcy;&ocy;&vcy;&iecy;&rcy;&yacy;&yucy;&tcy; &vcy;&iecy;&dcy;&ucy;&shchcy;&icy;&iecy; &pcy;&rcy;&iecy;&dcy;&pcy;&rcy;&icy;&yacy;&tcy;&icy;&yacy; &icy; &ocy;&rcy;&gcy;&acy;&ncy;&icy;&zcy;&acy;&tscy;&icy;&icy; &Bcy;&iecy;&lcy;&acy;&rcy;&ucy;&scy;&icy;
+      </p>
+      <div class="section-line">
+      </div>
+     </div>
+     <div class="clients-grid">
+      <a class="client-card" href="https://milk.by/" rel="noopener" target="_blank">
+       <div class="client-logo">
+        <img alt="&Mcy;&ocy;&lcy;&ocy;&chcy;&ncy;&ycy;&jcy; &mcy;&icy;&rcy;" src="img/logo-molochny-mir.png"/>
+       </div>
+       <div class="client-name">
+        &Mcy;&ocy;&lcy;&ocy;&chcy;&ncy;&ycy;&jcy; &mcy;&icy;&rcy;
+       </div>
+      </a>
+      <a class="client-card" href="https://belsoftex.by/" rel="noopener" target="_blank">
+       <div class="client-logo">
+        <img alt="&Bcy;&iecy;&lcy;&Scy;&ocy;&fcy;&Tcy;&iecy;&kcy;&scy;" src="https://image.qwenlm.ai/public_source/eaaf2eb9-3a3d-4a96-b824-f8fe105953e7/1e8d0d4d6-a014-4a25-84b2-7c035272240e.png"/>
+       </div>
+       <div class="client-name">
+        &Bcy;&iecy;&lcy;&Scy;&ocy;&fcy;&Tcy;&iecy;&kcy;&scy;
+       </div>
+      </a>
+      <a class="client-card" href="https://novdar.by/" rel="noopener" target="_blank">
+       <div class="client-logo">
+        <img alt="&Ncy;&ocy;&vcy;&ocy;&gcy;&rcy;&ucy;&dcy;&scy;&kcy;&icy;&iecy; &dcy;&acy;&rcy;&ycy;" src="img/logo-novogrudskie-dary.png"/>
+       </div>
+       <div class="client-name">
+        &Ncy;&ocy;&vcy;&ocy;&gcy;&rcy;&ucy;&dcy;&scy;&kcy;&icy;&iecy; &dcy;&acy;&rcy;&ycy;
+       </div>
+      </a>
+      <a class="client-card" href="https://tdn.by/" rel="noopener" target="_blank">
+       <div class="client-logo">
+        <img alt="&Tcy;&Dcy; &Ncy;&iecy;&mcy;&acy;&ncy;" src="img/logo-tdn.png"/>
+       </div>
+       <div class="client-name">
+        &Tcy;&Dcy; &laquo;&Ncy;&iecy;&mcy;&acy;&ncy;&raquo;
+       </div>
+      </a>
+      <a class="client-card" href="https://fif.by/" rel="noopener" target="_blank">
+       <div class="client-logo">
+        <img alt="&IEcy;&vcy;&rcy;&ocy;&acy;&vcy;&tcy;&ocy;&mcy;&acy;&tcy;&icy;&kcy;&acy; F&amp;F" src="img/logo-evroavtomatika.png"/>
+       </div>
+       <div class="client-name">
+        &IEcy;&vcy;&rcy;&ocy;&acy;&vcy;&tcy;&ocy;&mcy;&acy;&tcy;&icy;&kcy;&acy; F&amp;F
+       </div>
+      </a>
+     </div>
+    </div>
+   </section>
+   <section class="cta-section">
+    <div class="cta-inner">
+     <div class="cta-content">
+      <h2>
+       &Gcy;&Ocy;&Tcy;&Ocy;&Vcy;&Ycy; &Rcy;&Acy;&Zcy;&Vcy;&Icy;&Vcy;&Acy;&Tcy;&SOFTcy;
+       <br/>
+       &Vcy;&Acy;&SHcy; &Bcy;&Icy;&Zcy;&Ncy;&IEcy;&Scy;?
+      </h2>
+      <p>
+       &Ocy;&scy;&tcy;&acy;&vcy;&softcy;&tcy;&iecy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy; &pcy;&rcy;&yacy;&mcy;&ocy; &scy;&iecy;&jcy;&chcy;&acy;&scy;, &icy; &ncy;&acy;&shcy;&icy; &scy;&pcy;&iecy;&tscy;&icy;&acy;&lcy;&icy;&scy;&tcy;&ycy; &scy;&vcy;&yacy;&zhcy;&ucy;&tcy;&scy;&yacy; &scy; &vcy;&acy;&mcy;&icy; &dcy;&lcy;&yacy; &kcy;&ocy;&ncy;&scy;&ucy;&lcy;&softcy;&tcy;&acy;&tscy;&icy;&icy; &icy; &rcy;&acy;&scy;&chcy;&iocy;&tcy;&acy; &ucy;&scy;&lcy;&ocy;&vcy;&icy;&jcy;.
+      </p>
+      <a class="btn btn-primary btn-lg" href="#form">
+       &Ocy;&scy;&tcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
+      </a>
+     </div>
+    </div>
+   </section>
+   <section class="section section-light" id="form">
+    <div class="container">
+     <div class="form-card">
+      <div id="formContent">
+       <h3 class="form-title">
+        &Ocy;&scy;&tcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
+       </h3>
+       <p class="form-subtitle">
+        &Zcy;&acy;&pcy;&ocy;&lcy;&ncy;&icy;&tcy;&iecy; &fcy;&ocy;&rcy;&mcy;&ucy;, &icy; &mcy;&ycy; &scy;&vcy;&yacy;&zhcy;&iecy;&mcy;&scy;&yacy; &scy; &vcy;&acy;&mcy;&icy; &vcy; &tcy;&iecy;&chcy;&iecy;&ncy;&icy;&iecy; &rcy;&acy;&bcy;&ocy;&chcy;&iecy;&gcy;&ocy; &dcy;&ncy;&yacy;
+       </p>
+       <form id="leadForm">
+        <div class="form-row">
+         <div class="form-group">
+          <label class="form-label">
+           &Fcy;&Icy;&Ocy; *
+          </label>
+          <input class="form-input" placeholder="&Icy;&vcy;&acy;&ncy;&ocy;&vcy; &Icy;&vcy;&acy;&ncy; &Icy;&vcy;&acy;&ncy;&ocy;&vcy;&icy;&chcy;" required="" type="text"/>
+         </div>
+         <div class="form-group">
+          <label class="form-label">
+           &Tcy;&iecy;&lcy;&iecy;&fcy;&ocy;&ncy; *
+          </label>
+          <input class="form-input" placeholder="+375 (__) ___-__-__" required="" type="tel"/>
+         </div>
+        </div>
+        <div class="form-group">
+         <label class="form-label">
+          E-mail
+         </label>
+         <input class="form-input" placeholder="example@mail.com" type="email"/>
+        </div>
+        <div class="form-group">
+         <label class="form-label">
+          &Vcy;&icy;&dcy; &icy;&mcy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&acy;
+         </label>
+         <select class="form-select">
+          <option>
+           &Acy;&vcy;&tcy;&ocy;&mcy;&ocy;&bcy;&icy;&lcy;&icy;
+          </option>
+          <option>
+           &Gcy;&rcy;&ucy;&zcy;&ocy;&vcy;&ycy;&iecy; &acy;&vcy;&tcy;&ocy;&mcy;&ocy;&bcy;&icy;&lcy;&icy;
+          </option>
+          <option>
+           &Scy;&pcy;&iecy;&tscy;&tcy;&iecy;&khcy;&ncy;&icy;&kcy;&acy;
+          </option>
+          <option>
+           &Ocy;&bcy;&ocy;&rcy;&ucy;&dcy;&ocy;&vcy;&acy;&ncy;&icy;&iecy;
+          </option>
+          <option>
+           &Ncy;&iecy;&dcy;&vcy;&icy;&zhcy;&icy;&mcy;&ocy;&scy;&tcy;&softcy;
+          </option>
+         </select>
+        </div>
+        <div class="form-group">
+         <label class="form-label">
+          &Scy;&ocy;&ocy;&bcy;&shchcy;&iecy;&ncy;&icy;&iecy;
+         </label>
+         <textarea class="form-textarea" placeholder="&Ocy;&pcy;&icy;&shcy;&icy;&tcy;&iecy; &vcy;&acy;&shcy;&icy; &pcy;&ocy;&tcy;&rcy;&iecy;&bcy;&ncy;&ocy;&scy;&tcy;&icy;..."></textarea>
+        </div>
+        <div class="form-group">
+         <label class="form-check">
+          <input required="" type="checkbox"/>
+          &YAcy; &scy;&ocy;&gcy;&lcy;&acy;&scy;&iecy;&ncy; &ncy;&acy; &ocy;&bcy;&rcy;&acy;&bcy;&ocy;&tcy;&kcy;&ucy; &pcy;&iecy;&rcy;&scy;&ocy;&ncy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &dcy;&acy;&ncy;&ncy;&ycy;&khcy; &vcy; &scy;&ocy;&ocy;&tcy;&vcy;&iecy;&tcy;&scy;&tcy;&vcy;&icy;&icy; &scy;
+          <a href="privacy.html" style="color:var(--primary);text-decoration:underline">
+           &pcy;&ocy;&lcy;&icy;&tcy;&icy;&kcy;&ocy;&jcy; &kcy;&ocy;&ncy;&fcy;&icy;&dcy;&iecy;&ncy;&tscy;&icy;&acy;&lcy;&softcy;&ncy;&ocy;&scy;&tcy;&icy;
+          </a>
+         </label>
+        </div>
+        <button class="btn btn-primary btn-lg" style="width:100%" type="submit">
+         &Ocy;&tcy;&pcy;&rcy;&acy;&vcy;&icy;&tcy;&softcy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy;
+        </button>
+       </form>
+      </div>
+      <div class="form-success" id="formSuccess">
+       <i class="fas fa-check-circle">
+       </i>
+       <h3>
+        &Zcy;&acy;&yacy;&vcy;&kcy;&acy; &ocy;&tcy;&pcy;&rcy;&acy;&vcy;&lcy;&iecy;&ncy;&acy;!
+       </h3>
+       <p>
+        &Ncy;&acy;&shcy; &scy;&pcy;&iecy;&tscy;&icy;&acy;&lcy;&icy;&scy;&tcy; &scy;&vcy;&yacy;&zhcy;&iecy;&tcy;&scy;&yacy; &scy; &vcy;&acy;&mcy;&icy; &vcy; &bcy;&lcy;&icy;&zhcy;&acy;&jcy;&shcy;&iecy;&iecy; &vcy;&rcy;&iecy;&mcy;&yacy;
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="contacts">
+    <div class="container">
+     <div class="section-header">
+      <h2 class="section-title">
+       &Kcy;&ocy;&ncy;&tcy;&acy;&kcy;&tcy;&ycy;
+      </h2>
+      <p class="section-subtitle">
+       &Scy;&vcy;&yacy;&zhcy;&icy;&tcy;&iecy;&scy;&softcy; &scy; &ncy;&acy;&mcy;&icy; &lcy;&yucy;&bcy;&ycy;&mcy; &ucy;&dcy;&ocy;&bcy;&ncy;&ycy;&mcy; &scy;&pcy;&ocy;&scy;&ocy;&bcy;&ocy;&mcy;
+      </p>
+      <div class="section-line">
+      </div>
+     </div>
+     <div class="contacts-grid">
+      <div class="contact-info">
+       <div class="contact-item">
+        <div class="contact-icon">
+         <i class="fas fa-map-marker-alt">
+         </i>
+        </div>
+        <div>
+         <div class="contact-label">
+          &Acy;&dcy;&rcy;&iecy;&scy; &ocy;&fcy;&icy;&scy;&acy;
+         </div>
+         <div class="contact-value">
+          231300, &Gcy;&rcy;&ocy;&dcy;&ncy;&iecy;&ncy;&scy;&kcy;&acy;&yacy; &ocy;&bcy;&lcy;.,
+          <br/>
+          &gcy;. &Lcy;&icy;&dcy;&acy;, &ucy;&lcy;. &Kcy;&icy;&rcy;&ocy;&vcy;&acy;, &dcy;. 27, &pcy;&ocy;&mcy;. 9
+         </div>
+        </div>
+       </div>
+       <div class="contact-item">
+        <div class="contact-icon">
+         <i class="fas fa-phone">
+         </i>
+        </div>
+        <div>
+         <div class="contact-label">
+          &Gcy;&ocy;&rcy;&ocy;&dcy;&scy;&kcy;&icy;&iecy; &tcy;&iecy;&lcy;&iecy;&fcy;&ocy;&ncy;&ycy;
+         </div>
+         <div class="contact-value">
+          <a href="tel:+375154659775">
+           8 (0154) 65-97-75
+          </a>
+          <br/>
+          <a href="tel:+375154659774">
+           8 (0154) 65-97-74
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="contact-item">
+        <div class="contact-icon">
+         <i class="fas fa-mobile-alt">
+         </i>
+        </div>
+        <div>
+         <div class="contact-label">
+          &Mcy;&ocy;&bcy;&icy;&lcy;&softcy;&ncy;&ycy;&iecy; &tcy;&iecy;&lcy;&iecy;&fcy;&ocy;&ncy;&ycy;
+         </div>
+         <div class="contact-value">
+          <a href="tel:+375291301979">
+           8 (029) 130-19-79
+          </a>
+          <br/>
+          <a href="tel:+375296444680">
+           8 (029) 644-46-80
+          </a>
+          <br/>
+          <a href="tel:+375296755032">
+           8 (029) 675-50-32
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="contact-item">
+        <div class="contact-icon viber">
+         <i class="fab fa-viber">
+         </i>
+        </div>
+        <div>
+         <div class="contact-label">
+          Viber
+         </div>
+         <div class="contact-value">
+          <a href="viber://chat?number=+37529644680">
+           +375 (29) 644-46-80
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="contact-item">
+        <div class="contact-icon instagram">
+         <i class="fab fa-instagram">
+         </i>
+        </div>
+        <div>
+         <div class="contact-label">
+          Instagram
+         </div>
+         <div class="contact-value">
+          <a href="https://instagram.com/li_da_servis" rel="noopener" target="_blank">
+           @li_da_servis
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="contact-item">
+        <div class="contact-icon">
+         <i class="fas fa-envelope">
+         </i>
+        </div>
+        <div>
+         <div class="contact-label">
+          E-mail
+         </div>
+         <div class="contact-value">
+          <a href="mailto:info@lida-servis.by">
+           info@lida-servis.by
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="contact-item">
+        <div class="contact-icon">
+         <i class="fas fa-clock">
+         </i>
+        </div>
+        <div>
+         <div class="contact-label">
+          &Rcy;&iecy;&zhcy;&icy;&mcy; &rcy;&acy;&bcy;&ocy;&tcy;&ycy;
+         </div>
+         <div class="contact-value">
+          &Pcy;&ncy;&ndash;&Pcy;&tcy;: 8:00 &ndash; 17:00
+          <br/>
+          &Scy;&bcy;, &Vcy;&scy;: &vcy;&ycy;&khcy;&ocy;&dcy;&ncy;&ocy;&jcy;
+          <br/>
+          &Ocy;&bcy;&iecy;&dcy;: 13:00 &ndash; 14:00
+         </div>
+        </div>
+       </div>
+       <div class="contact-manager">
+        <div class="contact-manager-img">
+         <img alt="&Mcy;&iecy;&ncy;&iecy;&dcy;&zhcy;&iecy;&rcy; &Lcy;&icy;&dcy;&acy;-&Scy;&iecy;&rcy;&vcy;&icy;&scy;" src="img/manager.png"/>
+        </div>
+        <div class="contact-manager-text">
+         <strong>
+          &Ncy;&ucy;&zhcy;&ncy;&acy; &kcy;&ocy;&ncy;&scy;&ucy;&lcy;&softcy;&tcy;&acy;&tscy;&icy;&yacy;?
+         </strong>
+         &Ncy;&acy;&shcy;&icy; &mcy;&iecy;&ncy;&iecy;&dcy;&zhcy;&iecy;&rcy;&ycy; &vcy;&scy;&iecy;&gcy;&dcy;&acy; &ncy;&acy; &scy;&vcy;&yacy;&zcy;&icy; &icy; &gcy;&ocy;&tcy;&ocy;&vcy;&ycy; &ocy;&tcy;&vcy;&iecy;&tcy;&icy;&tcy;&softcy; &ncy;&acy; &vcy;&acy;&shcy;&icy; &vcy;&ocy;&pcy;&rcy;&ocy;&scy;&ycy;. &Pcy;&ocy;&zcy;&vcy;&ocy;&ncy;&icy;&tcy;&iecy; &ncy;&acy;&mcy; &icy;&lcy;&icy; &ocy;&scy;&tcy;&acy;&vcy;&softcy;&tcy;&iecy; &zcy;&acy;&yacy;&vcy;&kcy;&ucy; &mdash; &mcy;&ycy; &pcy;&iecy;&rcy;&iecy;&zcy;&vcy;&ocy;&ncy;&icy;&mcy; &vcy; &tcy;&iecy;&chcy;&iecy;&ncy;&icy;&iecy; &rcy;&acy;&bcy;&ocy;&chcy;&iecy;&gcy;&ocy; &dcy;&ncy;&yacy;.
+        </div>
+       </div>
+      </div>
+      <div class="map-wrap">
+       <iframe allowfullscreen="" loading="lazy" src="https://yandex.ru/map-widget/v1/?text=&Lcy;&icy;&dcy;&acy;+&ucy;&lcy;+&Kcy;&icy;&rcy;&ocy;&vcy;&acy;+27&amp;z=17&amp;l=map">
+       </iframe>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <div id="siteFooter">
+  </div>
+  <div class="cookie-banner" id="cookieBanner">
+   <div class="cookie-inner">
+    <div class="cookie-icon">
+     <i class="fas fa-cookie-bite">
+     </i>
+    </div>
+    <div class="cookie-text">
+     <h4>
+      &Mcy;&ycy; &icy;&scy;&pcy;&ocy;&lcy;&softcy;&zcy;&ucy;&iecy;&mcy; &fcy;&acy;&jcy;&lcy;&ycy; cookie
+     </h4>
+     <p>
+      &Ecy;&tcy;&ocy;&tcy; &scy;&acy;&jcy;&tcy; &icy;&scy;&pcy;&ocy;&lcy;&softcy;&zcy;&ucy;&iecy;&tcy; &fcy;&acy;&jcy;&lcy;&ycy; cookie &dcy;&lcy;&yacy; &ucy;&lcy;&ucy;&chcy;&shcy;&iecy;&ncy;&icy;&yacy; &rcy;&acy;&bcy;&ocy;&tcy;&ycy; &scy;&acy;&jcy;&tcy;&acy;.
+     </p>
+    </div>
+    <div class="cookie-buttons">
+     <button class="cookie-btn cookie-accept" id="cookieAccept">
+      &Pcy;&rcy;&icy;&ncy;&yacy;&tcy;&softcy;
+     </button>
+     <button class="cookie-btn cookie-decline" id="cookieDecline">
+      &Ocy;&tcy;&kcy;&lcy;&ocy;&ncy;&icy;&tcy;&softcy;
+     </button>
+    </div>
+   </div>
+  </div>
+  <button aria-label="&Ncy;&acy;&vcy;&iecy;&rcy;&khcy;" class="scroll-top" id="scrollTop">
+   <i class="fas fa-arrow-up">
+   </i>
+  </button>
+  <script src="js/main.js">
+  </script>
+ </body>
+</html>

@@ -529,3 +529,59 @@ a{text-decoration:none;color:inherit}
 .service-hero{position:relative;min-height:520px;padding:140px 0 80px;background:linear-gradient(135deg,rgba(19,43,79,.88),rgba(19,43,79,.7)),url('../img/page-back.png') center/cover no-repeat;color:#fff;overflow:hidden}.service-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}.service-image{border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.2)}.service-image img{width:100%;height:360px;object-fit:cover}.eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}.section-head{margin-bottom:48px}.title{font-size:40px;font-weight:800;color:var(--primary);line-height:1.2;margin-bottom:14px}.subtitle{font-size:16px;color:var(--text-light);max-width:760px;line-height:1.7}.line{width:60px;height:4px;background:var(--accent);margin-top:20px;border-radius:2px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}.check-list{display:flex;flex-direction:column;gap:16px}.check{display:flex;gap:14px;padding:20px;background:#fff;border-radius:14px;box-shadow:var(--shadow)}.check>i{color:var(--accent);font-size:22px;margin-top:2px}.check strong{color:var(--primary);font-size:16px}.prose{color:var(--text-light);line-height:1.75}.prose h2{color:var(--primary);font-size:28px;margin-bottom:14px}.prose h3{color:var(--primary);font-size:20px;margin:24px 0 8px}.conditions{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.condition{background:#fff;border-radius:14px;padding:28px 20px;text-align:center;box-shadow:var(--shadow);border-top:4px solid var(--accent)}.condition strong{display:block;color:var(--primary);font-size:32px;font-weight:800;line-height:1.1;margin-bottom:8px}.condition span{font-size:13px;color:var(--text-light)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.step{background:#fff;border-radius:16px;padding:32px;box-shadow:var(--shadow)}.step-num{width:48px;height:48px;background:var(--primary);color:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;margin-bottom:18px}.step h3{color:var(--primary);font-size:18px;margin-bottom:8px}.step p{color:var(--text-light);font-size:14px;line-height:1.6}.cta{position:relative;padding:70px 0;background:var(--primary);color:#fff}.cta-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{font-size:34px;line-height:1.2;margin-bottom:10px}.cta p{color:rgba(255,255,255,.75)}.disclosure-prose{max-width:900px;margin:0 auto}@media(max-width:900px){.service-grid,.grid2{grid-template-columns:1fr}.service-image{order:-1}.conditions{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.cta-inner{flex-direction:column;align-items:flex-start}}@media(max-width:600px){.service-hero{padding:120px 0 60px}.service-image img{height:240px}.title{font-size:28px}.conditions{grid-template-columns:1fr}.cta h2{font-size:26px}}
 
 .page-hero{padding:110px 0 50px;background:var(--bg-light)}.page-hero h1{font-size:44px;color:var(--primary);margin:16px 0 10px}.page-hero p{color:var(--text-light)}
+
+
+/* DISCLOSURE HERO */
+.disclosure-hero {
+    position: relative;
+    min-height: 520px;
+    padding: 160px 0 90px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    overflow: hidden;
+    background: url('../img/about-back.png') center center / cover no-repeat;
+}
+
+.disclosure-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(19, 43, 79, 0.94) 0%, rgba(19, 43, 79, 0.78) 48%, rgba(19, 43, 79, 0.35) 100%);
+}
+
+.disclosure-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 820px;
+}
+
+.disclosure-hero h1 {
+    margin: 0 0 20px;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.disclosure-hero p {
+    max-width: 680px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+@media (max-width: 600px) {
+    .disclosure-hero {
+        min-height: 440px;
+        padding: 130px 0 60px;
+    }
+
+    .disclosure-hero h1 {
+        font-size: 36px;
+    }
+
+    .disclosure-hero p {
+        font-size: 16px;
+    }
+}
