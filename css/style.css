@@ -91,7 +91,7 @@ a{text-decoration:none;color:inherit}
 .hero-auto::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(19,43,79,0.95) 0%,rgba(19,43,79,0.5) 60%,transparent 100%)}
 .hero-auto-inner{position:relative;z-index:2;max-width:720px}
 .hero-auto-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(247,195,68,0.15);border:1px solid rgba(247,195,68,0.4);border-radius:30px;padding:8px 20px;margin-bottom:24px;font-size:14px;font-weight:600;color:var(--accent)}
-.hero-auto h1{font-size:52px;font-weight:900;line-height:1.1;margin-bottom:20px;letter-spacing:-1px}
+.hero-auto h1{font-size:56px;font-weight:900;line-height:1.1;margin-bottom:20px;letter-spacing:-1px}
 .hero-auto h1 span{color:var(--accent)}
 .hero-auto-sub{font-size:18px;line-height:1.6;opacity:0.95;margin-bottom:32px;max-width:600px}
 .hero-auto-cta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}
@@ -585,3 +585,7 @@ a{text-decoration:none;color:inherit}
         font-size: 16px;
     }
 }
+
+/* DETAIL LEASING CALCULATOR */
+.detail-calculator-section{padding-top:90px;padding-bottom:90px}.detail-calculator-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1080px;margin:0 auto}.detail-calculator-copy{padding:10px 0}.detail-calculator-copy h3{font-size:32px;line-height:1.2;color:var(--primary);margin:0 0 18px}.detail-calculator-copy p{font-size:16px;line-height:1.75;color:var(--text-light);max-width:520px}.calc-benefits{display:flex;flex-direction:column;gap:13px;margin-top:28px}.calc-benefit{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--primary)}.calc-benefit i{width:24px;height:24px;border-radius:50%;background:rgba(247,195,68,.18);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:11px}.calc-fixed-type{display:flex;align-items:center;gap:10px;width:100%;padding:13px 16px;border:1px solid var(--border);border-radius:8px;background:var(--bg-light);font-size:14px;font-weight:700;color:var(--primary)}.calc-fixed-type i{color:var(--accent)}.detail-calculator-layout .calc-card{width:100%}.detail-calculator-layout .calc-title{font-size:22px}.detail-calculator-layout .calc-btn{display:flex;align-items:center;justify-content:center;text-decoration:none}
+@media(max-width:900px){.detail-calculator-layout{grid-template-columns:1fr;gap:30px}.detail-calculator-copy{order:1}.detail-calculator-layout .calc-card{order:0}}
