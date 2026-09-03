@@ -11,6 +11,21 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   await include('siteHeader','components/header.html');
   await include('siteFooter','components/footer.html');
 
+  // Correct anchor positioning after navigating from secondary pages.
+  // Header/footer are loaded asynchronously, so the browser may calculate the
+  // hash position before the fixed header changes the document layout.
+  const hash = window.location.hash;
+  if(hash){
+    setTimeout(()=>{
+      const target=document.querySelector(hash);
+      if(target){
+        const headerHeight=document.getElementById('header')?.offsetHeight || 80;
+        const top=target.getBoundingClientRect().top + window.scrollY - headerHeight - 8;
+        window.scrollTo({top,behavior:'auto'});
+      }
+    },50);
+  }
+
   const burger=document.getElementById('burger'), mobileNav=document.getElementById('mobileNav');
   if(burger&&mobileNav){
     burger.addEventListener('click',()=>mobileNav.classList.toggle('open'));
