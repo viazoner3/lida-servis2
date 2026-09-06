@@ -591,3 +591,11 @@ a{text-decoration:none;color:inherit}
 /* DETAIL LEASING CALCULATOR */
 .detail-calculator-section{padding-top:90px;padding-bottom:90px}.detail-calculator-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1080px;margin:0 auto}.detail-calculator-copy{padding:10px 0}.detail-calculator-copy h3{font-size:32px;line-height:1.2;color:var(--primary);margin:0 0 18px}.detail-calculator-copy p{font-size:16px;line-height:1.75;color:var(--text-light);max-width:520px}.calc-benefits{display:flex;flex-direction:column;gap:13px;margin-top:28px}.calc-benefit{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--primary)}.calc-benefit i{width:24px;height:24px;border-radius:50%;background:rgba(247,195,68,.18);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:11px}.calc-fixed-type{display:flex;align-items:center;gap:10px;width:100%;padding:13px 16px;border:1px solid var(--border);border-radius:8px;background:var(--bg-light);font-size:14px;font-weight:700;color:var(--primary)}.calc-fixed-type i{color:var(--accent)}.detail-calculator-layout .calc-card{width:100%}.detail-calculator-layout .calc-title{font-size:22px}.detail-calculator-layout .calc-btn{display:flex;align-items:center;justify-content:center;text-decoration:none}
 @media(max-width:900px){.detail-calculator-layout{grid-template-columns:1fr;gap:30px}.detail-calculator-copy{order:1}.detail-calculator-layout .calc-card{order:0}}
+
+/* DISCLOSURE CONDITIONS — mobile-friendly sequential presentation */
+.disclosure-conditions-list{display:flex;flex-direction:column;gap:0;margin-top:40px;background:var(--white);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.disclosure-condition{padding:22px 24px;border-bottom:1px solid var(--border)}
+.disclosure-condition:last-child{border-bottom:none}
+.disclosure-condition h3{margin:0 0 8px;font-size:16px;font-weight:700;color:var(--primary)}
+.disclosure-condition p{margin:0;font-size:15px;line-height:1.65;color:var(--text)}
+@media(max-width:600px){.disclosure-condition{padding:18px}.disclosure-condition h3{font-size:15px}.disclosure-condition p{font-size:14px}}
