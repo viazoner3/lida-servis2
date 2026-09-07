@@ -599,3 +599,23 @@ a{text-decoration:none;color:inherit}
 .disclosure-condition h3{margin:0 0 8px;font-size:16px;font-weight:700;color:var(--primary)}
 .disclosure-condition p{margin:0;font-size:15px;line-height:1.65;color:var(--text)}
 @media(max-width:600px){.disclosure-condition{padding:18px}.disclosure-condition h3{font-size:15px}.disclosure-condition p{font-size:14px}}
+
+/* FAQ blocks on leasing detail pages */
+.faq-section{background:var(--light)}
+.faq-list{max-width:980px;margin:40px auto 0;background:var(--white);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.faq-item{border-bottom:1px solid var(--border);padding:0}
+.faq-item:last-child{border-bottom:none}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 24px;font-size:17px;line-height:1.45;font-weight:700;color:var(--primary);transition:background .2s ease}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{background:#f8fafc}
+.faq-icon{flex:0 0 30px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--accent);color:var(--primary);font-size:22px;font-weight:500;line-height:1;transition:transform .2s ease}
+.faq-item[open] .faq-icon{transform:rotate(45deg)}
+.faq-answer{padding:0 74px 22px 24px}
+.faq-answer p{margin:0;color:var(--text);font-size:15px;line-height:1.7}
+@media(max-width:600px){
+ .faq-list{margin-top:28px;border-radius:12px}
+ .faq-item summary{padding:18px 16px;font-size:15px;gap:14px}
+ .faq-icon{width:28px;height:28px;flex-basis:28px;font-size:20px}
+ .faq-answer{padding:0 16px 18px}
+ .faq-answer p{font-size:14px;line-height:1.65}
+}
