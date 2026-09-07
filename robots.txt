@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /components/
 Sitemap: https://lida-servis.by/sitemap.xml

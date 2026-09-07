@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', async ()=>{
+  const metrGoal=(goal,params)=>{ if(typeof window.lidaMetrikaGoal==='function') window.lidaMetrikaGoal(goal,params); };
   async function include(id,file){
     const el=document.getElementById(id);
     if(!el)return;
+    if(el.innerHTML.trim()) return;
     try{
       const r=await fetch(file);
       el.innerHTML=await r.text();
@@ -10,6 +12,16 @@ document.addEventListener('DOMContentLoaded', async ()=>{
 
   await include('siteHeader','components/header.html');
   await include('siteFooter','components/footer.html');
+
+  // Analytics goals. The actual Yandex.Metrica counter is configured once in js/metrika.js.
+  document.addEventListener('click',e=>{
+    const link=e.target.closest('[data-metrika-goal]');
+    if(link) metrGoal(link.dataset.metrikaGoal);
+    const fileLink=e.target.closest('a[href]');
+    if(fileLink && /\.(pdf|jpg|jpeg|png|doc|docx|xls|xlsx)$/i.test(fileLink.getAttribute('href')||'')){
+      metrGoal('document_download',{url:fileLink.href});
+    }
+  });
 
   // Correct anchor positioning after navigating from secondary pages.
   // Header/footer are loaded asynchronously, so the browser may calculate the
@@ -160,6 +172,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   document.querySelectorAll('#leadForm').forEach(form=>{
     form.addEventListener('submit',e=>{
       e.preventDefault();
+      metrGoal('form_submit',{form:form.id || 'leadForm',page:location.pathname});
       const c=form.closest('.form-card')?.querySelector('#formContent');
       const s=form.closest('.form-card')?.querySelector('#formSuccess');
       if(c&&s){c.style.display='none';s.style.display='block';}
@@ -170,7 +183,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   const accept=document.getElementById('cookieAccept'),decline=document.getElementById('cookieDecline'),banner=document.getElementById('cookieBanner');
   if(accept&&decline&&banner){
     if(!localStorage.getItem('cookie_consent'))setTimeout(()=>banner.classList.add('show'),800);
-    accept.addEventListener('click',()=>{localStorage.setItem('cookie_consent','accepted');banner.classList.remove('show')});
+    accept.addEventListener('click',()=>{localStorage.setItem('cookie_consent','accepted');banner.classList.remove('show');window.dispatchEvent(new Event('lida-cookie-accepted'));});
     decline.addEventListener('click',()=>{localStorage.setItem('cookie_consent','declined');banner.classList.remove('show')});
   }
 });
