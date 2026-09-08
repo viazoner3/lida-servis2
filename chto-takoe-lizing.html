@@ -30,6 +30,26 @@
 .info-note{font-size:13px;color:#718096;line-height:1.55;margin-top:14px}
 @media(max-width:900px){.explain-grid,.steps-info{grid-template-columns:repeat(2,1fr)}.example-box{grid-template-columns:1fr}.type-mini-grid{grid-template-columns:repeat(2,1fr)}.audience-grid,.why-grid{grid-template-columns:1fr}.info-hero h1{font-size:42px}}
 @media(max-width:600px){.info-hero{padding:58px 0 54px}.info-hero h1{font-size:34px}.info-hero p{font-size:17px}.explain-grid,.steps-info,.type-mini-grid,.compare-row{grid-template-columns:1fr}.example-story,.example-choice{padding:24px}.example-price{font-size:34px}.link-panel{flex-direction:column;align-items:flex-start;padding:24px}.info-hero-actions .btn{width:100%;text-align:center}}
+
+.example-callout{margin-top:22px;padding:18px 20px;border-radius:12px;background:#eef4f9;border:1px solid #dce7f0;color:var(--text);line-height:1.65}
+.example-label,.compare-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#7a8796;margin-bottom:8px}
+.example-table-wrap{margin-top:34px;background:var(--white);border-radius:18px;box-shadow:var(--shadow);padding:28px}
+.example-table-wrap h3{margin:0 0 18px;color:var(--primary);font-size:22px}
+.example-table-scroll{overflow-x:auto}
+.example-table{width:100%;border-collapse:collapse;min-width:760px}
+.example-table th,.example-table td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--border);font-size:14px;line-height:1.55;vertical-align:top}
+.example-table th{background:var(--primary);color:var(--white);font-weight:700}
+.example-table td:first-child{font-weight:700;color:var(--primary);width:27%;background:#f7f9fb}
+.example-table tr:last-child td{border-bottom:none}
+.example-compare-steps{margin-top:34px;background:var(--primary);color:var(--white);border-radius:18px;padding:30px}
+.example-compare-steps .example-flow-title{font-size:21px;font-weight:800;margin-bottom:20px}
+.example-compare-steps .example-flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.example-compare-steps .example-flow-grid>div{padding:18px 14px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(255,255,255,.05)}
+.example-compare-steps .example-flow-grid b{display:block;color:var(--accent);font-size:24px;margin-bottom:8px}.example-compare-steps .example-flow-grid span{font-size:13px;line-height:1.45;display:block;color:rgba(255,255,255,.88)}
+@media(max-width:900px){.example-compare-steps .example-flow-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.example-table-wrap{padding:20px}.example-compare-steps{padding:22px}.example-compare-steps .example-flow-grid{grid-template-columns:1fr}.example-table th,.example-table td{padding:12px}.example-callout{font-size:14px}}
+
+.payment-explain{margin-top:30px;display:grid;grid-template-columns:1.35fr .65fr;gap:22px}.payment-explain-main,.payment-explain-side{background:var(--white);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);padding:28px}.payment-badge{display:inline-flex;padding:7px 11px;border-radius:999px;background:#eef4f9;color:var(--primary);font-size:12px;font-weight:800;margin-bottom:12px}.payment-explain h3{margin:0 0 12px;color:var(--primary);font-size:22px}.payment-explain p{margin:0 0 12px;font-size:15px;line-height:1.7}.payment-explain p:last-child{margin-bottom:0}.payment-explain-side{display:flex;flex-direction:column;gap:0;padding:0;overflow:hidden}.payment-explain-side div{padding:20px;border-bottom:1px solid var(--border)}.payment-explain-side div:last-child{border-bottom:none}.payment-explain-side strong{display:block;color:var(--primary);margin-bottom:5px}.payment-explain-side span{font-size:13px;color:var(--text);line-height:1.5}@media(max-width:900px){.payment-explain{grid-template-columns:1fr}}@media(max-width:600px){.payment-explain-main,.payment-explain-side{padding:22px}.payment-explain-side{padding:0}}
 </style></head>
 
 <body>
@@ -143,60 +163,96 @@
 
 <section class="section" id="example">
   <div class="container">
-    <div class="section-header"><h2 class="section-title">Автомобиль за 80 000 BYN: лизинг на 5 лет или кредит на 5 лет?</h2><p class="section-subtitle">Разберём ситуацию человека, который хочет не просто купить автомобиль, а начать пользоваться им сейчас — для работы или для себя.</p><div class="section-line"></div></div>
+    <div class="section-header"><h2 class="section-title">Лизинг или кредит: разберём на понятном примере</h2><p class="section-subtitle">Представим автомобиль стоимостью 80 000 BYN и срок финансирования 5 лет. Не будем подменять реальный расчёт выдуманной ставкой: сначала разберём механику, а затем покажем, какие цифры действительно нужно сравнивать.</p><div class="section-line"></div></div>
+
     <div class="example-box">
       <div class="example-story">
-        <h3>Представим простую ситуацию</h3>
+        <h3>Ситуация: автомобиль нужен уже сейчас</h3>
         <div class="example-price">80 000 BYN</div>
-        <p>Допустим, вы нашли автомобиль стоимостью 80 000 BYN. Он нужен вам сейчас: бизнесу — чтобы выполнять перевозки, ездить к клиентам или доставлять товар; физическому лицу — чтобы ездить на работу, по делам и пользоваться автомобилем уже сегодня.</p>
-        <p>Если всей суммы на руках нет, возникает вопрос: <strong>как получить автомобиль сейчас, не замораживая все свои деньги?</strong></p>
-        <p>Можно рассматривать кредит или лизинг. Оба варианта позволяют не ждать несколько лет, пока накопится вся сумма, но устроены они по-разному.</p>
+        <p>Допустим, автомобиль стоит 80 000 BYN. У вас нет желания или возможности ждать несколько лет, пока накопится вся сумма. Машина нужна сейчас: бизнесу — чтобы выполнять перевозки, доставлять товары, ездить к клиентам или расширять автопарк; для себя — чтобы ездить на работу, заниматься семьёй и личными делами.</p>
+        <p>Предположим, первоначальный взнос составляет <strong>20%</strong> — это 16 000 BYN. Оставшиеся 64 000 BYN финансируются на срок <strong>5 лет</strong>. Дальше начинаются различия между кредитом и лизингом.</p>
+        <div class="example-callout"><strong>Главная мысль:</strong> и кредит, и лизинг позволяют получить автомобиль сейчас. Поэтому вопрос не только в том, где «процент меньше», а в том, <strong>сколько денег нужно внести сразу, каким будет график платежей, сколько вы заплатите в итоге и какие дополнительные расходы возникнут.</strong></div>
       </div>
       <div class="example-choice">
-        <h3>Кредит и лизинг на один и тот же срок — в чём разница?</h3>
+        <h3>Что происходит в каждом варианте?</h3>
         <div class="compare-row">
-          <div class="compare-card"><strong>Кредит на 5 лет</strong><p>Банк финансирует покупку. Вы становитесь покупателем автомобиля, а затем погашаете задолженность перед банком по условиям кредитного договора. Размер и структура платежа зависят от банка, ставки, комиссий и выбранной программы.</p></div>
-          <div class="compare-card"><strong>Лизинг на 5 лет</strong><p>Лизинговая компания приобретает выбранный автомобиль и передаёт его вам в пользование на условиях договора лизинга. Вы вносите аванс и затем рассчитываетесь по графику. Право собственности и порядок его перехода определяются условиями договора.</p></div>
-          <div class="compare-card"><strong>Главное для клиента</strong><p>И в кредит, и в лизинг автомобиль можно получить сейчас. Поэтому важно смотреть не только на название продукта, а на первоначальный взнос, общую стоимость финансирования, график платежей, требования к обеспечению и то, сколько денег останется у вас после покупки.</p></div>
+          <div class="compare-card"><div class="compare-label">Вариант 1</div><strong>Кредит на 5 лет</strong><p>Банк выдаёт деньги на покупку. Автомобиль становится вашей собственностью сразу, но банк может потребовать залог или иное обеспечение. В зависимости от программы могут быть требования по страхованию.</p></div>
+          <div class="compare-card"><div class="compare-label">Вариант 2</div><strong>Лизинг на 5 лет</strong><p>Лизинговая компания покупает выбранный автомобиль и передаёт его вам в пользование. Вы вносите аванс и платежи по графику. Право собственности и порядок его перехода после окончания договора определяются условиями конкретной сделки.</p></div>
+          <div class="compare-card"><div class="compare-label">Что сравнивать</div><strong>Не только ставку</strong><p>Смотрите на аванс, первый и последний платежи, общую сумму выплат, страхование, комиссии, выкупную стоимость, требования к обеспечению и возможность досрочного погашения.</p></div>
         </div>
+      </div>
+    </div>
+
+    <div class="example-table-wrap">
+      <h3>Один автомобиль — две разные финансовые схемы</h3>
+      <div class="example-table-scroll">
+        <table class="example-table">
+          <thead><tr><th>Что сравниваем</th><th>Кредит</th><th>Лизинг в «Лида-Сервис»</th></tr></thead>
+          <tbody>
+            <tr><td>Цена автомобиля</td><td>80 000 BYN</td><td>80 000 BYN</td></tr>
+            <tr><td>Условный аванс</td><td>20% = 16 000 BYN</td><td>20% = 16 000 BYN</td></tr>
+            <tr><td>Финансируемая часть</td><td>64 000 BYN</td><td>64 000 BYN</td></tr>
+            <tr><td>Срок</td><td>5 лет</td><td>5 лет</td></tr>
+            <tr><td>Кто приобретает автомобиль</td><td>Покупатель за счёт банковского финансирования</td><td>Лизинговая компания</td></tr>
+            <tr><td>Кто пользуется автомобилем</td><td>Покупатель</td><td>Лизингополучатель</td></tr>
+            <tr><td>Как формируются платежи</td><td>По графику банка; он может быть аннуитетным или дифференцированным</td><td>По графику договора; в «Лида-Сервис» применяется дифференцированный график</td></tr>
+            <tr><td>Что происходит с платежом</td><td>Зависит от выбранной схемы</td><td><strong>Постепенно уменьшается</strong>: первый платёж выше, последующие снижаются</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="info-note">Цифры 80 000 BYN, 20% и 5 лет здесь нужны только для понимания механики. Фактическая стоимость финансирования зависит от конкретного автомобиля, условий сделки, страхования, комиссий и других параметров. Поэтому корректное сравнение делается по двум реальным графикам платежей.</p>
+    </div>
+
+    <div class="payment-explain">
+      <div class="payment-explain-main">
+        <div class="payment-badge">Почему дифференцированный платёж уменьшается</div>
+        <h3>Погашается не только стоимость финансирования, но и сама задолженность</h3>
+        <p>В нашем условном примере после аванса 16 000 BYN остаётся 64 000 BYN финансирования. Если для простоты вообще не учитывать вознаграждение и другие расходы, то 64 000 / 60 = около <strong>1 067 BYN основной суммы в месяц</strong>. При дифференцированном графике эта основная сумма погашается равными долями, а начисление за пользование финансированием рассчитывается на уменьшающийся остаток.</p>
+        <p>Поэтому с течением времени база, на которую начисляется вознаграждение, становится меньше — и <strong>общий ежемесячный платёж постепенно снижается</strong>. Это принципиальное отличие от графика, где клиент платит одну и ту же сумму каждый месяц.</p>
+      </div>
+      <div class="payment-explain-side">
+        <div><strong>В начале срока</strong><span>остаток задолженности больше → платёж выше</span></div>
+        <div><strong>В середине срока</strong><span>остаток уменьшается → платёж становится ниже</span></div>
+        <div><strong>К концу срока</strong><span>остаток минимальный → платёж ниже, чем в начале</span></div>
       </div>
     </div>
 
     <div class="example-detail-grid">
       <div class="example-detail-card">
         <div class="example-detail-number">01</div>
-        <h3>Что получает бизнес</h3>
-        <p>Представим транспортную компанию, которой автомобиль за 80 000 BYN нужен для работы. Если потратить все накопленные деньги на покупку, после сделки может не остаться достаточного запаса на топливо, зарплату, ремонт, налоги и новые заказы.</p>
-        <p>Лизинг позволяет распределить затраты во времени и <strong>запустить автомобиль в работу сразу</strong>. Машина начинает выполнять перевозки и приносить выручку, пока компания рассчитывается по графику.</p>
-        <p>Для бизнеса это особенно важно: деньги нужны не только на сам автомобиль, но и на ежедневную работу. Поэтому сохранение оборотных средств может быть не менее важным, чем сама покупка.</p>
+        <h3>Почему бизнесу важно смотреть не только на переплату</h3>
+        <p>Представим перевозчика. Ему нужна машина за 80 000 BYN, но если потратить все собственные деньги на покупку, у бизнеса станет меньше средств на топливо, зарплату, ремонт, налоги, рекламу и новые заказы.</p>
+        <p>При финансировании часть денег остаётся в обороте. Автомобиль можно запустить в работу и получать от него выручку, пока компания рассчитывается за него по графику.</p>
+        <p>Поэтому для бизнеса важно сравнивать не только итоговую переплату, но и <strong>сколько денег останется в обороте после старта сделки</strong>, когда объект начнёт приносить доход и насколько график соответствует денежному потоку компании.</p>
       </div>
       <div class="example-detail-card">
         <div class="example-detail-number">02</div>
-        <h3>Что получает физическое лицо</h3>
-        <p>Теперь представим человека, которому автомобиль нужен для обычной жизни: работа, семья, поездки за город, личные дела. Можно несколько лет копить всю сумму или получить автомобиль сейчас и распределить расходы на срок сделки.</p>
-        <p>Здесь ценность лизинга прежде всего в <strong>возможности пользоваться автомобилем уже сейчас</strong>, а не откладывать покупку до того момента, когда накопится вся стоимость.</p>
-        <p>При этом нужно заранее понимать размер аванса, срок, стоимость финансирования и будущий график платежей.</p>
+        <h3>Что важно физическому лицу</h3>
+        <p>Для частного клиента логика проще: нужный автомобиль можно получить сейчас, а не ждать, пока накопится вся стоимость. Это особенно актуально, когда машина нужна для работы, семьи или ежедневных поездок.</p>
+        <p>Но и здесь стоит заранее сравнить <strong>аванс, первый платёж, последующие платежи, общую сумму выплат, страхование и условия перехода права собственности</strong>.</p>
+        <p>Если два предложения выглядят похожими, решающим может оказаться не рекламная ставка, а реальный график и итоговая сумма, которую клиент заплатит за весь срок.</p>
       </div>
       <div class="example-detail-card example-detail-card-highlight">
         <div class="example-detail-number">03</div>
-        <h3>Важная особенность «Лида-Сервис»</h3>
-        <p><strong>У нас применяется дифференцированный график платежей.</strong> Это означает, что ежемесячный платёж не остаётся одинаковым на протяжении всего срока: по мере погашения задолженности сумма постепенно уменьшается.</p>
-        <p>То есть в начале сделки платёж выше, а дальше финансовая нагрузка снижается. Для клиента это понятная и практичная особенность, которую стоит учитывать при сравнении предложений разных лизинговых компаний.</p>
+        <h3>Главное преимущество графика «Лида-Сервис»</h3>
+        <p><strong>У нас применяется дифференцированный график платежей.</strong> Это означает, что задолженность погашается постепенно, и сумма ежемесячного платежа со временем уменьшается.</p>
+        <p>В начале срока платёж выше, затем он становится ниже. Для клиента это важно при планировании бюджета: финансовая нагрузка не остаётся одинаковой на всём протяжении пяти лет.</p>
+        <p>Именно поэтому при сравнении лизинга с кредитом мы рекомендуем смотреть не на одну цифру, а на <strong>весь график от первого до последнего платежа</strong>.</p>
       </div>
     </div>
 
-    <div class="example-flow">
-      <div class="example-flow-title">Как выглядит логика сделки</div>
+    <div class="example-compare-steps">
+      <div class="example-flow-title">Как правильно сравнить кредит и лизинг</div>
       <div class="example-flow-grid">
-        <div><b>1</b><span>Выбираете автомобиль</span></div>
-        <div><b>2</b><span>Согласовываете аванс и срок</span></div>
-        <div><b>3</b><span>Лизинговая компания приобретает автомобиль</span></div>
-        <div><b>4</b><span>Вы получаете автомобиль и начинаете им пользоваться</span></div>
-        <div><b>5</b><span>Вносите платежи по графику, который постепенно уменьшается</span></div>
+        <div><b>1</b><span>Возьмите одинаковую стоимость объекта и одинаковый срок</span></div>
+        <div><b>2</b><span>Сравните одинаковый или сопоставимый аванс</span></div>
+        <div><b>3</b><span>Посмотрите первый, средний и последний платежи</span></div>
+        <div><b>4</b><span>Посчитайте все выплаты за весь срок, включая дополнительные расходы</span></div>
+        <div><b>5</b><span>Оцените, сколько денег останется в обороте и когда объект начнёт приносить пользу</span></div>
       </div>
     </div>
 
-    <div class="link-panel"><div><h3>Не знаете, что выгоднее именно в вашей ситуации?</h3><p>Не обязательно заранее разбираться во всех терминах. Расскажите, что хотите приобрести и для чего вам это нужно — специалист поможет сравнить варианты и подобрать параметры сделки.</p></div><a class="btn btn-primary" href="index.html#form" data-metrika-goal="cta_application">Получить консультацию</a></div>
+    <div class="link-panel"><div><h3>А если вы вообще не знакомы с кредитами и лизингом?</h3><p>Это нормально. Не обязательно самостоятельно разбираться в формулах. Расскажите, что хотите приобрести, для чего нужен объект и какой бюджет вам комфортен — специалист поможет разобрать конкретную ситуацию и сравнить варианты.</p></div><a class="btn btn-primary" href="index.html#form" data-metrika-goal="cta_application">Получить консультацию</a></div>
   </div>
 </section>
 <section class="section section-light">
@@ -251,11 +307,11 @@
 <section class="section section-light" id="conditions-info">
   <div class="container">
     <div class="section-header"><h2 class="section-title">Что влияет на условия лизинга?</h2><p class="section-subtitle">Перед расчётом важно понимать основные параметры.</p><div class="section-line"></div></div>
-    <div class="explain-grid">
-      <div class="explain-card"><div class="explain-num">20–40%</div><h3>Аванс</h3><p>Ориентир по представленным на сайте базовым условиям.</p></div>
-      <div class="explain-card"><div class="explain-num">12–60</div><h3>Срок</h3><p>Срок лизинга — от 12 до 60 месяцев.</p></div>
-      <div class="explain-card"><div class="explain-num">7,9–11%</div><h3>Удорожание</h3><p>Ориентир по ставке удорожания в год согласно текущим параметрам сайта.</p></div>
-      <div class="explain-card"><div class="explain-num">BYN</div><h3>Расчёт</h3><p>Предварительный расчёт выполняется в белорусских рублях.</p></div>
+    <div class="cond-grid info-conditions-grid">
+      <div class="cond-card"><div class="cond-value">12–60 <span>мес.</span></div><div class="cond-label">Срок лизинга</div></div>
+      <div class="cond-card"><div class="cond-value">60–80 <span>%</span></div><div class="cond-label">Финансирование сделки</div></div>
+      <div class="cond-card"><div class="cond-value">20–40 <span>%</span></div><div class="cond-label">Размер аванса</div></div>
+      <div class="cond-card"><div class="cond-value">7,9–11 <span>%</span></div><div class="cond-label">Ставка удорожания в год</div></div>
     </div>
     <div class="link-panel"><div><h3>Нужны подробные условия?</h3><p>Посмотрите базовые условия лизинговой сделки.</p></div><a class="btn btn-primary" href="index.html#conditions">Базовые условия</a></div>
   </div>
