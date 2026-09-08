@@ -102,6 +102,17 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     update();
   });
 
+  // Informational calculator on "Что такое лизинг" page. It shows an orientational first payment; later payments decrease.
+  const infoCalc=document.querySelector('.leasing-calculator #infoCalcPrice');
+  if(infoCalc){
+    const box=infoCalc.closest('.leasing-calculator');
+    const adv=box.querySelector('#infoCalcAdv'), term=box.querySelector('#infoCalcTerm'), payment=box.querySelector('#infoCalcPayment');
+    const av=box.querySelector('#infoAdvValue'), tv=box.querySelector('#infoTermValue');
+    const format=n=>Math.round(n).toLocaleString('ru-RU').replace(/\u00a0/g,' ');
+    const update=()=>{const p=Math.max(0,Number(infoCalc.value)||0), a=Math.min(100,Math.max(0,Number(adv.value)||0)), t=Math.max(1,Number(term.value)||1); const first=(p*(1-a/100))/t; payment.innerHTML=`${format(first)} <span>BYN</span>`; av.textContent=`${a}%`; tv.textContent=`${t} мес.`;};
+    [infoCalc,adv,term].forEach(el=>el.addEventListener('input',update)); update();
+  }
+
   // Privacy modal used from application forms. The footer itself links to the standalone privacy page.
   if(!document.getElementById('privacyModal')){
     const modal=document.createElement('div');
@@ -148,8 +159,8 @@ document.addEventListener('DOMContentLoaded', async ()=>{
           <h4>6. Контактная информация</h4>
           <ul>
             <li><strong>ООО «Лида-Сервис»</strong></li>
-            <li>Адрес: 231300, Гродненская область, г. Лида, ул. Кирова, д. 27, пом. 9</li>
-            <li>Телефон: <a href="tel:+375154659775">8 (0154) 65-97-75</a></li>
+            <li>Адрес: 231291, Гродненская область, г. Лида, ул. Кирова, д. 27, пом. 9</li>
+            <li>Телефон: <a href="tel:+375296444680">8 (029) 644-46-80</a></li>
             <li>E-mail: <a href="mailto:info@lida-servis.by">info@lida-servis.by</a></li>
           </ul>
           <p><em>Дата последнего обновления: 1 сентября 2026 года</em></p>

@@ -6,4 +6,6 @@
   <url><loc>https://lida-servis.by/leasing-equipment.html</loc></url>
   <url><loc>https://lida-servis.by/leasing-realestate.html</loc></url>
   <url><loc>https://lida-servis.by/disclosure.html</loc></url>
+  <url><loc>https://lida-servis.by/chto-takoe-lizing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lida-servis.by/faq.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
