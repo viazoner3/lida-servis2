@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async ()=>{
-  const metrGoal=(goal,params)=>{ if(typeof window.lidaMetrikaGoal==='function') window.lidaMetrikaGoal(goal,params); };
+  const metrGoal=(goal,params)=>{ if(typeof window.ym==='function') window.ym(112380601,'reachGoal',goal,params||{}); };
   async function include(id,file){
     const el=document.getElementById(id);
     if(!el)return;
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   await include('siteHeader','components/header.html');
   await include('siteFooter','components/footer.html');
 
-  // Analytics goals. The actual Yandex.Metrica counter is configured once in js/metrika.js.
+  // Analytics goals. The Yandex.Metrica counter is embedded in each HTML page.
   document.addEventListener('click',e=>{
     const link=e.target.closest('[data-metrika-goal]');
     if(link) metrGoal(link.dataset.metrikaGoal);
