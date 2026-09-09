@@ -635,3 +635,14 @@ a{text-decoration:none;color:inherit}
   .logo-original{height:52px}
   .logo-original-img{height:52px;max-width:220px}
 }
+
+/* FAQ and informational lists */
+.faq-benefits-list{margin:12px 0 0;padding-left:22px;color:var(--text)}
+.faq-benefits-list li{margin:0 0 9px;font-size:15px;line-height:1.65}
+.faq-benefits-list strong{color:var(--primary)}
+.leasing-object-list{margin-top:38px;background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:26px 30px}
+.leasing-object-list ul{margin:0;padding-left:22px}
+.leasing-object-list li{margin:0 0 13px;font-size:16px;line-height:1.65;color:var(--text)}
+.leasing-object-list li:last-child{margin-bottom:0}
+.leasing-object-list strong{color:var(--primary)}
+@media(max-width:600px){.faq-benefits-list li{font-size:14px}.leasing-object-list{padding:21px}.leasing-object-list li{font-size:14px}}
