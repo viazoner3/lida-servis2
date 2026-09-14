@@ -37,6 +37,41 @@
 .direction-choice .choice-step p{margin:0}
 @media(max-width:768px){.direction-audience .audience-feature-grid{grid-template-columns:1fr}.direction-choice .choice-grid{grid-template-columns:1fr;gap:32px}}
 .footer-logo-original{display:flex;align-items:center;max-width:240px}.footer-logo-original-img{display:block;width:100%;max-width:220px;height:auto;object-fit:contain;}
+
+/* Desktop layout: keep leasing parameters and partners on one row */
+@media (min-width: 769px){
+  .conditions{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    gap:16px !important;
+    align-items:stretch;
+  }
+  .conditions .condition{
+    flex:1 1 0 !important;
+    min-width:0 !important;
+    width:auto !important;
+  }
+  .partners-grid{
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:24px !important;
+  }
+  .partner-card{
+    min-width:0 !important;
+  }
+}
+
+@media (max-width: 768px){
+  .conditions{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:14px !important;
+  }
+  .partners-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
 </style>
 
 </head>
