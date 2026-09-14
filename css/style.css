@@ -646,3 +646,112 @@ a{text-decoration:none;color:inherit}
 .leasing-object-list li:last-child{margin-bottom:0}
 .leasing-object-list strong{color:var(--primary)}
 @media(max-width:600px){.faq-benefits-list li{font-size:14px}.leasing-object-list{padding:21px}.leasing-object-list li{font-size:14px}}
+
+/* ============================================
+   V29 — сетка партнёров/клиентов и мобильное переполнение
+   ============================================ */
+
+/* ПК: партнёры — 3 карточки в ряд */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: none;
+}
+
+.partner-card {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ПК: клиенты — 6 карточек, ровно 2 ряда по 3 */
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.client-card {
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.client-logo,
+.client-logo-wide {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.client-logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Не допускаем горизонтального переполнения страницы */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 1024px) {
+  .partners-grid,
+  .clients-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .container {
+    min-width: 0;
+  }
+
+  .header-inner {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .logo-original {
+    min-width: 0;
+    max-width: calc(100vw - 72px);
+    flex-shrink: 1;
+  }
+
+  .logo-original-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .client-card {
+    min-width: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .clients-grid {
+    gap: 12px;
+  }
+
+  .client-card {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
