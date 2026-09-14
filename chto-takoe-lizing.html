@@ -75,6 +75,7 @@
 .comparison-note{margin:22px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.82);font-size:14px;line-height:1.65}
 @media(max-width:768px){.leasing-example-card{grid-template-columns:1fr;gap:16px;padding:22px}.leasing-example-number{width:50px;height:50px}.leasing-example-content h3{font-size:19px}.comparison-grid{grid-template-columns:1fr}.leasing-comparison{padding:24px}}
 
+.footer-logo-original{display:flex;align-items:center;max-width:240px}.footer-logo-original-img{display:block;width:100%;max-width:220px;height:auto;object-fit:contain;}
 </style></head>
 <body>
 <!-- Yandex.Metrika counter -->
@@ -311,7 +312,7 @@
 <div class="calc-field"><div class="slider-header"><label class="calc-label" style="margin:0">Аванс</label><span class="slider-value" id="infoAdvValue">20%</span></div><div class="slider-wrap"><input aria-label="Аванс, %" class="slider" id="infoCalcAdv" max="40" min="20" step="1" type="range" value="20"/></div></div>
 <div class="calc-field"><div class="slider-header"><label class="calc-label" style="margin:0">Срок лизинга</label><span class="slider-value" id="infoTermValue">36 мес.</span></div><div class="slider-wrap"><input aria-label="Срок лизинга, месяцев" class="slider" id="infoCalcTerm" max="60" min="12" step="6" type="range" value="36"/></div></div>
 </div>
-<div class="calc-result"><div class="calc-result-label">Ориентировочная сумма первого платежа</div><div class="calc-result-value" id="infoCalcPayment">2 225 <span>BYN</span></div><div class="info-note">Это ориентир для первого платежа. Далее платежи уменьшаются; график не предусматривает равные доли. Точный график определяется условиями конкретной сделки.</div></div>
+<div class="calc-result"><div class="calc-result-label">Ориентировочная сумма первого платежа</div><div class="calc-result-value" id="infoCalcPayment">2 225 <span>BYN</span></div><div class="info-note">Далее платежи уменьшаются каждый месяц. Проценты насчитываются ежемесячно на остаток основного долга. Точный график определяется условиями конкретной сделки.</div></div>
 <a class="btn btn-primary calc-btn" data-metrika-goal="cta_application" href="index.html#form">Обсудить расчёт</a>
 </div>
 </div>
@@ -328,18 +329,8 @@
 <div class="container">
 <div class="footer-grid">
 <div>
-<div class="footer-logo">
-<div class="logo-icon" style="width:40px;height:40px">
-<img alt="Лида-Сервис" src="img/logo-mark.png"/>
-</div>
-<div class="logo-text">
-<span class="logo-name" style="color:#fff">
-       ЛИДА-СЕРВИС
-      </span>
-<span class="logo-sub">
-       лизинговая компания
-      </span>
-</div>
+<div class="footer-logo footer-logo-original">
+<img class="footer-logo-original-img" src="img/logo.png" alt="Лида-Сервис — лизинговая компания"/>
 </div>
 <p class="footer-about">
      Мы помогаем бизнесу расти с 1997 года, предоставляя надёжные лизинговые решения.
@@ -402,67 +393,57 @@
      </span>
 </div>
 <div class="footer-contact">
-     <i class="fas fa-phone">
-     </i>
-     <a data-metrika-goal="phone_click" href="tel:+375154659775">
-      8 (0154) 65-97-75
+<i class="fas fa-phone">
+</i>
+<a data-metrika-goal="phone_click" href="tel:+375296444680">
+   8 (029) 644-46-80
      </a>
-    </div>
-    <div class="footer-contact">
-     <i class="fas fa-phone">
-     </i>
-     <a data-metrika-goal="phone_click" href="tel:+375154659774">
+</div>
+<div class="footer-contact">
+<i class="fas fa-phone">
+</i>
+<a data-metrika-goal="phone_click" href="tel:+375154659774">
       8 (0154) 65-97-74
      </a>
-    </div>
-    <div class="footer-contact">
-     <i class="fas fa-mobile-alt">
-     </i>
-     <a data-metrika-goal="phone_click" href="tel:+375296444680">
-      8 (029) 644-46-80
-     </a>
-    </div>
-    <div class="footer-contact">
-     <i class="fas fa-mobile-alt">
-     </i>
-     <a data-metrika-goal="phone_click" href="tel:+375291301979">
-      8 (029) 130-19-79
-     </a>
-    </div>
-    <div class="footer-contact">
-     <i class="fas fa-mobile-alt">
-     </i>
-     <a data-metrika-goal="phone_click" href="tel:+375296755032">
-      8 (029) 675-50-32
-     </a>
-    </div>
-    <div class="footer-contact">
-     <i class="fab fa-viber">
-     </i>
-     <a data-metrika-goal="viber_click" href="viber://chat?number=+37529644680">
+</div>
+<div class="footer-contact">
+<i class="fas fa-mobile-alt"></i>
+<a data-metrika-goal="phone_click" href="tel:+375296444680">8 (029) 644-46-80</a>
+</div>
+<div class="footer-contact">
+<i class="fas fa-mobile-alt"></i>
+<a data-metrika-goal="phone_click" href="tel:+375291301979">8 (029) 130-19-79</a>
+</div>
+<div class="footer-contact">
+<i class="fas fa-mobile-alt"></i>
+<a data-metrika-goal="phone_click" href="tel:+375296755032">8 (029) 675-50-32</a>
+</div>
+<div class="footer-contact">
+<i class="fab fa-viber">
+</i>
+<a data-metrika-goal="viber_click" href="viber://chat?number=+37529644680">
       Viber: +375 (29) 644-46-80
      </a>
-    </div>
-    <div class="footer-contact">
-     <i class="fab fa-telegram-plane">
-     </i>
-     <a href="https://t.me/Lida_Servis" rel="noopener" target="_blank" aria-label="Telegram" data-metrika-goal="telegram_click">
-      @Lida_Servis
-     </a>
-    </div>
-    <div class="footer-contact">
-     <i class="fab fa-instagram">
-     </i>
-     <a href="https://instagram.com/li_da_servis" rel="noopener" target="_blank" aria-label="Instagram" data-metrika-goal="instagram_click">
-      @li_da_servis
-     </a>
-    </div>
+</div>
+
+<div class="footer-contact">
+<i class="fab fa-telegram-plane"></i>
+<a href="https://t.me/Lida_Servis" target="_blank" rel="noopener" aria-label="Telegram" data-metrika-goal="telegram_click">@Lida_Servis</a>
+</div>
+<div class="footer-contact">
+<i class="fab fa-instagram"></i>
+<a href="https://instagram.com/li_da_servis" rel="noopener" target="_blank">@li_da_servis</a>
+</div>
 <div class="footer-contact">
 <i class="fas fa-envelope">
 </i>
 <a data-metrika-goal="email_click" href="mailto:info@lida-servis.by">
       info@lida-servis.by
      </a>
+</div>
+<div class="footer-contact">
+<i class="fas fa-globe"></i>
+<a href="https://lida-servis.by" target="_blank" rel="noopener">lida-servis.by</a>
 </div>
 </div>
 <div>
@@ -519,12 +500,10 @@
     </a>
 <div class="footer-social">
 <a aria-label="Instagram" data-metrika-goal="instagram_click" href="https://instagram.com/li_da_servis" rel="noopener" target="_blank">
-<i class="fab fa-instagram">
-</i>
+<i class="fab fa-instagram"></i>
 </a>
 <a aria-label="Telegram" data-metrika-goal="telegram_click" href="https://t.me/Lida_Servis" rel="noopener" target="_blank">
-<i class="fab fa-telegram-plane">
-</i>
+<i class="fab fa-telegram-plane"></i>
 </a>
 <a aria-label="Viber" data-metrika-goal="viber_click" href="viber://chat?number=+37529644680">
 <i class="fab fa-viber">
