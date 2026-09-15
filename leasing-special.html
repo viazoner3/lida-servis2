@@ -581,32 +581,34 @@
 <p class="form-subtitle">
         Заполните форму, и мы свяжемся с вами для уточнения параметров сделки и подготовки расчёта.
        </p>
-<form id="leadForm">
+<form id="leadForm" method="post" action="submit.php" accept-charset="UTF-8">
+<input type="hidden" name="form_type" value="Лизинг спецтехники"/>
+<input type="text" name="website" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"/>
 <div class="form-row">
 <div class="form-group">
 <label class="form-label">
            ФИО *
           </label>
-<input aria-label="Имя" class="form-input" placeholder="Иванов Иван Иванович" required="" type="text"/>
+<input aria-label="Имя" name="name" autocomplete="name" class="form-input" placeholder="Иванов Иван Иванович" required="" type="text"/>
 </div>
 <div class="form-group">
 <label class="form-label">
            Телефон *
           </label>
-<input aria-label="Номер телефона" class="form-input" placeholder="+375 (__) ___-__-__" required="" type="tel"/>
+<input aria-label="Номер телефона" name="phone" autocomplete="tel" class="form-input" placeholder="+375 (__) ___-__-__" required="" type="tel"/>
 </div>
 </div>
 <div class="form-group">
 <label class="form-label">
           E-mail
          </label>
-<input aria-label="Электронная почта" class="form-input" placeholder="example@mail.com" type="email"/>
+<input aria-label="Электронная почта" name="email" autocomplete="email" class="form-input" placeholder="example@mail.com" type="email"/>
 </div>
 <div class="form-group">
 <label class="form-label">
           Вид имущества
          </label>
-<select aria-label="Дополнительный параметр" class="form-select">
+<select aria-label="Дополнительный параметр" name="asset_type" class="form-select">
 <option>
            Автомобили
           </option>
@@ -628,11 +630,11 @@
 <label class="form-label">
           Сообщение
          </label>
-<textarea aria-label="Комментарий к заявке" class="form-textarea" placeholder="Опишите ваши потребности..."></textarea>
+<textarea aria-label="Комментарий к заявке" name="message" class="form-textarea" placeholder="Опишите ваши потребности..."></textarea>
 </div>
 <div class="form-group">
 <label class="form-check">
-<input aria-label="Поле заявки" required="" type="checkbox"/>
+<input aria-label="Поле заявки" name="consent" value="1" required="" type="checkbox"/>
           Я согласен на обработку персональных данных в соответствии с
           <a href="#" onclick="openPrivacyModal();return false;" style="color:var(--primary);text-decoration:underline">
            политикой конфиденциальности
