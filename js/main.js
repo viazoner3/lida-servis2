@@ -102,6 +102,65 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     update();
   });
 
+  // Approximate first-year payment schedule: remaining principal + monthly interest.
+  // The 8% annual rate is deliberately a conditional example value and is isolated here
+  // so the calculation formula/rate can be replaced later without changing the UI.
+  const scheduleRate=0.08;
+  const scheduleFormat=n=>Number(n||0).toLocaleString('ru-RU',{minimumFractionDigits:2,maximumFractionDigits:2}).replace(/\u00a0/g,' ');
+  const closeSchedule=()=>document.getElementById('scheduleModal')?.classList.remove('show');
+  const openSchedule=(calc)=>{
+    const price=calc.querySelector('#calcPrice, #detailCalcPrice, #infoCalcPrice');
+    const adv=calc.querySelector('#calcAdv, #detailCalcAdv, #infoCalcAdv');
+    const term=calc.querySelector('#calcTerm, #detailCalcTerm, #infoCalcTerm');
+    if(!price||!adv||!term)return;
+    const assetPrice=Math.max(0,Number(price.value)||0);
+    const advancePct=Math.min(100,Math.max(0,Number(adv.value)||0));
+    const months=Math.max(1,Number(term.value)||1);
+    const advance=assetPrice*advancePct/100;
+    const financed=Math.max(0,assetPrice-advance);
+    const principalPerMonth=financed/months;
+    let remaining=financed;
+    let rows='';
+    let yearTotal=0;
+    for(let month=1;month<=Math.min(12,months);month++){
+      const interest=remaining*scheduleRate/12;
+      const principal=Math.min(principalPerMonth,remaining);
+      const payment=principal+interest;
+      yearTotal+=payment;
+      const after=Math.max(0,remaining-principal);
+      rows+=`<tr><td>${month}</td><td>${scheduleFormat(principal)}</td><td>${scheduleFormat(interest)}</td><td><strong>${scheduleFormat(payment)}</strong></td></tr>`;
+      remaining=after;
+    }
+    let modal=document.getElementById('scheduleModal');
+    if(!modal){
+      modal=document.createElement('div');
+      modal.className='schedule-modal';
+      modal.id='scheduleModal';
+      document.body.appendChild(modal);
+      modal.addEventListener('click',e=>{if(e.target===modal)closeSchedule()});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSchedule()});
+    }
+    modal.innerHTML=`<div class="schedule-dialog" role="dialog" aria-modal="true" aria-labelledby="scheduleTitle">
+      <div class="schedule-head"><h3 id="scheduleTitle">Примерный график на первый год</h3><button class="schedule-close" type="button" aria-label="Закрыть"><i class="fas fa-times"></i></button></div>
+      <div class="schedule-body">
+        <div class="schedule-summary">
+          <div class="schedule-summary-item"><span>Стоимость</span><strong>${scheduleFormat(assetPrice)} BYN</strong></div>
+          <div class="schedule-summary-item"><span>Аванс</span><strong>${scheduleFormat(advance)} BYN (${advancePct}%)</strong></div>
+          <div class="schedule-summary-item"><span>Финансирование</span><strong>${scheduleFormat(financed)} BYN</strong></div>
+          <div class="schedule-summary-item"><span>Срок</span><strong>${months} мес.</strong></div>
+          <div class="schedule-summary-item"><span>Условная ставка</span><strong>8% годовых</strong></div>
+          <div class="schedule-summary-item"><span>Сумма за 12 мес.</span><strong>${scheduleFormat(yearTotal)} BYN</strong></div>
+        </div>
+        <div class="schedule-table-wrap"><table class="schedule-table"><thead><tr><th>Месяц</th><th>Основной долг</th><th>Проценты</th><th>Платёж</th></tr></thead><tbody>${rows}</tbody></table></div>
+        <p class="schedule-note"><strong>Важно:</strong> 8% — условное значение для примера. В расчёте используется дифференцированный платёж: основной долг погашается равными долями, а проценты каждый месяц начисляются на остаток основного долга. Фактический график определяется условиями конкретной сделки.</p>
+      </div></div>`;
+    modal.classList.add('show');
+    modal.querySelector('.schedule-close').addEventListener('click',closeSchedule);
+  };
+  document.querySelectorAll('[data-schedule-trigger]').forEach(btn=>{
+    btn.addEventListener('click',()=>openSchedule(btn.closest('.leasing-calculator')));
+  });
+
   // Informational calculator on "Что такое лизинг" page. It shows an orientational first payment; later payments decrease.
   const infoCalc=document.querySelector('.leasing-calculator #infoCalcPrice');
   if(infoCalc){
@@ -179,14 +238,31 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
   }
 
-  // Identical application form behavior on the homepage and all leasing-type pages.
+  // Real application submission: send form data to the site's PHP mail handler.
   document.querySelectorAll('#leadForm').forEach(form=>{
-    form.addEventListener('submit',e=>{
+    form.addEventListener('submit',async e=>{
       e.preventDefault();
-      metrGoal('form_submit',{form:form.id || 'leadForm',page:location.pathname});
+      const button=form.querySelector('button[type="submit"]');
+      const originalText=button?.textContent || 'Отправить заявку';
       const c=form.closest('.form-card')?.querySelector('#formContent');
       const s=form.closest('.form-card')?.querySelector('#formSuccess');
-      if(c&&s){c.style.display='none';s.style.display='block';}
+      const errorBox=form.closest('.form-card')?.querySelector('.form-submit-error');
+      if(button){button.disabled=true;button.textContent='Отправка...';}
+      if(errorBox) errorBox.remove();
+      try{
+        const response=await fetch('submit.php',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+        const data=await response.json().catch(()=>({success:false,message:'Сервер вернул некорректный ответ.'}));
+        if(!response.ok || !data.success) throw new Error(data.message || 'Не удалось отправить заявку.');
+        metrGoal('form_submit',{form:form.id || 'leadForm',page:location.pathname});
+        if(c&&s){c.style.display='none';s.style.display='block';}
+      }catch(err){
+        const box=document.createElement('div');
+        box.className='form-submit-error';
+        box.style.cssText='margin-top:16px;padding:12px 14px;border-radius:10px;background:#fff1f1;color:#a33;font-size:14px;line-height:1.5;';
+        box.textContent=err.message || 'Не удалось отправить заявку. Позвоните нам или попробуйте ещё раз.';
+        form.appendChild(box);
+        if(button){button.disabled=false;button.textContent=originalText;}
+      }
     });
   });
 

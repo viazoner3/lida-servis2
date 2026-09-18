@@ -755,3 +755,41 @@ html, body {
     padding-right: 6px;
   }
 }
+
+/* FIRST-YEAR PAYMENT SCHEDULE */
+.calc-schedule-btn{width:100%;padding:14px 16px;margin:0 0 10px;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px}
+.schedule-modal{position:fixed;inset:0;background:rgba(5,18,32,.62);z-index:11000;display:none;align-items:center;justify-content:center;padding:14px;backdrop-filter:blur(4px)}
+.schedule-modal.show{display:flex}
+.schedule-dialog{width:min(760px,100%);max-height:88vh;background:var(--white);border-radius:18px;box-shadow:var(--shadow-lg);overflow:hidden;display:flex;flex-direction:column}
+.schedule-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;border-bottom:1px solid var(--border)}
+.schedule-head h3{margin:0;color:var(--primary);font-size:21px;line-height:1.25}
+.schedule-close{width:36px;height:36px;border:0;border-radius:50%;background:var(--bg-light);color:var(--primary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;flex:0 0 auto}
+.schedule-close:hover{background:var(--accent)}
+.schedule-body{padding:18px 24px 22px;overflow:auto}
+.schedule-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.schedule-summary-item{background:var(--bg-light);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.schedule-summary-item span{display:block;color:var(--text-light);font-size:11px;margin-bottom:3px}
+.schedule-summary-item strong{display:block;color:var(--primary);font-size:14px}
+.schedule-table-wrap{border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.schedule-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px}
+.schedule-table th,.schedule-table td{padding:9px 10px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+.schedule-table th:first-child,.schedule-table td:first-child{text-align:center;width:20%}
+.schedule-table th{background:var(--primary);color:var(--white);font-weight:700}
+.schedule-table tr:last-child td{border-bottom:none}
+.schedule-table td{color:var(--text)}
+.schedule-note{margin:13px 2px 0;color:var(--text-light);font-size:12px;line-height:1.5}
+@media(max-width:600px){
+  .schedule-modal{padding:8px}
+  .schedule-dialog{max-height:92vh;border-radius:14px}
+  .schedule-head{padding:15px 16px}
+  .schedule-head h3{font-size:17px}
+  .schedule-body{padding:12px 12px 15px}
+  .schedule-summary{grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px}
+  .schedule-summary-item{padding:8px 9px}
+  .schedule-summary-item span{font-size:10px}
+  .schedule-summary-item strong{font-size:12px}
+  .schedule-table{font-size:11px}
+  .schedule-table th,.schedule-table td{padding:7px 5px}
+  .schedule-table th:first-child,.schedule-table td:first-child{width:22%}
+  .schedule-note{font-size:11px}
+}
