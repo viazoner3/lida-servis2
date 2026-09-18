@@ -45,7 +45,7 @@ if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 // Prevent header injection even if this file is changed later to use user data in headers.
 $email = str_replace(["\r", "\n"], '', $email);
 
-$to = 'viazoner@mail.ru';
+$to = 'info@lida-servis.by';
 $subject = 'Новая заявка с сайта — ' . $formType;
 $subjectHeader = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 
@@ -69,8 +69,8 @@ if ($page !== '') {
 $headers = [
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
-    'From: Лида-Сервис <viazoner@mail.ru>',
-    'Reply-To: ' . ($email !== '' ? $email : 'viazoner@mail.ru'),
+    'From: Лида-Сервис <info@lida-servis.by>',
+    'Reply-To: ' . ($email !== '' ? $email : 'info@lida-servis.by'),
     'X-Mailer: PHP/' . PHP_VERSION,
 ];
 
