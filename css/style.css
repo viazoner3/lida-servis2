@@ -405,12 +405,8 @@ a{text-decoration:none;color:inherit}
 .footer-contact i{color:var(--accent);margin-top:3px;min-width:16px}
 .footer-contact a{color:var(--white);transition:color .2s}
 .footer-contact a:hover{color:var(--accent)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:24px}
-.footer-bottom-left{display:flex;align-items:center;gap:28px;min-width:0}
-.footer-copy{font-size:13px;opacity:0.6;white-space:nowrap}
-.footer-privacy{font-size:13px;opacity:0.7;white-space:nowrap;transition:opacity .2s}
-.footer-privacy:hover{opacity:1;color:var(--accent)}
-.footer-privacy i{margin-right:6px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-copy{font-size:13px;opacity:0.6}
 .footer-social{display:flex;gap:12px}
 .footer-social a{width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .footer-social a:hover{background:var(--accent);color:var(--primary)}
@@ -508,9 +504,7 @@ a{text-decoration:none;color:inherit}
   .form-row{grid-template-columns:1fr}
   .about-stats{grid-template-columns:1fr}
   .partners-grid{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center;flex-wrap:wrap}
-  .footer-bottom-left{flex-direction:column;gap:12px}
-  .footer-copy{white-space:normal}
+  .footer-bottom{flex-direction:column;text-align:center}
   .contact-manager{flex-direction:column;text-align:center}
   .cookie-inner{flex-direction:column;text-align:center}
   .cookie-buttons{width:100%;justify-content:center}
@@ -798,27 +792,4 @@ html, body {
   .schedule-table th,.schedule-table td{padding:7px 5px}
   .schedule-table th:first-child,.schedule-table td:first-child{width:22%}
   .schedule-note{font-size:11px}
-}
-
-/* v33 — disclosure page and compact desktop footer */
-.disclosure-hero-content{text-align:left;align-items:flex-start}
-.disclosure-hero-content h1{text-align:left;margin-left:0;margin-right:0}
-.disclosure-hero-content p{text-align:left;margin-left:0;margin-right:0}
-.disclosure-main-section .disclosure-prose{max-width:980px}
-.disclosure-point{padding:0 0 28px;margin-bottom:28px;border-bottom:1px solid var(--border)}
-.disclosure-point:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.disclosure-point h3{font-size:18px;line-height:1.4;color:var(--primary);margin:0 0 10px;font-weight:700}
-.disclosure-point p{margin:0 0 9px;font-size:15px;line-height:1.7;color:var(--text)}
-.disclosure-point p:last-child{margin-bottom:0}
-.disclosure-document-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--primary);text-decoration:none}
-.disclosure-document-link:hover{color:var(--accent)}
-@media(max-width:768px){
-  .disclosure-hero-content h1{font-size:30px}
-  .disclosure-point{padding-bottom:22px;margin-bottom:22px}
-  .disclosure-point h3{font-size:17px}
-  .disclosure-point p{font-size:14px}
-}
-@media(max-width:768px){
-  .footer-bottom-left{flex-direction:column;gap:12px}
-  .footer-copy{white-space:normal}
 }
