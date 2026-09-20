@@ -87,13 +87,16 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     const payment=calc.querySelector('#calcPayment, #detailCalcPayment');
     if(!price||!adv||!term||!payment)return;
 
-    const format=n=>Math.round(n).toLocaleString('ru-RU').replace(/\u00a0/g,' ');
+    const format=n=>Number(n||0).toLocaleString('ru-RU',{minimumFractionDigits:2,maximumFractionDigits:2}).replace(/\u00a0/g,' ');
+    const calculatorRate=0.08;
     const update=()=>{
       const p=Math.max(0,Number(price.value)||0);
       const a=Math.min(100,Math.max(0,Number(adv.value)||0));
       const t=Math.max(1,Number(term.value)||1);
-      const monthly=(p*(1-a/100))/t;
-      payment.innerHTML=`${format(monthly)} <span>BYN</span>`;
+      const financed=p*(1-a/100);
+      const principal=financed/t;
+      const firstPayment=principal+(financed*calculatorRate/12);
+      payment.innerHTML=`${format(firstPayment)} <span>BYN</span>`;
       if(advValue)advValue.textContent=`${a}%`;
       if(termValue)termValue.textContent=`${t} мес.`;
     };
@@ -167,8 +170,9 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     const box=infoCalc.closest('.leasing-calculator');
     const adv=box.querySelector('#infoCalcAdv'), term=box.querySelector('#infoCalcTerm'), payment=box.querySelector('#infoCalcPayment');
     const av=box.querySelector('#infoAdvValue'), tv=box.querySelector('#infoTermValue');
-    const format=n=>Math.round(n).toLocaleString('ru-RU').replace(/\u00a0/g,' ');
-    const update=()=>{const p=Math.max(0,Number(infoCalc.value)||0), a=Math.min(100,Math.max(0,Number(adv.value)||0)), t=Math.max(1,Number(term.value)||1); const first=(p*(1-a/100))/t; payment.innerHTML=`${format(first)} <span>BYN</span>`; av.textContent=`${a}%`; tv.textContent=`${t} мес.`;};
+    const format=n=>Number(n||0).toLocaleString('ru-RU',{minimumFractionDigits:2,maximumFractionDigits:2}).replace(/\u00a0/g,' ');
+    const calculatorRate=0.08;
+    const update=()=>{const p=Math.max(0,Number(infoCalc.value)||0), a=Math.min(100,Math.max(0,Number(adv.value)||0)), t=Math.max(1,Number(term.value)||1); const financed=p*(1-a/100); const first=(financed/t)+(financed*calculatorRate/12); payment.innerHTML=`${format(first)} <span>BYN</span>`; av.textContent=`${a}%`; tv.textContent=`${t} мес.`;};
     [infoCalc,adv,term].forEach(el=>el.addEventListener('input',update)); update();
   }
 

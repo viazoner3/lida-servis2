@@ -405,12 +405,8 @@ a{text-decoration:none;color:inherit}
 .footer-contact i{color:var(--accent);margin-top:3px;min-width:16px}
 .footer-contact a{color:var(--white);transition:color .2s}
 .footer-contact a:hover{color:var(--accent)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:24px}
-.footer-bottom-left{display:flex;align-items:center;gap:28px;min-width:0}
-.footer-copy{font-size:13px;opacity:0.6;white-space:nowrap}
-.footer-privacy{font-size:13px;opacity:0.7;white-space:nowrap;transition:opacity .2s}
-.footer-privacy:hover{opacity:1;color:var(--accent)}
-.footer-privacy i{margin-right:6px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-copy{font-size:13px;opacity:0.6}
 .footer-social{display:flex;gap:12px}
 .footer-social a{width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .footer-social a:hover{background:var(--accent);color:var(--primary)}
@@ -598,13 +594,13 @@ a{text-decoration:none;color:inherit}
 .detail-calculator-section{padding-top:90px;padding-bottom:90px}.detail-calculator-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1080px;margin:0 auto}.detail-calculator-copy{padding:10px 0}.detail-calculator-copy h3{font-size:32px;line-height:1.2;color:var(--primary);margin:0 0 18px}.detail-calculator-copy p{font-size:16px;line-height:1.75;color:var(--text-light);max-width:520px}.calc-benefits{display:flex;flex-direction:column;gap:13px;margin-top:28px}.calc-benefit{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--primary)}.calc-benefit i{width:24px;height:24px;border-radius:50%;background:rgba(247,195,68,.18);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:11px}.calc-fixed-type{display:flex;align-items:center;gap:10px;width:100%;padding:13px 16px;border:1px solid var(--border);border-radius:8px;background:var(--bg-light);font-size:14px;font-weight:700;color:var(--primary)}.calc-fixed-type i{color:var(--accent)}.detail-calculator-layout .calc-card{width:100%}.detail-calculator-layout .calc-title{font-size:22px}.detail-calculator-layout .calc-btn{display:flex;align-items:center;justify-content:center;text-decoration:none}
 @media(max-width:900px){.detail-calculator-layout{grid-template-columns:1fr;gap:30px}.detail-calculator-copy{order:1}.detail-calculator-layout .calc-card{order:0}}
 
-/* DISCLOSURE CONDITIONS — mobile-friendly sequential presentation */
-.disclosure-conditions-list{display:flex;flex-direction:column;gap:0;margin-top:40px;background:var(--white);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
-.disclosure-condition{padding:22px 24px;border-bottom:1px solid var(--border)}
+/* DISCLOSURE CONDITIONS — readable sequential presentation */
+.disclosure-conditions-list{display:flex;flex-direction:column;margin-top:40px;background:var(--white);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.disclosure-condition{padding:19px 26px;border-bottom:1px solid var(--border)}
 .disclosure-condition:last-child{border-bottom:none}
-.disclosure-condition h3{margin:0 0 8px;font-size:16px;font-weight:700;color:var(--primary)}
-.disclosure-condition p{margin:0;font-size:15px;line-height:1.65;color:var(--text)}
-@media(max-width:600px){.disclosure-condition{padding:18px}.disclosure-condition h3{font-size:15px}.disclosure-condition p{font-size:14px}}
+.disclosure-condition p{margin:0;font-size:16px;line-height:1.72;color:var(--text)}
+.disclosure-condition strong{font-weight:800;color:var(--primary)}
+@media(max-width:600px){.disclosure-condition{padding:16px 18px}.disclosure-condition p{font-size:14px;line-height:1.65}}
 
 /* FAQ blocks on leasing detail pages */
 .faq-section{background:var(--light)}
@@ -800,9 +796,9 @@ html, body {
   .schedule-note{font-size:11px}
 }
 
-/* v33 — disclosure page and compact desktop footer */
+/* v34 — disclosure page and footer cleanup */
 .disclosure-hero-content{text-align:left;align-items:flex-start}
-.disclosure-hero-content h1{text-align:left;margin-left:0;margin-right:0}
+.disclosure-hero-content h1{text-align:left;margin-left:0;margin-right:0;font-size:52px}
 .disclosure-hero-content p{text-align:left;margin-left:0;margin-right:0}
 .disclosure-main-section .disclosure-prose{max-width:980px}
 .disclosure-point{padding:0 0 28px;margin-bottom:28px;border-bottom:1px solid var(--border)}
@@ -813,12 +809,17 @@ html, body {
 .disclosure-document-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--primary);text-decoration:none}
 .disclosure-document-link:hover{color:var(--accent)}
 @media(max-width:768px){
-  .disclosure-hero-content h1{font-size:30px}
+  .disclosure-hero-content h1{font-size:34px}
   .disclosure-point{padding-bottom:22px;margin-bottom:22px}
   .disclosure-point h3{font-size:17px}
   .disclosure-point p{font-size:14px}
 }
-@media(max-width:768px){
-  .footer-bottom-left{flex-direction:column;gap:12px}
-  .footer-copy{white-space:normal}
+
+
+/* v35 — disclosure title scale and conditions heading */
+.disclosure-hero-content h1{font-size:44px}
+.disclosure-conditions-section .title{font-size:34px}
+@media(max-width:600px){
+  .disclosure-hero-content h1{font-size:32px}
+  .disclosure-conditions-section .title{font-size:28px}
 }
