@@ -823,3 +823,12 @@ html, body {
   .disclosure-hero-content h1{font-size:32px}
   .disclosure-conditions-section .title{font-size:28px}
 }
+
+
+/* v36 — final disclosure typography adjustment */
+.disclosure-hero-content h1{font-size:40px}
+.disclosure-conditions-section .title{font-size:30px}
+@media(max-width:600px){
+  .disclosure-hero-content h1{font-size:30px}
+  .disclosure-conditions-section .title{font-size:26px}
+}
