@@ -1,9 +1,10 @@
 {
-  "name": "Лида-Сервис — лизинговая компания",
+  "name": "Лида-Сервис",
   "short_name": "Лида-Сервис",
-  "lang": "ru",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#132B4F",
-  "background_color": "#ffffff"
+  "lang": "ru",
+  "icons": [
+    {"src": "/img/favicon.png", "sizes": "64x64", "type": "image/png"}
+  ]
 }

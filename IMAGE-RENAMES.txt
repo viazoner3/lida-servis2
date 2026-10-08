@@ -1,0 +1,35 @@
+ЛИДА-СЕРВИС — список переименования/перевода изображений на WebP
+
+Обновлены ссылки в HTML/CSS/OG/Twitter/JSON-LD с .png на .webp для изображений сайта.
+Favicon оставлен в PNG намеренно: img/favicon.png
+Скан документа в docs/svidetelstvo-o-registracii.jpg оставлен JPG, чтобы не изменять исходный документ. Favicon также оставлен PNG для совместимости.
+
+Переименовать/конвертировать в каталоге img:
+  about-back.png -> about-back.webp
+  back.png -> back.webp
+  cta-back.png -> cta-back.webp
+  liz-auto.png -> liz-auto.webp
+  liz-building.png -> liz-building.webp
+  liz-equipment.png -> liz-equipment.webp
+  liz-tech.png -> liz-tech.webp
+  page-back.png -> page-back.webp
+  card-auto.png -> card-auto.webp
+  card-building.png -> card-building.webp
+  card-equipment.png -> card-equipment.webp
+  card-tech.png -> card-tech.webp
+  logo-agropusk.png -> logo-agropusk.webp
+  logo-evroavtomatika.png -> logo-evroavtomatika.webp
+  logo-molochny-mir.png -> logo-molochny-mir.webp
+  logo-novogrudskie-dary.png -> logo-novogrudskie-dary.webp
+  logo-svdtrans.png -> logo-svdtrans.webp
+  logo-tdn.png -> logo-tdn.webp
+  logo.png -> logo.webp (в архиве уже сконвертирован в logo.webp)
+  manager.png -> manager.webp
+
+Уже созданные пользователем изображения для блока автотранспорта:
+  lizauto1.webp  — легковые автомобили
+  lizauto2.webp  — грузовые автомобили
+  lizauto3.webp  — микроавтобусы
+  lizauto4.webp  — прицепы и полуприцепы
+
+Важно: HTML/CSS уже ожидают эти имена. Положите реальные WebP-файлы в /img/.

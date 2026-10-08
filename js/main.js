@@ -1,18 +1,5 @@
 document.addEventListener('DOMContentLoaded', async ()=>{
   const metrGoal=(goal,params)=>{ if(typeof window.ym==='function') window.ym(112380601,'reachGoal',goal,params||{}); };
-  async function include(id,file){
-    const el=document.getElementById(id);
-    if(!el)return;
-    if(el.innerHTML.trim()) return;
-    try{
-      const r=await fetch(file);
-      el.innerHTML=await r.text();
-    }catch(e){console.error(e)}
-  }
-
-  await include('siteHeader','components/header.html');
-  await include('siteFooter','components/footer.html');
-
   // Analytics goals. The Yandex.Metrica counter is embedded in each HTML page.
   document.addEventListener('click',e=>{
     const link=e.target.closest('[data-metrika-goal]');
@@ -76,6 +63,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     });
   });
 
+  // v36: leasing calculators. The displayed first payment equals month 1 of the schedule.
   // Leasing calculators: same calculation logic on the homepage and on every leasing-type page.
   document.querySelectorAll('.leasing-calculator').forEach(calc=>{
     const typeSelect=calc.querySelector('#calcType');
@@ -95,7 +83,9 @@ document.addEventListener('DOMContentLoaded', async ()=>{
       const t=Math.max(1,Number(term.value)||1);
       const financed=p*(1-a/100);
       const principal=financed/t;
-      const firstPayment=principal+(financed*calculatorRate/12);
+      // The result must exactly match month 1 of the schedule: principal + interest on the initial balance.
+      const firstMonthInterest=financed*calculatorRate/12;
+      const firstPayment=principal+firstMonthInterest;
       payment.innerHTML=`${format(firstPayment)} <span>BYN</span>`;
       if(advValue)advValue.textContent=`${a}%`;
       if(termValue)termValue.textContent=`${t} мес.`;
@@ -105,9 +95,55 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     update();
   });
 
+  // Transfer calculator values into the application form. The visitor does not
+  // need to retype the figures already entered in the calculator. Values are
+  // stored temporarily so the same works when the calculator links to index.html#form.
+  const formatCalcNumber=n=>Number(n||0).toLocaleString('ru-RU',{minimumFractionDigits:0,maximumFractionDigits:2}).replace(/\u00a0/g,' ');
+  const getCalcData=calc=>{
+    if(!calc)return null;
+    const price=calc.querySelector('#calcPrice, #detailCalcPrice, #infoCalcPrice');
+    const adv=calc.querySelector('#calcAdv, #detailCalcAdv, #infoCalcAdv');
+    const term=calc.querySelector('#calcTerm, #detailCalcTerm, #infoCalcTerm');
+    if(!price||!adv||!term)return null;
+    const assetPrice=Math.max(0,Number(price.value)||0);
+    const advancePct=Math.min(100,Math.max(0,Number(adv.value)||0));
+    const months=Math.max(1,Number(term.value)||1);
+    return {assetPrice,advance:assetPrice*advancePct/100,advancePct,financed:assetPrice*(1-advancePct/100),months};
+  };
+  const fillFormFromCalculator=data=>{
+    const form=document.querySelector('#leadForm');
+    if(!form||!data)return;
+    const message=form.querySelector('[name="message"]');
+    if(message){
+      const text=`Расчет лизинга:\nОбщая сумма: ${formatCalcNumber(data.assetPrice)} BYN\nАванс: ${formatCalcNumber(data.advance)} BYN (${data.advancePct}%)\nСумма финансирования: ${formatCalcNumber(data.financed)} BYN\nСрок лизинга: ${data.months} мес.`;
+      if(!message.value.trim()) message.value=text;
+      else if(message.value.indexOf('Расчет лизинга:')===-1) message.value=text+'\n\n'+message.value;
+    }
+    const asset=form.querySelector('[name="asset_type"]');
+    if(asset&&data.assetType){
+      const option=[...asset.options].find(o=>o.value===data.assetType||o.textContent.trim()===data.assetType);
+      if(option)asset.value=option.value;
+    }
+  };
+  const pendingKey='lidaServisCalculatorRequest';
+  const pending=sessionStorage.getItem(pendingKey);
+  if(pending){
+    try{fillFormFromCalculator(JSON.parse(pending));}catch(e){}
+    sessionStorage.removeItem(pendingKey);
+  }
+  document.querySelectorAll('.calc-btn[data-calc-submit]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const data=getCalcData(btn.closest('.leasing-calculator'));
+      if(!data)return;
+      const select=btn.closest('.leasing-calculator')?.querySelector('#calcType');
+      data.assetType=select?.value||'';
+      sessionStorage.setItem(pendingKey,JSON.stringify(data));
+      fillFormFromCalculator(data);
+    });
+  });
+
   // Approximate first-year payment schedule: remaining principal + monthly interest.
-  // The 8% annual rate is deliberately a conditional example value and is isolated here
-  // so the calculation formula/rate can be replaced later without changing the UI.
+  // The internal calculation parameter is not displayed to site visitors.
   const scheduleRate=0.08;
   const scheduleFormat=n=>Number(n||0).toLocaleString('ru-RU',{minimumFractionDigits:2,maximumFractionDigits:2}).replace(/\u00a0/g,' ');
   const closeSchedule=()=>document.getElementById('scheduleModal')?.classList.remove('show');
@@ -151,11 +187,10 @@ document.addEventListener('DOMContentLoaded', async ()=>{
           <div class="schedule-summary-item"><span>Аванс</span><strong>${scheduleFormat(advance)} BYN (${advancePct}%)</strong></div>
           <div class="schedule-summary-item"><span>Финансирование</span><strong>${scheduleFormat(financed)} BYN</strong></div>
           <div class="schedule-summary-item"><span>Срок</span><strong>${months} мес.</strong></div>
-          <div class="schedule-summary-item"><span>Условная ставка</span><strong>8% годовых</strong></div>
           <div class="schedule-summary-item"><span>Сумма за 12 мес.</span><strong>${scheduleFormat(yearTotal)} BYN</strong></div>
         </div>
         <div class="schedule-table-wrap"><table class="schedule-table"><thead><tr><th>Месяц</th><th>Основной долг</th><th>Проценты</th><th>Платёж</th></tr></thead><tbody>${rows}</tbody></table></div>
-        <p class="schedule-note"><strong>Важно:</strong> 8% — условное значение для примера. В расчёте используется дифференцированный платёж: основной долг погашается равными долями, а проценты каждый месяц начисляются на остаток основного долга. Фактический график определяется условиями конкретной сделки.</p>
+        <p class="schedule-note"><strong>Важно:</strong> это примерный расчёт. В графике используется дифференцированный платёж: основной долг погашается равными долями, а проценты начисляются на остаток основного долга. Фактический график определяется условиями конкретной сделки.</p>
       </div></div>`;
     modal.classList.add('show');
     modal.querySelector('.schedule-close').addEventListener('click',closeSchedule);
@@ -172,7 +207,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     const av=box.querySelector('#infoAdvValue'), tv=box.querySelector('#infoTermValue');
     const format=n=>Number(n||0).toLocaleString('ru-RU',{minimumFractionDigits:2,maximumFractionDigits:2}).replace(/\u00a0/g,' ');
     const calculatorRate=0.08;
-    const update=()=>{const p=Math.max(0,Number(infoCalc.value)||0), a=Math.min(100,Math.max(0,Number(adv.value)||0)), t=Math.max(1,Number(term.value)||1); const financed=p*(1-a/100); const first=(financed/t)+(financed*calculatorRate/12); payment.innerHTML=`${format(first)} <span>BYN</span>`; av.textContent=`${a}%`; tv.textContent=`${t} мес.`;};
+    const update=()=>{const p=Math.max(0,Number(infoCalc.value)||0), a=Math.min(100,Math.max(0,Number(adv.value)||0)), t=Math.max(1,Number(term.value)||1); const financed=p*(1-a/100); const principal=financed/t; const firstMonthInterest=financed*calculatorRate/12; const first=principal+firstMonthInterest; payment.innerHTML=`${format(first)} <span>BYN</span>`; av.textContent=`${a}%`; tv.textContent=`${t} мес.`;};
     [infoCalc,adv,term].forEach(el=>el.addEventListener('input',update)); update();
   }
 
