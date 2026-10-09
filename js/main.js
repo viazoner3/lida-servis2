@@ -137,8 +137,27 @@ document.addEventListener('DOMContentLoaded', async ()=>{
       if(!data)return;
       const select=btn.closest('.leasing-calculator')?.querySelector('#calcType');
       data.assetType=select?.value||'';
-      sessionStorage.setItem(pendingKey,JSON.stringify(data));
-      fillFormFromCalculator(data);
+
+      // If the application form is on this page, fill it directly. Persist the
+      // calculation only when the CTA navigates to the homepage form.
+      const currentForm=document.querySelector('#leadForm');
+      if(currentForm){
+        sessionStorage.removeItem(pendingKey);
+        fillFormFromCalculator(data);
+      }else{
+        sessionStorage.setItem(pendingKey,JSON.stringify(data));
+      }
+
+      // The homepage calculator uses a button rather than an anchor, so its
+      // CTA must scroll to the application form explicitly after filling it.
+      if(btn.tagName==='BUTTON'){
+        const formSection=document.getElementById('form');
+        if(formSection){
+          const headerHeight=document.getElementById('header')?.offsetHeight||80;
+          const top=formSection.getBoundingClientRect().top+window.scrollY-headerHeight-12;
+          window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+        }
+      }
     });
   });
 

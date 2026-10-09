@@ -886,3 +886,9 @@ html, body {
 .faq-detail-table td:first-child{width:20%;color:var(--primary)}
 .faq-detail-table tr:nth-child(even) td{background:#f8fafc}
 @media(max-width:768px){.faq-table-wrap{margin-left:-4px;margin-right:-4px}.faq-detail-table{min-width:680px;font-size:13px}.faq-detail-table th,.faq-detail-table td{padding:12px 13px}}
+
+/* Automotive FAQ: list styled like the homepage leasing-benefits list */
+.faq-transport-list{margin-top:14px}
+.faq-transport-list li{margin-bottom:14px}
+.faq-transport-list li:last-child{margin-bottom:0}
+.faq-transport-note{margin-top:14px!important}
